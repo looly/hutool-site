@@ -1,4 +1,4 @@
 #!/bin/bash
 
-# Push to github
+# Push to origin
 git push origin master
