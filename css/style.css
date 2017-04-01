@@ -11,11 +11,6 @@ body {
   font-weight: 300;
   line-height: 1.8;
   color: #949494;
-  
-  transform: rotate(5deg);
-  -moz-transform: rotate(5deg);
-  -webkit-transform: rotate(5deg);
-  -o-transform: rotate(5deg);
 }
 body.fh5co-overflow {
   overflow-x: hidden;
