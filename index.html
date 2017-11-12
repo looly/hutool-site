@@ -39,10 +39,10 @@
 		<script>
 			var _hmt = _hmt || [];
 			(function() {
-			  var hm = document.createElement("script");
-			  hm.src = "https://hm.baidu.com/hm.js?f2c884fc06fca522c4105429259b8a73";
-			  var s = document.getElementsByTagName("script")[0]; 
-			  s.parentNode.insertBefore(hm, s);
+				var hm = document.createElement("script");
+				hm.src = "https://hm.baidu.com/hm.js?f2c884fc06fca522c4105429259b8a73";
+				var s = document.getElementsByTagName("script")[0];
+				s.parentNode.insertBefore(hm, s);
 			})();
 		</script>
 	</head>
@@ -65,15 +65,15 @@
 									</h1>
 									<h2>A set of Java tools that makes it easy to code</h2>
 									<div style="margin-top: 100px">
-										<p>
-											<a href="http://hutool.mydoc.io/" target="_blank"><b>参考文档</b></a>
-											<a href="apidocs/3.2.0" target="_blank" style="margin-left: 70px;"><b>API文档</b></a>
-										</p>
-										<p>
-											<a href="http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22hutool-all%22" target="_blank"><b>Download</b></a>
-											<a href="https://gitee.com/loolly/hutool" target="_blank" style="margin-left: 50px;"><b>Hutool@Gitee</b></a>
-											<a href="https://github.com/looly/hutool" target="_blank" style="margin-left: 50px;"><b>Hutool@Github</b></a>
-										</p>
+										<div>
+											<a href="http://hutool.mydoc.io/" target="_blank" style="margin-right: 70px;"><b>参考文档</b></a>
+											<a href="apidocs/3.2.0" target="_blank"><b>API文档</b></a>
+										</div>
+										<div style="margin-top: 2em;">
+											<a href="http://search.maven.org/#search%7Cga%7C1%7Ca%3A%22hutool-all%22" target="_blank" style="margin-right: 50px;"><b>Download</b></a>
+											<a href="https://gitee.com/loolly/hutool" target="_blank" style="margin-right: 50px;"><b>Hutool@Gitee</b></a>
+											<a href="https://github.com/looly/hutool" target="_blank"><b>Hutool@Github</b></a>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -92,6 +92,8 @@
 								<a href="#" data-nav-section="docs">文档</a>
 								<a href="#" data-nav-section="team">团队</a>
 								<a href="#" data-nav-section="contact">加入讨论</a>
+								<a href="#" data-nav-section="donate">赞助商</a>
+								<a href="#" data-nav-section="friends">友情链接</a>
 							</div>
 						</div>
 					</div>
@@ -164,13 +166,12 @@
 				</div>
 
 				<div id="fh5co-services" data-section="docs">
-					<!--
-			<div class="fh5co-video">
-				<a href="#" class="popup-vimeo">
-				<i class="icon-play2"></i>
-				</a> <span>Watch video</span>
-			</div>
-			-->
+					<div class="fh5co-video">
+						<a href="javascript:void();" class="popup-vimeo">
+							<i class="icon-play2"></i>
+						</a>
+						<span>Watch Video</span>
+					</div>
 					<div class="container">
 						<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
 							<h2>Hutool 是什么</h2>
@@ -236,6 +237,7 @@
 					<div class="container">
 						<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
 							<h2>开发团队</h2>
+							<p>我们不是一个人在战斗</p>
 						</div>
 						<div class="col-md-4 col-md-offset-2">
 							<div class="person">
@@ -255,7 +257,7 @@
 									</li>
 								</ul>
 							</div>
-							
+
 						</div>
 						<div class="col-md-4">
 							<div class="person">
@@ -282,20 +284,24 @@
 
 				<div id="fh5co-contact" data-section="contact">
 					<div class="container">
-						<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
+						<div class="col-md-12 text-center fh5co-heading">
 							<h2>加入讨论</h2>
-							<p>通过以下方式加入讨论</p>
+							<p>通过以下方式加入讨论，或为Hutool添砖加瓦</p>
 						</div>
 						<div style="text-align: center;">
-							<div class="col-md-4">
+							<div class="col-md-3">
 								<i class="icon-qq"></i>
 								<a href="http://shang.qq.com/wpa/qunwpa?idkey=382bb37ce779c11da77577f69d92d5171b340e3e7343d5ae0521f237c82c7810" target="_blank">537116831</a>
 							</div>
-							<div class="col-md-4">
+							<div class="col-md-3">
 								<i class="icon-mail2"></i>
 								<a href="mailto:loolly@aliyun.com" target="_blank">loolly@aliyun.com</a>
 							</div>
-							<div class="col-md-4">
+							<div class="col-md-3">
+								<i class="icon-git"></i>
+								<a href="https://gitee.com/loolly/hutool/issues" target="_blank">Gitee Issues</a>
+							</div>
+							<div class="col-md-3">
 								<i class="icon-github"></i>
 								<a href="https://github.com/looly/hutool/issues" target="_blank">Github Issues</a>
 							</div>
@@ -303,32 +309,70 @@
 
 					</div>
 				</div>
-
+				<!-- END fh5co-contact -->
+				
+				<div id="fh5co-donate" data-section="donate" style="padding: 7em 0; background-color: #E8ECF1;">
+					<div class="container">
+						<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
+							<h2>赞助商</h2>
+							<p>为Hutool提供赞助，也许他们也会为你提供更优惠的服务</p>
+						</div>
+						<div class="col-md-6  col-md-offset-3">
+							<a target="_blank" href="https://www.chanmir.com/?u=3E1076">
+								<img src="https://www.chanmir.com/logo_small.gif">
+								<span>11.11狂欢 云服务器2折15元/月 起</span>
+							</a>
+							<span>优惠劵：</span><span style="color: red;">1E0E3C</span>
+						</div>
+					</div>
+				</div>
+				<!-- END fh5co-friends -->
+				
+				<div id="fh5co-friends" data-section="friends" style="padding: 7em 0;">
+					<div class="container">
+						<div class="col-md-12 text-center fh5co-heading">
+							<h2>友情链接</h2>
+							<p>为Hutool提供各种帮助和支持的朋友们，我们一起共奋进</p>
+						</div>
+						<div class="col-md-2">
+							<a target="_blank" href="https://www.chanmir.com/?u=3E1076"><img src="https://www.chanmir.com/logo_small.gif" height="38px"></a>
+						</div>
+						<div class="col-md-2">
+							<a target="_blank" href="http://www.oschina.net/"><img src="http://www.oschina.net/build/oschina/components/imgs/oschina.svg" height="38px"></a>
+						</div>
+						<div class="col-md-2">
+							<a target="_blank" href="http://t-io.org"><img src="http://t-io.org/static/logo.d852d784.jpg" height="38px"></a>
+						</div>
+						<div class="col-md-2">
+							<a target="_blank" href="http://actframework.org/"><img src="http://static.jinbaozheng.com/act/big-logo.png" height="38px"></a>
+						</div>
+					</div>
+				</div>
+				<!-- END fh5co-friends -->
+				
 				<footer id="fh5co-footer">
 					<div class="container">
 						<div class="row">
 							<div class="col-md-6">
 								<p>
-									<small>&copy; 2017 Hutool Project. All Rights Reserved. <br> 
-							Designed by <a href="javascript:;" target="_blank">Unknown</a>, Hosted by <a href="https://www.coding.net/" target="_blank">Coding</a> Pages.
-						</p>
+									<small>&copy; 2017 Hutool Project. All Rights Reserved. <br>
+									Designed by <a href="http://luxiaolei.com/" target="_blank">Looly</a>, Hosted by <a href="https://www.coding.net/" target="_blank">Coding</a> Pages.
+								</p>
+							</div>
+							<div class="col-md-6">
+								<ul class="fh5co-social">
+									<li><a href="http://www.luxiaolei.com/" target="_blank"><i class="icon-home"></i></a></li>
+									<li><a href="http://weibo.com/loolly" target="_blank"><i class="icon-weibo"></i></a></li>
+									<li><a href="https://github.com/looly/hutool" target="_blank"><i class="icon-github"></i></a></li>
+								</ul>
+							</div>
+						</div>
 					</div>
-					<div class="col-md-6">
-						<ul class="fh5co-social">
-							<li><a href="http://www.luxiaolei.com/" target="_blank"><i class="icon-home"></i></a></li>
-							<li><a href="http://weibo.com/loolly" target="_blank"><i class="icon-weibo"></i></a></li>
-							<li><a href="https://github.com/looly/hutool" target="_blank"><i class="icon-github"></i></a></li>
-						</ul>
-					</div>
-				</div>
+				</footer>
 			</div>
-		</footer>
-
-		
-		
-	</div>
-
-	</div>
+			<!-- END fh5co-container -->
+		</div>
+		<!-- END fh5co-pages -->
 
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
