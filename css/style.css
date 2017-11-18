@@ -1184,4 +1184,14 @@ p {
   background: url(../images/Preloader_2.gif) center no-repeat #fff;
 }
 
+#fh5co-friends .friend{
+  text-align: center;
+}
+#fh5co-friends .friend a{
+  line-height: 3em;
+}
+#fh5co-friends .friend a img{
+  height: 2em;
+}
+
 /*# sourceMappingURL=style.css.map */
