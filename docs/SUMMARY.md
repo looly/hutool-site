@@ -1,6 +1,6 @@
 * [入门和安装]()
 * [更新记录](CHANGELOG)
-* <div class="ps-icon ps-icon-arrow-right"></div>核心（Hutool-core）
+* 核心（Hutool-core）
   * 克隆
     * [支持泛型的克隆接口和克隆类](core/克隆/支持泛型的克隆接口和克隆类.md)
   * 类型转换
