@@ -1,84 +1,102 @@
-## 由来
+## 介绍
+数组工具中的方法在2.x版本中都在CollectionUtil中存在，3.x之后版本（包括4.x版本）中拆分出来作为ArrayUtil。数组工具类主要针对原始类型数组和泛型数组相关方案进行封装。
 
-数字工具针对数学运算做工具性封装
+数组工具类主要是解决对象数组（包括包装类型数组）和原始类型数组使用方法不统一的问题。
 
-## 使用
+## 方法
 
-### 加减乘除
+### 判空
+数组的判空类似于字符串的判空，标准是`null`或者数组长度为0，ArrayUtil中封装了针对原始类型和泛型数组的判空和判非空：
 
-- `NumberUtil.add`  针对double类型做加法
-- `NumberUtil.sub`  针对double类型做减法
-- `NumberUtil.mul`  针对double类型做乘法
-- `NumberUtil.div`  针对double类型做除法，并提供重载方法用于规定除不尽的情况下保留小数位数和舍弃方式。
-
-以上四种运算都会将double转为BigDecimal后计算，解决float和double类型无法进行精确计算的问题。这些方法常用于商业计算。
-
-### 保留小数
-
-保留小数的方法主要有两种：
-
-- `NumberUtil.round` 方法主要封装BigDecimal中的方法来保留小数，返回double，这个方法更加灵活，可以选择四舍五入或者全部舍弃等模式。
-
+1. 判断空
 ```java
-double te1=123456.123456;
-double te2=123456.128456;
-Console.log(round(te1,4));//结果:123456.12
-Console.log(round(te2,4));//结果:123456.13
+int[] a = {};
+int[] b = null;
+ArrayUtil.isEmpty(a);
+ArrayUtil.isEmpty(b);
 ```
 
-- `NumberUtil.roundStr` 方法主要封装`String.format`方法,舍弃方式采用四舍五入。
-
+2. 判断非空
 ```java
-double te1=123456.123456;
-double te2=123456.128456;
-Console.log(roundStr(te1,2));//结果:123456.12
-Console.log(roundStr(te2,2));//结果:123456.13
+int[] a = {1,2};
+ArrayUtil.isNotEmpty(a);
 ```
 
-### decimalFormat
-
-针对 `DecimalFormat.format`进行简单封装。按照固定格式对double或long类型的数字做格式化操作。
+### 新建泛型数组
+`Array.newInstance`并不支持泛型返回值，在此封装此方法使之支持泛型返回值。
 
 ```java
-long c=299792458;//光速
-String format = NumberUtil.decimalFormat(",###", c);//299,792,458
+String[] newArray = ArrayUtil.newArray(String.class, 3);
 ```
 
-格式中主要以 # 和 0 两种占位符号来指定数字长度。0 表示如果位数不足则以 0 填充，# 表示只要有可能就把数字拉上这个位置。
+### 调整大小
+使用 `ArrayUtil.resize`方法生成一个新的重新设置大小的数组。
 
-- 0 -> 取一位整数
-- 0.00 -> 取一位整数和两位小数
-- 00.000 -> 取两位整数和三位小数
-- \# -> 取所有整数部分
-- \#.##% -> 以百分比方式计数，并取两位小数
-- \#.#####E0 -> 显示为科学计数法，并取五位小数
-- ,### -> 每三位以逗号进行分隔，例如：299,792,458
-- 光速大小为每秒,###米 -> 将格式嵌入文本
+### 合并数组
+`ArrayUtil.addAll`方法采用可变参数方式，将多个泛型数组合并为一个数组。
 
-关于格式的更多说明，请参阅：[Java DecimalFormat的主要功能及使用方法](http://blog.csdn.net/evangel_z/article/details/7624503)
+### 克隆
+数组本身支持clone方法，因此确定为某种类型数组时调用`ArrayUtil.clone(T[])`,不确定类型的使用`ArrayUtil.clone(T)`，两种重载方法在实现上有所不同，但是在使用中并不能感知出差别。
 
-### 是否为数字
-- `NumberUtil.isNumber` 是否为数字
-- `NumberUtil.isInteger` 是否为整数
-- `NumberUtil.isDouble` 是否为浮点数
-- `NumberUtil.isPrimes` 是否为质数
+1. 泛型数组调用原生克隆
+```java
+Integer[] b = {1,2,3};
+Integer[] cloneB = ArrayUtil.clone(b);
+Assert.assertArrayEquals(b, cloneB);
+```
+2. 非泛型数组（原始类型数组）调用第二种重载方法
+```java
+int[] a = {1,2,3};
+int[] clone = ArrayUtil.clone(a);
+Assert.assertArrayEquals(a, clone);
+```
 
-### 随机数
-- `NumberUtil.generateRandomNumber` 生成不重复随机数 根据给定的最小数字和最大数字，以及随机数的个数，产生指定的不重复的数组。
-- `NumberUtil.generateBySet` 生成不重复随机数 根据给定的最小数字和最大数字，以及随机数的个数，产生指定的不重复的数组。
+### 有序列表生成
+`ArrayUtil.range`方法有三个重载，这三个重载配合可以实现支持步进的有序数组或者步进为1的有序数组。这种列表生成器在Python中做为语法糖存在。
 
-### 整数列表
+### 拆分数组
+`ArrayUtil.split`方法用于拆分一个byte数组，将byte数组平均分成几等份，常用于消息拆分。
 
-`NumberUtil.range` 方法根据范围和步进，生成一个有序整数列表。
-`NumberUtil.appendRange` 将给定范围内的整数添加到已有集合中
+### 过滤
+`ArrayUtil.filter`方法用于编辑已有数组元素，只针对泛型数组操作，原始类型数组并未提供。
+方法中Editor接口用于返回每个元素编辑后的值，返回null此元素将被抛弃。
 
-### 其它
-- `NumberUtil.factorial` 阶乘
-- `NumberUtil.sqrt` 平方根
-- `NumberUtil.divisor` 最大公约数
-- `NumberUtil.multiple` 最小公倍数
-- `NumberUtil.getBinaryStr` 获得数字对应的二进制字符串
-- `NumberUtil.binaryToInt` 二进制转int
-- `NumberUtil.binaryToLong` 二进制转long
-- `NumberUtil.compare` 比较两个值的大小
-- `NumberUtil.toStr` 数字转字符串，自动并去除尾小数点儿后多余的0
+一个大栗子：过滤数组，只保留偶数
+```java
+Integer[] a = {1,2,3,4,5,6};
+Integer[] filter = ArrayUtil.filter(a, new Editor<Integer>(){
+	@Override
+	public Integer edit(Integer t) {
+		return (t % 2 == 0) ? t : null;
+	}});
+Assert.assertArrayEquals(filter, new Integer[]{2,4,6});
+```
+
+### zip
+`ArrayUtil.zip`方法传入两个数组，第一个数组为key，第二个数组对应位置为value，此方法在Python中为zip()函数。
+
+```java
+String[] keys = {"a", "b", "c"};
+Integer[] values = {1,2,3};
+Map<String, Integer> map = ArrayUtil.zip(keys, values, true);
+
+//{a=1, b=2, c=3}
+```
+
+### 是否包含元素
+`ArrayUtil.contains`方法只针对泛型数组，检测指定元素是否在数组中。
+
+### 包装和拆包
+在原始类型元素和包装类型中，Java实现了自动包装和拆包，但是相应的数组无法实现，于是便是用`ArrayUtil.wrap`和`ArrayUtil.unwrap`对原始类型数组和包装类型数组进行转换。
+
+### 判断对象是否为数组
+`ArrayUtil.isArray`方法封装了`obj.getClass().isArray()`。
+
+### 转为字符串
+
+1. `ArrayUtil.toString` 通常原始类型的数组输出为字符串时无法正常显示，于是封装此方法可以完美兼容原始类型数组和包装类型数组的转为字符串操作。
+
+2. `ArrayUtil.join` 方法使用间隔符将一个数组转为字符串，比如[1,2,3,4]这个数组转为字符串，间隔符使用“-”的话，结果为 1-2-3-4，join方法同样支持泛型数组和原始类型数组。
+
+### toArray
+`ArrayUtil.toArray`方法针对ByteBuffer转数组提供便利。
