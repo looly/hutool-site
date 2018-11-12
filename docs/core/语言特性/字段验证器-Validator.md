@@ -21,7 +21,7 @@ boolean isEmail = Validator.isEmail("loolly@gmail.com")
 如果Validator里的方法无法满足自己的需求，那还可以调用
 
 ```
-Validator.isByRegex("需要验证字段的正则表达式", "被验证内容")
+Validator.isMactchRegex("需要验证字段的正则表达式", "被验证内容")
 ```
 
 来通过正则表达式灵活的验证内容。
