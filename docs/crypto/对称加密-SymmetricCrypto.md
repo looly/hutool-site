@@ -115,3 +115,36 @@ DES des = SecureUtil.des(key);
 DES des = new DES(Mode.CTS, Padding.PKCS5Padding, "0CoJUm6Qyw8W8jud".getBytes(), "01020304".getBytes());
 ```
 
+### SM4
+
+在4.2.1之后，Hutool借助Bouncy Castle库可以支持国密算法，以SM4为例：
+
+我们首先需要引入Bouncy Castle库：
+
+```xml
+<dependency>
+  <groupId>org.bouncycastle</groupId>
+  <artifactId>bcpkix-jdk15on</artifactId>
+  <version>1.60</version>
+</dependency>
+```
+
+然后可以调用SM4算法，调用方法与其它算法一致：
+
+```java
+String content = "test中文";
+SymmetricCrypto sm4 = new SymmetricCrypto("SM4");
+
+String encryptHex = sm4.encryptHex(content);
+String decryptStr = sm4.decryptStr(encryptHex, CharsetUtil.CHARSET_UTF_8);//test中文
+```
+
+同样我们可以指定加密模式和偏移：
+
+```java
+String content = "test中文";
+SymmetricCrypto sm4 = new SymmetricCrypto("SM4/ECB/PKCS5Padding");
+
+String encryptHex = sm4.encryptHex(content);
+String decryptStr = sm4.decryptStr(encryptHex, CharsetUtil.CHARSET_UTF_8);//test中文
+```

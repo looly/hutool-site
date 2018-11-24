@@ -121,6 +121,7 @@
   * [Http请求-HttpRequest](http/Http请求-HttpRequest.md)
   * [Http响应-HttpResponse](http/Http响应-HttpResponse.md)
   * [HTML工具类-HtmlUtil](http/HTML工具类-HtmlUtil.md)
+  * [UA工具类-UserAgentUtil](http/UA工具类-UserAgentUtil.md)
   * [常用Http状态码-HttpStatus](http/常用Http状态码-HttpStatus.md)
   * [常见问题](http/常见问题.md)
   * [案例1-爬取开源中国的开源资讯](http/案例1-爬取开源中国的开源资讯.md)

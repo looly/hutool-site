@@ -43,12 +43,11 @@ HMAC，全称为“Hash Message Authentication Code”，中文名“散列消�
 以MD5为例：
 ```java
 Digester md5 = new Digester(DigestAlgorithm.MD5);
-String digestHex = md5.digestHex(testStr);
-//Junit单元测试
-//Assert.assertEquals("5393554e94bf0eb6436f240a4fd71282", digestHex);
+String digestHex = md5.digestHex(testStr);//5393554e94bf0eb6436f240a4fd71282
 ```
 
 当然，做为最为常用的方法，MD5等方法被封装为工具方法在`DigestUtil`中，以上代码可以进一步简化为：
+
 ```java
 String md5Hex1 = DigestUtil.md5Hex(testStr);
 //Junit单元测试
@@ -60,12 +59,31 @@ String md5Hex1 = DigestUtil.md5Hex(testStr);
 以HmacMD5为例：
 ```java
 String testStr = "test中文";
-		
+
 byte[] key = "password".getBytes();
 HMac mac = new HMac(HmacAlgorithm.HmacMD5, key);
 
-String macHex1 = mac.digestHex(testStr);
-//Junit单元测试
-//Assert.assertEquals("b977f4b13f93f549e06140971bded384", macHex1);
+String macHex1 = mac.digestHex(testStr);//b977f4b13f93f549e06140971bded384
 ```
 
+### SM3
+
+在4.2.1之后，Hutool借助Bouncy Castle库可以支持国密算法，以SM3为例：
+
+我们首先需要引入Bouncy Castle库：
+
+```xml
+<dependency>
+  <groupId>org.bouncycastle</groupId>
+  <artifactId>bcpkix-jdk15on</artifactId>
+  <version>1.60</version>
+</dependency>
+```
+
+然后可以调用SM3算法，调用方法与其它摘要算法一致：
+
+```java
+Digester digester = DigestUtil.digester("sm3");
+//136ce3c86e4ed909b76082055a61586af20b4dab674732ebd4b599eef080c9be
+String digestHex = digester.digestHex("aaaaa");
+```
