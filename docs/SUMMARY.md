@@ -137,6 +137,8 @@
     * [Jsch(SSH)工具-JschUtil](extra/Jsch封装/Jsch工具-JschUtil.md)
   * CommonsNet封装
     * [FTP封装-Ftp](extra/CommonsNet封装/FTP封装-Ftp.md)
+  * Emoji
+    * [Emoji工具-EmojiUtil](extra/emoji/Emoji工具-EmojiUtil.md)
 * [布隆过滤（Hutool-bloomFilter）](bloomFilter/概述.md)
 * [切面（Hutool-aop）](aop/概述.md)
   * [切面代理工具-ProxyUtil](aop/切面代理工具-ProxyUtil.md)
