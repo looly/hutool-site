@@ -17,6 +17,8 @@ Hutool相关博客（软文）
 
 - [Hutool-贼好用的Java工具类库](https://ryanc.cc/archives/hutool-java-tools-lib)
 
+- [如何编写一个 Java 工具类？](https://www.xttblog.com/?p=3485)
+
 ## 使用Hutool的开源项目
 
 [Fast-boot](https://gitee.com/jiangzeyin/common-parent)
