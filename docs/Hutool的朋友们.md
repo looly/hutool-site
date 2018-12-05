@@ -38,14 +38,11 @@ Voovan更像是t-io的竞争者（其实两位作者好的不得了），同时�
 ## 关于Hutool的博客
 
 - [安利一波那个叫做 Hutool 的通用工具类库](http://www.cnblogs.com/java-class/p/7742481.html)
-
 - [Java工具方法hutool 使用备注](http://blog.csdn.net/earbao/article/details/46832853)
-
 - [Hutool是一个JAVA工具包](http://www.jfinal.com/share/252)
-
 - [hutool java工具架包功能介绍](https://blog.csdn.net/lx1309244704/article/details/76459718)
-
 - [【Hutool】Hutool工具类之Http工具——HttpUtil](https://www.cnblogs.com/jiangbei/p/7667858.html)
+- [如何编写一个 Java 工具类？](https://www.xttblog.com/?p=3485)
 
 - [Hutool-Java基础工具包](https://mp.weixin.qq.com/s?src=11&timestamp=1521945641&ver=775&signature=TCm61hzYfoFK8TjtgS3RkCtf7h1AXpC1ONMoImcMqpiF5o5oJOa5e51pM8H4x36wJWWKfgt3HmYEagdGXFKWdHhfh5WYbveXkQed5SkYvYCWKIWfg6we**QexadhzPqR&new=1)
 
