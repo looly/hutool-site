@@ -59,12 +59,12 @@ DateTime对象默认是可变对象（调用offset、setField、setTime方法默
 ```java
 DateTime dateTime = new DateTime("2017-01-05 12:34:23", DatePattern.NORM_DATETIME_FORMAT);
 
-//默认情况下DateTime为可变对象，此时offsite == dateTime
-DateTime offsite = dateTime.offsite(DateField.YEAR, 0);
+//默认情况下DateTime为可变对象，此时offset == dateTime
+DateTime offset = dateTime.offset(DateField.YEAR, 0);
 
-//设置为不可变对象后变动将返回新对象，此时offsite != dateTime
+//设置为不可变对象后变动将返回新对象，此时offset != dateTime
 dateTime.setMutable(false);
-offsite = dateTime.offsite(DateField.YEAR, 0);
+offset = dateTime.offset(DateField.YEAR, 0);
 ```
 
 ### 格式化为字符串
