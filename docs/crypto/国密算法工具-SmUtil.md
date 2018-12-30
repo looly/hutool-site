@@ -41,6 +41,7 @@ String decryptStr = StrUtil.utf8Str(sm2.decryptFromBcd(encryptStr, KeyType.Priva
 ```
 
 2. 使用自定义密钥对加密或解密
+
 ```java
 String text = "我是一段测试aaaa";
 
