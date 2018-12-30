@@ -13,10 +13,10 @@ Assert类更像是Junit中的Assert类，也很像Guava中的Preconditions，主
 
 ```java
 String a = null;
-com.xiaoleilu.hutool.lang.Assert.isNull(a);
+cn.hutool.lang.Assert.isNull(a);
 ```
 
-## 更方法
+## 更多方法
 - isTrue 是否True
 - isNull 是否是null值，不为null抛出异常
 - notNull 是否非null值

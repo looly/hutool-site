@@ -21,7 +21,7 @@
 
 ## 使用
 
-由于嵌套Bean定义过于复杂，在此我们省略，有兴趣的可以看下这里：com.xiaoleilu.hutool.core.lang.test.bean（src/test/java下）下定义了测试用例用的bean。
+由于嵌套Bean定义过于复杂，在此我们省略，有兴趣的可以看下这里：cn.hutool.core.lang.test.bean（src/test/java下）下定义了测试用例用的bean。
 
 首先我们创建这个复杂的Bean（实际当中这个复杂的Bean可能是从数据库中获取，或者从JSON转入）
 

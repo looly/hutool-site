@@ -28,25 +28,13 @@ pass = test
 
 ### 代码：`PicTransfer.java`
 ```java
-import java.sql.Blob;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
-import com.xiaoleilu.hutool.db.Entity;
-import com.xiaoleilu.hutool.db.SqlRunner;
-import com.xiaoleilu.hutool.db.ds.DSFactory;
-import com.xiaoleilu.hutool.db.handler.RsHandler;
-import com.xiaoleilu.hutool.io.FileUtil;
-import com.xiaoleilu.hutool.util.CollectionUtil;
-import com.xiaoleilu.hutool.util.StrUtil;
-
 public class PicTransfer {
 	private static SqlRunner runner = SqlRunner.create();
 	private static String destDir = "f:/pic";
 	
 	public static void main(String[] args) throws SQLException {
 		runner.find(
-				CollectionUtil.newArrayList("NAME", "TYPE", "GROUP", "PIC"), 
+				CollUtil.newArrayList("NAME", "TYPE", "GROUP", "PIC"), 
 				Entity.create("PIC_INFO").set("TYPE", 1),
 				new RsHandler<String>(){
 					@Override

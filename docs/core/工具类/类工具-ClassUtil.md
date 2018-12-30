@@ -15,7 +15,7 @@
 
 ### `getPackage`
 获得给定类所在包的名称，例如：
-`com.xiaoleilu.hutool.util.ClassUtil` -> `com.xiaoleilu.hutool.util`
+`cn.hutool.util.ClassUtil` -> `cn.hutool.util`
 
 ### `scanPackage`方法
 此方法唯一的参数是包的名称，返回结果为此包以及子包下所有的类。方法使用很简单，但是过程复杂一些，包扫面首先会调用 `getClassPaths`方法获得ClassPath，然后扫描ClassPath，如果是目录，扫描目录下的类文件，或者jar文件。如果是jar包，则直接从jar包中获取类名。这个方法的作用显而易见，就是要找出所有的类，在Spring中用于依赖注入，我在[Hulu](https://github.com/looly/hulu)中则用于找到Action类。当然，你也可以传一个`ClassFilter`对象，用于过滤不需要的类。

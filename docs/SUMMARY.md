@@ -116,6 +116,7 @@
   * [非对称加密-AsymmetricCrypto](crypto/非对称加密-AsymmetricCrypto.md)
   * [摘要加密-Digester和HMac](crypto/摘要加密-Digester和HMac.md)
   * [签名和验证-Sign](crypto/签名和验证-Sign.md)
+  * [国密算法工具-SmUtil](crypto/国密算法工具-SmUtil.md)
 * DFA查找（Hutool-dfa）
   * [概述](dfa/概述.md)
   * [DFA查找](dfa/DFA查找.md)
