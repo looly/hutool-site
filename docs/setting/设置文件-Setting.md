@@ -47,6 +47,7 @@ Setting配置文件类似于Properties文件，规则如下：
 代码具体请见`cn.hutool.setting.test.SettingTest`
 
 1. Setting初始化
+
 ```Java
 //读取classpath下的XXX.setting，不使用变量
 Setting setting = new Setting("XXX.setting");
@@ -109,4 +110,3 @@ setting.toBean(userVo);
 //整个正则匹配变量名，分组1匹配key的名字
 setting.setVarRegex("\\$\\{(.*?)\\}");
 ```
-
