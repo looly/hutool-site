@@ -48,7 +48,7 @@ Setting配置文件类似于Properties文件，规则如下：
 
 1. Setting初始化
 
-```Java
+```java
 //读取classpath下的XXX.setting，不使用变量
 Setting setting = new Setting("XXX.setting");
 
