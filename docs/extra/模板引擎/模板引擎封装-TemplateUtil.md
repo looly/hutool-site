@@ -12,15 +12,16 @@ Hutool现在封装的引擎有：
 - [Rythm](http://rythmengine.org/)
 - [FreeMarker](https://freemarker.apache.org/)
 - [Velocity](http://velocity.apache.org/)
+- [Thymeleaf](https://www.thymeleaf.org/)
 
 ## 原理
 
 类似于Java日志门面的思想，Hutool将模板引擎的渲染抽象为两个概念：
 
-- Engine 模板引擎，用于封装模板对象，配置各种配置
+- TemplateEngine 模板引擎，用于封装模板对象，配置各种配置
 - Template 模板对象，用于配合参数渲染产生内容
 
-通过实现这两个接口，用户便可抛开模板实现，从而渲染模板。Hutool同时会通过EngineFactory***根据用户引入的模板引擎库的jar来自动选择用哪个引擎来渲染**。
+通过实现这两个接口，用户便可抛开模板实现，从而渲染模板。Hutool同时会通过`TemplateFactory`**根据用户引入的模板引擎库的jar来自动选择用哪个引擎来渲染**。
 
 ## 使用
 
@@ -28,7 +29,7 @@ Hutool现在封装的引擎有：
 ```
 //自动根据用户引入的模板引擎库的jar来自动选择使用的引擎
 //TemplateConfig为模板引擎的选项，可选内容有字符编码、模板路径、模板加载方式等，默认通过模板字符串渲染
-Engine engine = TemplateUtil.createEngine(new TemplateConfig());
+TemplateEngine engine = TemplateUtil.createEngine(new TemplateConfig());
 
 //假设我们引入的是Beetl引擎，则：
 Template template = engine.getTemplate("Hello ${name}");
@@ -44,7 +45,7 @@ String result = template.render(Dict.create().set("name", "Hutool"));
 只需修改TemplateConfig配置文件内容即可更换（这里以Velocity为例）：
 
 ```
-Engine engine = TemplateUtil.createEngine(new TemplateConfig("templates", ResourceMode.CLASSPATH));
+TemplateEngine engine = TemplateUtil.createEngine(new TemplateConfig("templates", ResourceMode.CLASSPATH));
 Template template = engine.getTemplate("templates/velocity_test.vtl");
 String result = template.render(Dict.create().set("name", "Hutool"));
 ```
@@ -58,4 +59,3 @@ String result = template.render(Dict.create().set("name", "Hutool"));
 - WEB_ROOT 从WebRoot目录加载模板
 - STRING 从模板文本加载模板
 - COMPOSITE 复合加载模板（分别从File、ClassPath、Web-root、String方式尝试查找模板）
-
