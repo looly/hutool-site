@@ -15,6 +15,8 @@ Hutool现在封装的引擎有：
 - [Jcseg](https://gitee.com/lionsoul/jcseg)
 - [Jieba](https://github.com/huaban/jieba-analysis)
 - [mmseg4j](https://github.com/chenlb/mmseg4j-core)
+- [Word](https://github.com/ysc/word)
+- [Smartcn](https://github.com/chenlb/mmseg4j-core)
 
 > 注意
 > 此工具和模块从Hutool-4.4.0开始支持。
