@@ -6,7 +6,7 @@ Hutool将Excel写出封装为`ExcelWriter`，原理为包装了Workbook对象，
 
 由于机制原因，在写出结束后需要关闭`ExcelWriter`对象，调用`close`方法即可关闭，此时才会释放Workbook对象资源，否则带有数据的Workbook一直会常驻内存。
 
-## 使用栗子
+## 使用例子
 
 ### 1. 将行列对象写出到Excel
 
@@ -238,6 +238,8 @@ ServletOutputStream out=response.getOutputStream();
 writer.flush(out);
 // 关闭writer，释放内存
 writer.close();
+//此处记得关闭输出Servlet流
+IoUtil.close(out);
 ```
 
 > 注意
