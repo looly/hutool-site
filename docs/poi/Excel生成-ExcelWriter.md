@@ -35,8 +35,8 @@ writer.passCurrentRow();
 
 //合并单元格后的标题行，使用默认标题样式
 writer.merge(list1.size() - 1, "测试标题");
-//一次性写出内容
-writer.write(rows);
+//一次性写出内容，强制输出标题
+writer.write(rows, true);
 //关闭writer，释放内存
 writer.close();
 ```
@@ -73,8 +73,8 @@ ArrayList<Map<String, Object>> rows = CollUtil.newArrayList(row1, row2);
 ExcelWriter writer = ExcelUtil.getWriter("d:/writeMapTest.xlsx");
 // 合并单元格后的标题行，使用默认标题样式
 writer.merge(row1.size() - 1, "一班成绩单");
-// 一次性写出内容，使用默认样式
-writer.write(rows);
+// 一次性写出内容，使用默认样式，强制输出标题
+writer.write(rows, true);
 // 关闭writer，释放内存
 writer.close();
 ```
@@ -163,8 +163,8 @@ List<TestBean> rows = CollUtil.newArrayList(bean1, bean2);
 ExcelWriter writer = ExcelUtil.getWriter("d:/writeBeanTest.xlsx");
 // 合并单元格后的标题行，使用默认标题样式
 writer.merge(4, "一班成绩单");
-// 一次性写出内容，使用默认样式
-writer.write(rows);
+// 一次性写出内容，使用默认样式，强制输出标题
+writer.write(rows, true);
 // 关闭writer，释放内存
 writer.close();
 ```
@@ -191,8 +191,8 @@ writer.addHeaderAlias("examDate", "考试时间");
 
 // 合并单元格后的标题行，使用默认标题样式
 writer.merge(4, "一班成绩单");
-// 一次性写出内容，使用默认样式
-writer.write(rows);
+// 一次性写出内容，使用默认样式，强制输出标题
+writer.write(rows, true);
 // 关闭writer，释放内存
 writer.close();
 ```
@@ -212,8 +212,8 @@ writer.close();
 ExcelWriter writer = ExcelUtil.getWriter();
 //创建xlsx格式的
 //ExcelWriter writer = ExcelUtil.getWriter(true);
-// 一次性写出内容，使用默认样式
-writer.write(rows);
+// 一次性写出内容，使用默认样式，强制输出标题
+writer.write(rows, true);
 //out为OutputStream，需要写出到的目标流
 writer.flush(out);
 // 关闭writer，释放内存
@@ -222,11 +222,11 @@ writer.close();
 
 ### 6. 写出到客户端下载（写出到Servlet）
 
-```
+```java
 // 通过工具类创建writer，默认创建xls格式
 ExcelWriter writer = ExcelUtil.getWriter();
-// 一次性写出内容，使用默认样式
-writer.write(rows);
+// 一次性写出内容，使用默认样式，强制输出标题
+writer.write(rows, true);
 //out为OutputStream，需要写出到的目标流
 
 //response为HttpServletResponse对象
@@ -261,7 +261,7 @@ style.setBackgroundColor(IndexedColors.RED, false);
 
 ### 2. 自定义字体
 
-```
+```java
 ExcelWriter writer = ...;
 //设置内容字体
 Font font = writer.createFont();
@@ -274,7 +274,7 @@ writer.getStyleSet().setFont(font, true);
 
 ### 3. 写出多个sheet
 
-```
+```java
 //初始化时定义表名
 ExcelWriter writer = new ExcelWriter("d:/aaa.xls", "表1");
 //切换sheet，此时从第0行开始写
@@ -296,7 +296,8 @@ writer.setSheet("表3");
 其中`cellStyleForNumber` `cellStyleForDate`用于控制数字和日期的显示方式。
 
 因此我们可以使用以下方式获取`CellStyle`对象自定义指定种类的样式：
-```
+
+```java
 StyleSet style = writer.getStyleSet();
 CellStyle cellStyle = style.getHeadCellStyle();
 ...
