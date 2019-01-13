@@ -31,7 +31,7 @@ showParams = true
 
 ### 2、引入MySQL JDBC驱动jar
 
-```java
+```xml
 <!--mysql数据库驱动 -->
 <dependency>
     <groupId>mysql</groupId>
@@ -120,7 +120,7 @@ List<Entity> = Db.use().query("select * from user where age < ?", 3);
 
 ```java
 //更新
-Db.use().query("update user set age = ? where name = ?", 3, "张三");
+Db.use().execute("update user set age = ? where name = ?", 3, "张三");
 ```
 
 5. 事务
