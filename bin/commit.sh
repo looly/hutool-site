@@ -2,4 +2,5 @@
 
 git add .
 git commit -am "$1"
-./push.sh
+
+bin/push.sh
