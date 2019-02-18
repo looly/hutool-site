@@ -18,7 +18,7 @@ String fileName = StrUtil.removeSuffix("pretty_girl.jpg", ".jpg")  //fileName ->
 还有忽略大小写的`removePrefixIgnoreCase`和`removeSuffixIgnoreCase`都比较实用。
 
 ### 3. `sub`方法
-不得不提一下这个方法，有人说String有了subString你还写它干啥，我想说subString方法越界啥的都会报异常，你还得自己判断，难受死了，我把各种情况判断都加进来了，而且index的位置还支付负数哦，-1表示最后一个字符（这个思想来自于[Python](https://www.python.org/)，如果学过[Python](https://www.python.org/)的应该会很喜欢的），还有就是如果不小心把第一个位置和第二个位置搞反了，也会自动修正（例如想截取第4个和第2个字符之间的部分也是可以的哦~）
+不得不提一下这个方法，有人说String有了subString你还写它干啥，我想说subString方法越界啥的都会报异常，你还得自己判断，难受死了，我把各种情况判断都加进来了，而且index的位置还支持负数哦，-1表示最后一个字符（这个思想来自于[Python](https://www.python.org/)，如果学过[Python](https://www.python.org/)的应该会很喜欢的），还有就是如果不小心把第一个位置和第二个位置搞反了，也会自动修正（例如想截取第4个和第2个字符之间的部分也是可以的哦~）
 举个栗子
 
 ```Java
