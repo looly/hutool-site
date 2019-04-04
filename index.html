@@ -58,7 +58,7 @@
 		<div class="fh5co-page" id="app">
 
 			<div id="fh5co-container">
-				<div id="fh5co-home" class="js-fullheight-home" data-section="home" style="background-image: url(https://cdn.jsdelivr.net/gh/looly/bing-bg/bing.jpg" data-stellar-background-ratio="0.5">
+				<div id="fh5co-home" class="js-fullheight-home" data-section="home" style="background-image: url(https://cdn.jsdelivr.net/gh/looly/bing-bg/bing.jpg);" data-stellar-background-ratio="0.5">
 					<div class="container">
 						<div class="col-md-6">
 							<div class="js-fullheight-home fh5co-copy">
@@ -475,14 +475,8 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
 	<!-- Main JS -->
 	<script src="https://cdn.jsdelivr.net/gh/looly/hutool-site/js/main.min.js"></script>
-	<!-- gitter -->
-	<script>
-		((window.gitter = {}).chat = {}).options = {
-			room: 'hutool/Lobby'
-		};
-	</script>
-	<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
-	<script src="https://cdn.jsdelivr.net/gh/looly/hutool-site/js/version.js" async defer></script>
+	<!-- version -->
+	<script src="https://cdn.jsdelivr.net/gh/looly/hutool-site/js/version.min.js"></script>
 	<script>
 		var app = new Vue({
 			el: '#app',
@@ -491,5 +485,12 @@
 			}
 		});
 	</script>
+	<!-- gitter -->
+	<script>
+		((window.gitter = {}).chat = {}).options = {
+			room: 'hutool/Lobby'
+		};
+	</script>
+	<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
 	</body>
 </html>
