@@ -134,7 +134,7 @@
   * NoSQL数据库客户端封装
     * [Redis客户端封装-RedisDS](db/NoSQL/Redis客户端封装-RedisDS.md)
     * [MongoDB客户端封装-MongoDS](db/NoSQL/MongoDB客户端封装-MongoDS.md)
-* http客户端（Hutool-http）
+* HTTP客户端（Hutool-http）
   * [概述](http/概述.md)
   * [Http客户端工具类-HttpUtil](http/Http客户端工具类-HttpUtil.md)
   * [Http请求-HttpRequest](http/Http请求-HttpRequest.md)
@@ -144,6 +144,8 @@
   * [常用Http状态码-HttpStatus](http/常用Http状态码-HttpStatus.md)
   * [常见问题](http/常见问题.md)
   * [案例1-爬取开源中国的开源资讯](http/案例1-爬取开源中国的开源资讯.md)
+  * WebService
+    * [Soap客户端-SoapClient](http/WebService/Soap客户端-SoapClient.md)
 * 定时任务（Hutool-cron）
   * [概述](cron/概述.md)
   * [全局定时任务-CronUtil](cron/全局定时任务-CronUtil.md)
