@@ -26,7 +26,7 @@ Hutool现在封装的引擎有：
 ## 使用
 
 ### 从字符串模板渲染内容
-```
+```java
 //自动根据用户引入的模板引擎库的jar来自动选择使用的引擎
 //TemplateConfig为模板引擎的选项，可选内容有字符编码、模板路径、模板加载方式等，默认通过模板字符串渲染
 TemplateEngine engine = TemplateUtil.createEngine(new TemplateConfig());
@@ -44,7 +44,7 @@ String result = template.render(Dict.create().set("name", "Hutool"));
 
 只需修改TemplateConfig配置文件内容即可更换（这里以Velocity为例）：
 
-```
+```java
 TemplateEngine engine = TemplateUtil.createEngine(new TemplateConfig("templates", ResourceMode.CLASSPATH));
 Template template = engine.getTemplate("templates/velocity_test.vtl");
 String result = template.render(Dict.create().set("name", "Hutool"));

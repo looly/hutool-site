@@ -235,7 +235,7 @@ response.setContentType("application/vnd.ms-excel;charset=utf-8");
 response.setHeader("Content-Disposition","attachment;filename=test.xls"); 
 ServletOutputStream out=response.getOutputStream(); 
 
-writer.flush(out);
+writer.flush(out, true);
 // 关闭writer，释放内存
 writer.close();
 //此处记得关闭输出Servlet流
