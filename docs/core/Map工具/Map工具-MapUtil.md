@@ -12,7 +12,7 @@ MapUtil是针对Map的一一列工具方法的封装，包括getXXX的快捷值�
 - `of` 此方法将一个或多个键值对加入到一个新建的Map中，下面是栗子:
 
 ```java
-Map<Object, Object> colorMap = MapUtil.of(new String[][] {{
+Map<Object, Object> colorMap = MapUtil.of(new String[][] {
      {"RED", "#FF0000"},
      {"GREEN", "#00FF00"},
      {"BLUE", "#0000FF"}
