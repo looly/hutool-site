@@ -23,10 +23,19 @@ Hutool相关博客（软文）
 
 - [Hutool 系列教程 | 基于实例代码分步讲解 一站式学习Java](http://how2j.cn/k/hutool/hutool-brief/1930.html)
 
+- [如何编写一个 Java 工具类？](https://www.xttblog.com/?p=3485)
+
+
 ## 使用Hutool的开源项目
 
 - [Fast-boot](https://gitee.com/jiangzeyin/common-parent)
+
 - [Halo](https://github.com/ruibaby/halo)
+
 - [RuoYi](https://github.com/lerry903/RuoYi)
+
 - [seckill](https://github.com/colg-cloud/seckill)
+
 - [JustAuth](https://gitee.com/yadong.zhang/JustAuth)
+
+- [Jpom](https://gitee.com/keepbx/Jpom/)
