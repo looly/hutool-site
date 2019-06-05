@@ -17,14 +17,14 @@ HttpResponse是HttpRequest执行execute()方法后返回的一个对象，我们
 ### 获取响应状态码
 
 ```java
-HttpResoonse res = HttpRequest.post(url)..execute();
+HttpResponse res = HttpRequest.post(url)..execute();
 Console.log(res.getStatus());
 ```
 
 ### 获取响应头信息
 
 ```java
-HttpResoonse res = HttpRequest.post(url)..execute();
+HttpResponse res = HttpRequest.post(url)..execute();
 //预定义的头信息
 Console.log(res.header(Header.CONTENT_ENCODING));
 //自定义头信息
