@@ -1,4 +1,4 @@
-表达式解析-BeanResolver
+表达式解析-BeanPath
 ===
 
 ## 由来
@@ -63,15 +63,15 @@ tempMap.put("userInfo", userInfoDict);
 tempMap.put("flag", 1);
 ```
 
-下面，我们使用`BeanResolver`获取这个Map下此用户第一门考试的ID：
+下面，我们使用`BeanPath`获取这个Map下此用户第一门考试的ID：
 
 ```java
-BeanResolver resolver = new BeanResolver(tempMap, "userInfo.examInfoDict[0].id");
-Object result = resolver.resolve();//ID为1
+BeanPath resolver = new BeanPath("userInfo.examInfoDict[0].id");
+Object result = resolver.get(tempMap);//ID为1
 ```
 
 只需两句（甚至一句）即可完成复杂Bean中各层次对象的获取。
 
 > 说明：
-> 为了简化`BeanResolver`的使用，Hutool在BeanUtil中也加入了快捷入口方法：`BeanUtil.getProperty`，这个方法的命名更容易理解（毕竟BeanResolver不但可以解析Bean，而且可以解析Map和集合）。
+> 为了简化`BeanPath`的使用，Hutool在BeanUtil中也加入了快捷入口方法：`BeanUtil.getProperty`，这个方法的命名更容易理解（毕竟BeanPath不但可以解析Bean，而且可以解析Map和集合）。
 
