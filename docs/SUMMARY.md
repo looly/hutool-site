@@ -57,7 +57,7 @@
     * [概述](core/JavaBean/概述.md)
     * [Bean工具-BeanUtil](core/JavaBean/Bean工具-BeanUtil.md)
     * [DynaBean](core/JavaBean/DynaBean.md)
-    * [表达式解析-BeanResolver](core/JavaBean/表达式解析-BeanResolver.md)
+    * [表达式解析-BeanPath](core/JavaBean/表达式解析-BeanPath.md)
   * 集合类
     * [概述](core/集合类/概述.md)
     * [集合工具-CollUtil](core/集合类/集合工具-CollUtil.md)
