@@ -11,7 +11,7 @@
 
 ### Java常见类型转换
 
-1、转换为字符串：
+1. 转换为字符串：
 
 ```java
 int a = 1;
@@ -23,7 +23,7 @@ long[] b = {1,2,3,4,5};
 String bStr = Convert.toStr(b);
 ```
 
-2、转换为指定类型数组：
+2. 转换为指定类型数组：
 
 ```java
 String[] b = { "1", "2", "3", "4" };
@@ -35,14 +35,14 @@ long[] c = {1,2,3,4,5};
 Integer[] intArray2 = Convert.toIntArray(c);
 ```
 
-3、转换为日期对象：
+3. 转换为日期对象：
 
 ```
 String a = "2017-05-06";
 Date value = Convert.toDate(a);
 ```
 
-4、转换为集合
+4. 转换为集合
 ```
 Object[] a = {"a", "你", "好", "", 1};
 List<?> list = Convert.convert(List.class, a);
@@ -52,7 +52,20 @@ List<?> list = Convert.toList(a);
 
 ### 其它类型转换
 
+1. 标准类型
+
 通过`Convert.convert(Class<T>, Object)`方法可以将任意类型转换为指定类型，Hutool中预定义了许多类型转换，例如转换为URI、URL、Calendar等等，这些类型的转换都依托于`ConverterRegistry`类。通过这个类和`Converter`接口，我们可以自定义一些类型转换。详细的使用请参阅“自定义类型转换”一节。
+
+2. 泛型类型
+
+通过`convert(TypeReference<T> reference, Object value)`方法，自行new一个`TypeReference`对象可以对嵌套泛型进行类型转换。例如，我们想转换一个对象为`List<String>`类型，此时传入的标准Class就无法满足要求，此时我们可以这样：
+
+```java
+Object[] a = { "a", "你", "好", "", 1 };
+List<String> list = Convert.convert(new TypeReference<List<String>>() {}, a);
+```
+
+通过TypeReference实例化后制定泛型类型，即可转换对象为我们想要的目标类型。
 
 ### 半角和全角转换
 在很多文本的统一化中这两个方法非常有用，主要对标点符号的全角半角转换。
