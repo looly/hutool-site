@@ -26,6 +26,8 @@ showSql = true
 formatSql = false
 # 是否显示SQL参数
 showParams = true
+# 打印SQL的日志等级，默认debug
+sqlLevel = debug
 #------------------------------------------------------------------------------------------
 ```
 
