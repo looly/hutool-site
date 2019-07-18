@@ -21,7 +21,8 @@ ZipUtil.zip("d:/aaa");
 
 ```java
 //将aaa目录下的所有文件目录打包到d:/bbb/目录下的aaa.zip文件中
-ZipUtil.zip("d:/aaa", "d:/bbb/");
+// 此处第二个参数必须为文件，不能为目录
+ZipUtil.zip("d:/aaa", "d:/bbb/aaa.zip");
 
 //将aaa目录下的所有文件目录打包到d:/bbb/目录下的ccc.zip文件中
 ZipUtil.zip("d:/aaa", "d:/bbb/ccc.zip");
@@ -29,7 +30,7 @@ ZipUtil.zip("d:/aaa", "d:/bbb/ccc.zip");
 
 - 可选是否包含被打包的目录。比如我们打包一个照片的目录，打开这个压缩包有可能是带目录的，也有可能是打开压缩包直接看到的是文件。zip方法增加一个boolean参数可选这两种模式，以应对众多需求。
 
-```
+```java
 //将aaa目录以及其目录下的所有文件目录打包到d:/bbb/目录下的ccc.zip文件中
 ZipUtil.zip("d:/aaa", "d:/bbb/ccc.zip", true);
 ```
@@ -49,7 +50,7 @@ ZipUtil.zip(FileUtil.file("d:/bbb/ccc.zip"), false,
 
 `ZipUtil.unzip` 解压。同样提供几个重载，满足不同需求。
 
-```
+```java
 //将test.zip解压到e:\\aaa目录下，返回解压到的目录
 File unzip = ZipUtil.unzip("E:\\aaa\\test.zip", "e:\\aaa");
 ```
