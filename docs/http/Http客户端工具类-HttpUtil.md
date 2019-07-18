@@ -2,7 +2,9 @@ Http客户端工具类-HttpUtil
 ===
 
 ## 概述
-HttpUtil是应对简单场景下Http请求的工具类封装，这个工具类可以保证在一个方法之内完成Http请求
+HttpUtil是应对简单场景下Http请求的工具类封装，此工具封装了*HttpRequest*对象常用操作，可以保证在一个方法之内完成Http请求。
+
+此模块基于JDK的HttpUrlConnection封装完成，完整支持https、代理和文件上传。
 
 ## 使用
 
@@ -26,6 +28,7 @@ String result2= HttpUtil.get("https://www.baidu.com", CharsetUtil.CHARSET_UTF_8)
 //可以单独传入http参数，这样参数会自动做URL编码，拼接在URL中
 HashMap<String, Object> paramMap = new HashMap<>();
 paramMap.put("city", "北京");
+
 String result3= HttpUtil.get("https://www.baidu.com", paramMap);
 ```
 
@@ -34,10 +37,17 @@ POST请求例子：
 ```java
 HashMap<String, Object> paramMap = new HashMap<>();
 paramMap.put("city", "北京");
-String result= HttpUtil.post("https://www.baidu.com", paramMap);
 
+String result= HttpUtil.post("https://www.baidu.com", paramMap);
+```
+
+### 文件上传
+
+```java
+HashMap<String, Object> paramMap = new HashMap<>();
 //文件上传只需将参数中的键指定（默认file），值设为文件对象即可，对于使用者来说，文件上传与普通表单提交并无区别
 paramMap.put("file", FileUtil.file("D:\\face.jpg"));
+
 String result= HttpUtil.post("https://www.baidu.com", paramMap);
 ```
 
