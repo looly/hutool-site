@@ -44,6 +44,8 @@
     * [压缩工具-ZipUtil](core/工具类/压缩工具-ZipUtil.md)
     * [引用工具-ReferenceUtil](core/工具类/引用工具-ReferenceUtil.md)
     * [正则工具-ReUtil](core/工具类/正则工具-ReUtil.md)
+    * [身份证工具-IdcardUtil](core/工具类/身份证工具-IdcardUtil.md)
+  * 语言特性
   * 语言特性
     * [概述](core/语言特性/概述.md)
     * [HashMap扩展-Dict](core/语言特性/HashMap扩展-Dict.md)
