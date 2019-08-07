@@ -34,7 +34,7 @@ ExcelWriter writer = ExcelUtil.getWriter("d:/writeTest.xlsx");
 writer.passCurrentRow();
 
 //合并单元格后的标题行，使用默认标题样式
-writer.merge(list1.size() - 1, "测试标题");
+writer.merge(row1.size() - 1, "测试标题");
 //一次性写出内容，强制输出标题
 writer.write(rows, true);
 //关闭writer，释放内存
