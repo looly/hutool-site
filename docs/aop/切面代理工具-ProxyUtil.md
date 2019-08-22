@@ -5,7 +5,7 @@
 
 ### 使用JDK的动态代理实现切面
 
-1. 我们定义一个接接口：
+1. 我们定义一个接口：
 
 ```java
 public interface Animal{
