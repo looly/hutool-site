@@ -42,7 +42,7 @@ ZipUtil.zip(FileUtil.file("d:/bbb/ccc.zip"), false,
     FileUtil.file("d:/test1/file1.txt"),
     FileUtil.file("d:/test1/file2.txt"),
     FileUtil.file("d:/test2/file1.txt"),
-    FileUtil.file("d:/test2/file2.txt"),
+    FileUtil.file("d:/test2/file2.txt")
 );
 ```
 
