@@ -42,13 +42,13 @@ port = 25
 from = hutool@yeah.net
 # 用户名，默认为发件人邮箱前缀
 user = hutool
-# 密码（注意，某些邮箱需要为SMTP服务单独设置密码，详情查看相关帮助）
+# 密码（注意，某些邮箱需要为SMTP服务单独设置授权码，详情查看相关帮助）
 pass = q1w2e3
 ```
 
 > 注意
 > 邮件服务器必须支持并打开SMTP协议，详细请查看相关帮助说明
-> 配置文件的样例中提供的是我专门为测试邮件功能注册的yeah.net邮箱，帐号密码公开，供Hutool用户测试使用。
+> 配置文件的样例中提供的是我专门为测试邮件功能注册的yeah.net邮箱，~~帐号密码公开，供Hutool用户测试使用~~。
 
 ## 发送邮件
 
@@ -129,7 +129,7 @@ user = hutool
 # 密码（注意，某些邮箱需要为SMTP服务单独设置密码，详情查看相关帮助）
 pass = q1w2e3
 #使用 STARTTLS安全连接，STARTTLS是对纯文本通信协议的扩展。
-startttlsEnable = true
+starttlsEnable = true
 
 # 使用SSL安全连接
 sslEnable = true
