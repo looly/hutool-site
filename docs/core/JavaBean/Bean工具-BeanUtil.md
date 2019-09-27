@@ -23,6 +23,11 @@ boolean isBean = BeanUtil.isBean(HashMap.class);//false
 Hutool中对内省的封装包括：
 
 1. `BeanUtil.getPropertyDescriptors` 获得Bean字段描述数组
+
+```java
+PropertyDescriptor[] propertyDescriptors = BeanUtil.getPropertyDescriptors(SubPerson.class);
+```
+
 2. `BeanUtil.getFieldNamePropertyDescriptorMap` 获得字段名和字段描述Map
 3. `BeanUtil.getPropertyDescriptor` 获得Bean类指定属性描述
 
@@ -41,7 +46,8 @@ ValueProvider接口需要实现两个方法：
 1. `value`方法是通过key和目标类型来从任何地方获取一个值，并转换为目标类型，如果返回值不和目标类型匹配，将会自动调用`Convert.convert`方法转换。
 2. `containsKey`方法主要是检测是否包含指定的key，如果不包含这个key，其对应的属性将会忽略注入。
 
-首先定义一个bean：
+首先定义两个bean：
+
 ```java
 public class Person{
 	private String name;
@@ -58,6 +64,33 @@ public class Person{
 	}
 	public void setAge(int age) {
 		this.age = age;
+	}
+}
+
+public class SubPerson extends Person {
+	public static final String SUBNAME = "TEST";
+
+	private UUID id;
+	private String subName;
+	private Boolean isSlow;
+
+	public UUID getId() {
+		return id;
+	}
+	public void setId(UUID id) {
+		this.id = id;
+	}
+	public String getSubName() {
+		return subName;
+	}
+	public void setSubName(String subName) {
+		this.subName = subName;
+	}
+	public Boolean isSlow() {
+		return isSlow;
+	}
+	public void setSlow(Boolean isSlow) {
+		this.isSlow = isSlow;
 	}
 }
 ```
@@ -93,24 +126,78 @@ Assert.assertEquals(person.getAge(), 18);
 
 基于`BeanUtil.fillBean`方法Hutool还提供了Map对象键值对注入Bean，其方法有：
 
-1. `BeanUtil.fillBeanWithMap`
-2. `BeanUtil.fillBeanWithMapIgnoreCase`
+1. `BeanUtil.fillBeanWithMap` 使用Map填充bean
+
+```java
+HashMap<String, Object> map = CollUtil.newHashMap();
+map.put("name", "Joe");
+map.put("age", 12);
+map.put("openId", "DFDFSDFWERWER");
+
+SubPerson person = BeanUtil.fillBeanWithMap(map, new SubPerson(), false);
+```
+
+2. `BeanUtil.fillBeanWithMapIgnoreCase` 使用Map填充bean，忽略大小写
+
+```java
+HashMap<String, Object> map = CollUtil.newHashMap();
+map.put("Name", "Joe");
+map.put("aGe", 12);
+map.put("openId", "DFDFSDFWERWER");
+SubPerson person = BeanUtil.fillBeanWithMapIgnoreCase(map, new SubPerson(), false);
+```
 
 同时提供了map转bean的方法，与fillBean不同的是，此处并不是传Bean对象，而是Bean类，Hutool会自动调用默认构造方法创建对象。当然，前提是Bean类有默认构造方法（空构造），这些方法有：
 
 1. `BeanUtil.mapToBean`
+
+```java
+HashMap<String, Object> map = CollUtil.newHashMap();
+map.put("a_name", "Joe");
+map.put("b_age", 12);
+// 设置别名，用于对应bean的字段名
+HashMap<String, String> mapping = CollUtil.newHashMap();
+mapping.put("a_name", "name");
+mapping.put("b_age", "age");
+Person person = BeanUtil.mapToBean(map, Person.class, CopyOptions.create().setFieldMapping(mapping));
+```
+
 2. `BeanUtil.mapToBeanIgnoreCase`
 
-在Java Web应用中，我们经常需要将ServletRequest对象中的参数注入bean（http表单数据），BeanUtil类提供了两个便捷方法：
+```java
+HashMap<String, Object> map = CollUtil.newHashMap();
+map.put("Name", "Joe");
+map.put("aGe", 12);
 
-1. `BeanUtil.fillBeanWithRequestParam` 将http表单数据注入Bean对象
-2. `BeanUtil.requestParamToBean` 将http表单数据注入新建的Bean对象
+Person person = BeanUtil.mapToBeanIgnoreCase(map, Person.class, false);
+```
 
 ### Bean转为Map
 `BeanUtil.beanToMap`方法则是将一个Bean对象转为Map对象。
 
+```java
+SubPerson person = new SubPerson();
+person.setAge(14);
+person.setOpenid("11213232");
+person.setName("测试A11");
+person.setSubName("sub名字");
+
+Map<String, Object> map = BeanUtil.beanToMap(person);
+```
+
 ### Bean转Bean
-Bean之间的转换主要是相同属性的复制，因此方法名为`copyProperties`。
+Bean之间的转换主要是相同属性的复制，因此方法名为`copyProperties`，此方法支持Bean和Map之间的字段复制。
 
 `BeanUtil.copyProperties`方法同样提供一个`CopyOptions`参数用于自定义属性复制。
+
+```java
+SubPerson p1 = new SubPerson();
+p1.setSlow(true);
+p1.setName("测试");
+p1.setSubName("sub测试");
+
+Map<String, Object> map = MapUtil.newHashMap();
+
+BeanUtil.copyProperties(p1, map);
+```
 

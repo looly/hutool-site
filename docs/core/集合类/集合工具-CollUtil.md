@@ -56,22 +56,13 @@ ArrayList<String> list = CollUtil.newArrayList();
 ### 8. `addAll`方法
 将多个数据合并成一个数组
 
-##### 9. `range`方法
-这个方法来源于[Python](https://www.python.org/)的一个语法糖，给定开始和结尾以及步进，就会生成一个等差数列（列表）
-
-````Java
-int[] a1 = CollUtil.range(6);       //[0,1,2,3,4,5]
-int[] a2 = CollUtil.range(4, 7);    //[4,5,6]
-int[] a3 = CollUtil.range(4, 9, 2); //[4,6,8]
-````
-
-### 10. `sub`方法
+### 9. `sub`方法
 对集合切片，其他类型的集合会转换成`List`，封装`List.subList`方法，自动修正越界等问题，完全避免`IndexOutOfBoundsException`异常。
 
-### 11. `isEmpty`、`isNotEmpty`方法
+### 10. `isEmpty`、`isNotEmpty`方法
 判断集合是否为空（包括null和没有元素的集合）。
 
-### 12. `zip`方法
+### 11. `zip`方法
 此方法也是来源于[Python](https://www.python.org/)的一个语法糖，给定两个集合，然后两个集合中的元素一一对应，成为一个Map。此方法还有一个重载方法，可以传字符，然后给定分分隔符，字符串会被split成列表。栗子：
 
 ```Java
@@ -86,7 +77,7 @@ Map<String, String> map2 = CollUtil.zip(a,b, ",");
 System.out.println(map2);   // {b=2, c=3, a=1}
 ```
 
-### 13. `filter`方法
+### 12. `filter`方法
 此方法可以过滤map，排除不需要的key。栗子：
 ```Java
 @Test
