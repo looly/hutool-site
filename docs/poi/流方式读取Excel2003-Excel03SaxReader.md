@@ -28,8 +28,8 @@ ExcelUtil.read03BySax("aaa.xls", 1, createRowHandler());
 
 ### 构建对象读取
 ```java
-Excel07SaxReader reader = new Excel07SaxReader(createRowHandler());
-reader.read("aaa.xlsx", 0);
+Excel03SaxReader reader = new Excel03SaxReader(createRowHandler());
+reader.read("aaa.xls", 0);
 ```
 
 reader方法的第二个参数是sheet的序号，-1表示读取所有sheet，0表示第一个sheet，依此类推。
