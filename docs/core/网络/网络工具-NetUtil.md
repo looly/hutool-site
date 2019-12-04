@@ -41,4 +41,4 @@ boolean result= NetUtil.isValidPort(6379);
 
 更多方法请见：
 
-[API文档-NetUtil](https://apidoc.gitee.com/loolly/hutool/cn/hutool/core/util/NetUtil.html)
+[API文档-NetUtil](https://apidoc.gitee.com/loolly/hutool/cn/hutool/core/net/NetUtil.html)

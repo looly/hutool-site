@@ -222,6 +222,8 @@ writer.close();
 
 ### 6. 写出到客户端下载（写出到Servlet）
 
+1. 写出xls
+
 ```java
 // 通过工具类创建writer，默认创建xls格式
 ExcelWriter writer = ExcelUtil.getWriter();
@@ -242,9 +244,31 @@ writer.close();
 IoUtil.close(out);
 ```
 
+2. 写出xlsx
+
+```java
+ExcelWriter writer = ExcelUtil.getWriter(true);
+writer.write(rows, true);
+
+response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8"); 
+response.setHeader("Content-Disposition","attachment;filename=test.xlsx"); 
+
+writer.flush(out, true);
+writer.close();
+IoUtil.close(out);
+```
+
 > 注意
 > `ExcelUtil.getWriter()`默认创建xls格式的Excel，因此写出到客户端也需要自定义文件名为XXX.xls，否则会出现文件损坏的提示。
 > 若想生成xlsx格式，请使用`ExcelUtil.getWriter(true)`创建。
+
+3. 下载提示文件损坏问题解决
+
+有用户反馈按照代码生成的Excel下载后提示文件损坏，无法打开，经过排查，可能是几个问题：
+- （1）writer和out流没有正确关闭，请在代码末尾的finally块增加关闭。
+- （2）扩展名不匹配。getWriter默认生成xls，Content-Disposition中也应该是xls，只有getWriter(true)时才可以使用xlsx
+- （3）Maven项目中Excel保存于ClassPath中（src/main/resources下）宏替换导致被破坏，解决办法是添加filtering（参考：https://blog.csdn.net/qq_42270377/article/details/92771349）
+- （4）Excel打开提示文件损坏，WPS可以打开。这是Excel的安全性控制导致的，解决办法见：https://blog.csdn.net/zm9898/article/details/99677626
 
 ## 自定义Excel
 
