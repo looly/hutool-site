@@ -89,7 +89,7 @@
     * [图片工具-ImgUtil](core/图片/图片工具-ImgUtil.md)
     * [图片编辑器-Img](core/图片/图片编辑器-Img.md)
   * 网络
-    * [网络工具-NetUtil](core/工具类/网络工具-NetUtil.md)
+    * [网络工具-NetUtil](core/网络/网络工具-NetUtil.md)
 * 配置文件(Hutool-setting）
   * [概述](setting/概述.md)
   * [设置文件-Setting](setting/设置文件-Setting.md)
