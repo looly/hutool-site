@@ -22,8 +22,8 @@
 ```java
 double te1=123456.123456;
 double te2=123456.128456;
-Console.log(round(te1,4));//结果:123456.12
-Console.log(round(te2,4));//结果:123456.13
+Console.log(round(te1,4));//结果:123456.1235
+Console.log(round(te2,4));//结果:123456.1285
 ```
 
 - `NumberUtil.roundStr` 方法主要封装`String.format`方法,舍弃方式采用四舍五入。

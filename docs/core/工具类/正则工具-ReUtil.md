@@ -1,7 +1,8 @@
 ## 由来
 在文本处理中，正则表达式几乎是全能的，但是Java的正则表达式有时候处理一些事情还是有些繁琐，所以我封装了部分常用功能。就比如说我要匹配一段文本中的某些部分，我们需要这样做：
 
-```Java
+```java
+String content = "ZZZaaabbbccc中文1234";
 Pattern pattern = Pattern.compile(regex, Pattern.DOTALL);
 Matcher matcher = pattern.matcher(content);
 if (matcher.find()) {
@@ -11,7 +12,7 @@ if (matcher.find()) {
 
 其中牵涉到多个对象，想用的时候真心记不住。好吧，既然功能如此常用，我就封装一下：
 
-```Java
+```java
 /**
 * 获得匹配的字符串
 * 
@@ -48,6 +49,7 @@ public static String get(String regex, String content, int groupIndex) {
 抽取多个分组然后把它们拼接起来
 
 ```java
+String content = "ZZZaaabbbccc中文1234";
 String resultExtractMulti = ReUtil.extractMulti("(\\w)aa(\\w)", content, "$1-$2");
 Assert.assertEquals("Z-a", resultExtractMulti);
 ```
@@ -56,6 +58,7 @@ Assert.assertEquals("Z-a", resultExtractMulti);
 删除第一个匹配到的内容
 
 ```java
+String content = "ZZZaaabbbccc中文1234";
 String resultDelFirst = ReUtil.delFirst("(\\w)aa(\\w)", content);
 Assert.assertEquals("ZZbbbccc中文1234", resultDelFirst);
 ```
@@ -64,9 +67,9 @@ Assert.assertEquals("ZZbbbccc中文1234", resultDelFirst);
 查找所有匹配文本
 
 ```java
+String content = "ZZZaaabbbccc中文1234";
 List<String> resultFindAll = ReUtil.findAll("\\w{2}", content, 0, new ArrayList<String>());
-ArrayList<String> expected = CollectionUtil.newArrayList("ZZ", "Za", "aa", "bb", "bc", "cc", "12", "34");
-Assert.assertEquals(expected, resultFindAll);
+// 结果：["ZZ", "Za", "aa", "bb", "bc", "cc", "12", "34"]
 ```
 
 ### ReUtil.getFirstNumber
@@ -74,13 +77,14 @@ Assert.assertEquals(expected, resultFindAll);
 
 ```java
 Integer resultGetFirstNumber = ReUtil.getFirstNumber(content);
-Assert.assertEquals(Integer.valueOf(1234), resultGetFirstNumber);
+// 结果：1234
 ```
 
 ### ReUtil.isMatch
 给定字符串是否匹配给定正则
 
 ```java
+String content = "ZZZaaabbbccc中文1234";
 boolean isMatch = ReUtil.isMatch("\\w+[\u4E00-\u9FFF]+\\d+", content);
 Assert.assertTrue(isMatch);
 ```
@@ -89,6 +93,7 @@ Assert.assertTrue(isMatch);
 通过正则查找到字符串，然后把匹配到的字符串加入到replacementTemplate中，$1表示分组1的字符串
 
 ```java
+String content = "ZZZaaabbbccc中文1234";
 //此处把1234替换为 ->1234<-
 String replaceAll = ReUtil.replaceAll(content, "(\\d+)", "->$1<-");
 Assert.assertEquals("ZZZaaabbbccc中文->1234<-", replaceAll);
@@ -99,5 +104,5 @@ Assert.assertEquals("ZZZaaabbbccc中文->1234<-", replaceAll);
 
 ```java
 String escape = ReUtil.escape("我有个$符号{}");
-Assert.assertEquals("我有个\\$符号\\{\\}", escape);
+// 结果：我有个\\$符号\\{\\}
 ```
