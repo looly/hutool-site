@@ -32,7 +32,7 @@
   <script>
     window.$docsify = {
       name: 'Hutool',
-      logo: 'https://cdn.jsdelivr.net/gh/looly/hutool-site/images/logo_small.jpg',
+      logo: 'https://cdn.jsdelivr.net/gh/looly/hutool-site/images/logo.jpg',
       repo: 'looly/hutool',
       loadSidebar: true,
       alias: {
@@ -56,7 +56,23 @@
       search: {
         placeholder: '搜索',
         noData: '没有结果！',
-      }
+      },
+      plugins: [
+        // footer
+        function(hook) {
+          var footer = [
+            '<hr/>',
+            '<footer>',
+            '<span><a href="http://beian.miit.gov.cn" target="_blank" style="color: inherit; font-weight: normal; text-decoration: none;">蒙ICP备19001663号</a><br/>&copy; 2020 Hutool Project. All Rights Reserved.</span>',
+            '<span><a href="https://docsify.js.org" target="_blank">Powered by docsify</a></span>',
+            '</footer>'
+          ].join('');
+
+          hook.afterEach(function(html) {
+            return html + footer;
+          });
+        }
+      ]
     }
   </script>
   <script src="https://cdn.jsdelivr.net/npm/docsify/lib/docsify.min.js"></script>
