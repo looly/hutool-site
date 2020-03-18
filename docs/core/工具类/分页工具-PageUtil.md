@@ -8,15 +8,15 @@
 此方法用于不包括结束位置的分页方法。
 
 例如：
-- 页码：1，每页10 -> [0, 10]
-- 页码：2，每页10 -> [10, 20]
+- 页码：0，每页10 -> [0, 10]
+- 页码：1，每页10 -> [10, 20]
 
 ```java
-int[] startEnd1 = PageUtil.transToStartEnd(1, 10);//[0, 10]
-int[] startEnd2 = PageUtil.transToStartEnd(2, 10);//[10, 20]
+int[] startEnd1 = PageUtil.transToStartEnd(0, 10);//[0, 10]
+int[] startEnd2 = PageUtil.transToStartEnd(1, 10);//[10, 20]
 ```
 
-> 方法中，页码从1开始，位置从0开始
+> 方法中，页码从0开始，位置从0开始
 
 ### totalPage
 
