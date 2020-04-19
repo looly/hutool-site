@@ -15,6 +15,42 @@
 - `getAnnotation` 获取指定类型注解
 - `getAnnotationValue` 获取指定注解属性的值
 
+例子：
+
+我们定义一个注解：
+
+```java
+// Retention注解决定MyAnnotation注解的生命周期
+@Retention(RetentionPolicy.RUNTIME)
+// Target注解决定MyAnnotation注解可以加在哪些成分上，如加在类身上，或者属性身上，或者方法身上等成分
+@Target({ ElementType.METHOD, ElementType.TYPE })
+public @interface AnnotationForTest {
+	
+	/**
+	 * 注解的默认属性值
+	 * 
+	 * @return 属性值
+	 */
+	String value();
+}
+```
+
+给需要的类加上注解：
+
+```java
+@AnnotationForTest("测试")
+public static class ClassWithAnnotation{
+
+}
+```
+
+获取注解中的值：
+
+```java
+// value为"测试"
+Object value = AnnotationUtil.getAnnotationValue(ClassWithAnnotation.class, AnnotationForTest.class);
+```
+
 2. 注解属性获取相关方法：
 
 - `getRetentionPolicy` 获取注解类的保留时间，可选值 SOURCE（源码时），CLASS（编译时），RUNTIME（运行时），默认为 CLASS

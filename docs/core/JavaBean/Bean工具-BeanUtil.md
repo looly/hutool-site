@@ -11,7 +11,7 @@ Bean工具类主要是针对这些setXXX和getXXX方法进行操作，比如将B
 ## 方法
 
 ### 是否为Bean对象
-`BeanUtil.isBean`方法根据是否存在只有一个参数的setXXX方法来判定是否是一个Bean对象。这样的判定方法主要目的是保证至少有一个setXXX方法用于属性注入。
+`BeanUtil.isBean`方法根据是否存在只有一个参数的setXXX方法或者public类型的字段来判定是否是一个Bean对象。这样的判定方法主要目的是保证至少有一个setXXX方法用于属性注入。
 
 ```java
 boolean isBean = BeanUtil.isBean(HashMap.class);//false
@@ -49,49 +49,21 @@ ValueProvider接口需要实现两个方法：
 首先定义两个bean：
 
 ```java
+// Lombok注解
+@Data
 public class Person{
 	private String name;
 	private int age;
-	
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public int getAge() {
-		return age;
-	}
-	public void setAge(int age) {
-		this.age = age;
-	}
 }
 
+// Lombok注解
+@Data
 public class SubPerson extends Person {
 	public static final String SUBNAME = "TEST";
 
 	private UUID id;
 	private String subName;
 	private Boolean isSlow;
-
-	public UUID getId() {
-		return id;
-	}
-	public void setId(UUID id) {
-		this.id = id;
-	}
-	public String getSubName() {
-		return subName;
-	}
-	public void setSubName(String subName) {
-		this.subName = subName;
-	}
-	public Boolean isSlow() {
-		return isSlow;
-	}
-	public void setSlow(Boolean isSlow) {
-		this.isSlow = isSlow;
-	}
 }
 ```
 
@@ -201,3 +173,42 @@ Map<String, Object> map = MapUtil.newHashMap();
 BeanUtil.copyProperties(p1, map);
 ```
 
+### Alias注解
+
+5.x的Hutool中增加了一个自定义注解：`Alias`，通过此注解可以给Bean的字段设置别名。
+
+首先我们给Bean加上注解：
+
+```java
+// Lombok注解
+@Getter
+@Setter
+public static class SubPersonWithAlias {
+	@Alias("aliasSubName")
+	private String subName;
+	private Boolean slow;
+
+```
+
+```java
+SubPersonWithAlias person = new SubPersonWithAlias();
+person.setSubName("sub名字");
+person.setSlow(true);
+
+// Bean转换为Map时，自动将subName修改为aliasSubName
+Map<String, Object> map = BeanUtil.beanToMap(person);
+// 返回"sub名字"
+map.get("aliasSubName")
+```
+
+同样Alias注解支持注入Bean时的别名：
+
+```java
+Map<String, Object> map = MapUtil.newHashMap();
+map.put("aliasSubName", "sub名字");
+map.put("slow", true);
+
+SubPersonWithAlias subPersonWithAlias = BeanUtil.mapToBean(map, SubPersonWithAlias.class, false);
+// 返回"sub名字"
+subPersonWithAlias.getSubName();
+```

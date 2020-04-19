@@ -10,30 +10,16 @@ DynaBean是使用反射机制动态操作JavaBean的一个封装类，通过这�
 我们先定义一个JavaBean：
 
 ```java
+// Lombok注解
+@Data
 public static class User{
 	private String name;
 	private int age;
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public int getAge() {
-		return age;
-	}
-	public void setAge(int age) {
-		this.age = age;
-	}
 	
 	public String testMethod(){
 		return "test for " + this.name;
 	}
-	
-	@Override
-	public String toString() {
-		return "User [name=" + name + ", age=" + age + "]";
-	}
+
 }
 ```
 
