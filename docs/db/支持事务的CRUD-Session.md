@@ -1,6 +1,3 @@
-支持事务的CRUD-Session
-===
-
 ## 介绍
 `Session`非常类似于`SqlRunner`，差别是`Session`对象中只有一个Connection，所有操作也是用这个Connection，便于事务操作，而`SqlRunner`每执行一个方法都要从`DataSource`中去要Connection。样例如下：
 

@@ -1,6 +1,3 @@
-ClassPath资源访问-ClassPathResource
-===
-
 ## 什么是ClassPath
 简单说来ClassPath就是查找class文件的路径，在Tomcat等容器下，ClassPath一般是`WEB-INF/classes`，在普通java程序中，我们可以通过定义`-cp`或者`-classpath`参数来定义查找class文件的路径，这些路径就是ClassPath。
 

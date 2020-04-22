@@ -1,6 +1,3 @@
-SFTP封装-Sftp
-===
-
 ## 介绍
 
 SFTP是Secure File Transfer Protocol的缩写，安全文件传送协议。可以为传输文件提供一种安全的加密方法。

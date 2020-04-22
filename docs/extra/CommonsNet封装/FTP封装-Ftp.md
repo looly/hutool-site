@@ -1,6 +1,3 @@
-FTP封装-Ftp
-===
-
 ## 介绍
 
 FTP客户端封装，此客户端基于[Apache Commons Net](http://commons.apache.org/proper/commons-net/)。

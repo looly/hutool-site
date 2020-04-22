@@ -1,6 +1,3 @@
-二维码工具-QrCodeUtil
-===
-
 ## 由来
 由于大家对二维码的需求较多，对于二维码的生成和解析我认为应该作为简单的工具存在于Hutool中。考虑到自行实现的难度，因此Hutool针对被广泛接受的的[zxing](https://github.com/zxing/zxing)库进行封装。而由于涉及第三方包，因此归类到extra模块中。
 

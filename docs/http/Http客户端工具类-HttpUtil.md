@@ -1,6 +1,3 @@
-Http客户端工具类-HttpUtil
-===
-
 ## 概述
 HttpUtil是应对简单场景下Http请求的工具类封装，此工具封装了*HttpRequest*对象常用操作，可以保证在一个方法之内完成Http请求。
 

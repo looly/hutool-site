@@ -1,6 +1,3 @@
-国密算法工具-SmUtil
-===
-
 ## 介绍
 Hutool针对`Bouncy Castle`做了简化包装，用于实现国密算法中的SM2、SM3、SM4。
 

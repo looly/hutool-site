@@ -1,6 +1,3 @@
-Map工具-MapUtil
-===
-
 ## 介绍
 MapUtil是针对Map的一一列工具方法的封装，包括getXXX的快捷值转换方法。
 

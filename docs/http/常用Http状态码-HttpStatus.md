@@ -1,6 +1,3 @@
-常用Http状态码-HttpStatus
-===
-
 ## 介绍
 针对Http响应，Hutool封装了一个类用于保存Http状态码
 

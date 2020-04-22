@@ -1,6 +1,3 @@
-Http响应封装-HttpResponse
-===
-
 ## 介绍
 HttpResponse是HttpRequest执行execute()方法后返回的一个对象，我们可以通过此对象获取服务端返回的：
 

@@ -1,6 +1,3 @@
-Http客户端-HttpRequest
-===
-
 ## 介绍
 本质上，HttpUtil中的get和post工具方法都是HttpRequest对象的封装，因此如果想更加灵活操作Http请求，可以使用HttpRequest。
 

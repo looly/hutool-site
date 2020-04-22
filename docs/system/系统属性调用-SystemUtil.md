@@ -1,6 +1,3 @@
-系统属性调用-SystemUtil
-===
-
 ## 概述
 
 此工具是针对`System.getProperty(name)`的封装，通过此工具，可以获取如下信息：

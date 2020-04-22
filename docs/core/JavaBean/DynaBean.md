@@ -1,6 +1,3 @@
-DynaBean
-===
-
 ## 介绍
 
 DynaBean是使用反射机制动态操作JavaBean的一个封装类，通过这个类，可以通过字符串传入name方式动态调用get和set方法，也可以动态创建JavaBean对象，亦或者执行JavaBean中的方法。

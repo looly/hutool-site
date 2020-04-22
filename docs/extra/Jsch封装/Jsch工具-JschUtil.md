@@ -1,6 +1,3 @@
-Jsch(SSH)工具-JschUtil
-===
-
 ## 由来
 
 此工具最早来自于我的早期项目：Common-tools，当时是为了解决在存在堡垒机（跳板机）环境时无法穿透堡垒机访问内部主机端口问题，于是辗转找到了[jsch](http://www.jcraft.com/jsch/)库。为了更加便捷的、且容易理解的方式使用此库，因此有了`JschUtil`。

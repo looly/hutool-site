@@ -1,6 +1,3 @@
-线程安全的HashSet-ConcurrentHashSet
-===
-
 ## 简介
 
 我们知道，JDK提供了线程安全的HashMap：ConcurrentHashMap，但是没有提供对应的ConcurrentHashSet，Hutool借助ConcurrentHashMap封装了线程安全的ConcurrentHashSet。

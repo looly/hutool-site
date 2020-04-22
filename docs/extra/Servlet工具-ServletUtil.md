@@ -1,6 +1,3 @@
-Servlet工具-ServletUtil
-===
-
 ## 由来
 最早Servlet相关的工具并不在Hutool的封装考虑范围内，但是后来很多人提出需要一个Servlet Cookie工具，于是我决定建立ServletUtil，这样工具的使用范围就不仅限于Cookie，还包括参数等等。
 

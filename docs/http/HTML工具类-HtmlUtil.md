@@ -1,6 +1,3 @@
-HTML工具类-HtmlUtil
-===
-
 ## 由来
 
 针对Http请求中返回的Http内容，Hutool使用此工具类来处理一些HTML页面相关的事情。

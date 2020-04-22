@@ -1,6 +1,3 @@
-简易Http服务器-SimpleServer
-===
-
 ## 由来
 
 Oracle JDK提供了一个简单的Http服务端类，叫做`HttpServer`，当然它是sun的私有包，位于com.sun.net.httpserver下，必须引入rt.jar才能使用，Hutool基于此封装了`SimpleServer`，用于在不引入Tomcat、Jetty等容器的情况下，实现简单的Http请求处理。

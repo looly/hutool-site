@@ -1,6 +1,3 @@
-签名和验证-Sign
-===
-
 ## 介绍
 Hutool针对`java.security.Signature`做了简化包装，包装类为：`Sign`，用于生成签名和签名验证。
 

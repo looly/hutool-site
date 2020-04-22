@@ -1,6 +1,3 @@
-Spring工具-SpringUtil
-===
-
 ## 由来
 使用Spring Boot时，通过依赖注入获取bean是非常方便的，但是在工具化的应用场景下，想要动态获取bean就变得非常困难，于是Hutool封装了Spring中Bean获取的工具类——SpringUtil。
 
