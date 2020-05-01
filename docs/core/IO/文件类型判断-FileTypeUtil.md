@@ -25,3 +25,5 @@ FileTypeUtil.putFileType("ffd8ffe000104a464946", "new_jpg");
 
 第一个参数是文件流的前N个byte的16进制表示，我们可以读取自定义文件查看，选取一定长度即可(长度越长越精确)，第二个参数就是文件类型，然后使用`FileTypeUtil.getType`即可。
 
+> 注意
+> xlsx、docx本质上是各种XML打包为zip的结果，因此会被识别为zip格式。

@@ -16,10 +16,16 @@
     * [IO工具类-IoUtil](core/IO/IO工具类-IoUtil.md)
     * [文件工具类-FileUtil](core/IO/文件工具类-FileUtil.md)
     * [文件类型判断-FileTypeUtil](core/IO/文件类型判断-FileTypeUtil.md)
-    * [文件读取-FileReader](core/IO/文件读取-FileReader.md)
-    * [文件写入-FileWriter](core/IO/文件写入-FileWriter.md)
     * [文件监听-WatchMonitor](core/IO/文件监听-WatchMonitor.md)
-    * [ClassPath资源访问-ClassPathResource](core/IO/ClassPath资源访问-ClassPathResource.md)
+    * 文件
+      * [文件读取-FileReader](core/IO/文件/文件读取-FileReader.md)
+      * [文件写入-FileWriter](core/IO/文件/文件写入-FileWriter.md)
+      * [文件追加-FileAppender](core/IO/文件/文件追加-FileAppender.md)
+      * [文件跟随-Tailer](core/IO/文件/文件跟随-Tailer.md)
+    * 资源
+      * [概述](core/IO/资源/概述.md)
+      * [资源工具-ResourceUtil.md](core/IO/资源/资源工具-ResourceUtil.md)
+      * [ClassPath资源访问-ClassPathResource](core/IO/资源/ClassPath资源访问-ClassPathResource.md)
   * 工具类
     * [概述](core/工具类/概述.md)
     * [字符串工具-StrUtil](core/工具类/字符串工具-StrUtil.md)
@@ -54,6 +60,8 @@
     * [控制台打印封装-Console](core/语言特性/控制台打印封装-Console.md)
     * [字段验证器-Validator](core/语言特性/字段验证器-Validator.md)
     * [字符串格式化-StrFormatter](core/语言特性/字符串格式化-StrFormatter.md)
+    * 树结构
+      * [树结构工具-TreeUtil](core/语言特性/树结构/树结构工具-TreeUtil.md)
   * JavaBean
     * [概述](core/JavaBean/概述.md)
     * [Bean工具-BeanUtil](core/JavaBean/Bean工具-BeanUtil.md)
@@ -66,9 +74,11 @@
     * [Iterator工具-IterUtil](core/集合类/Iterator工具-IterUtil.md)
     * [有界优先队列-BoundedPriorityQueue](core/集合类/有界优先队列-BoundedPriorityQueue.md)
     * [线程安全的HashSet-ConcurrentHashSet](core/集合类/线程安全的HashSet-ConcurrentHashSet.md)
-  * Map工具
-    * [概述](core/Map工具/概述.md)
-    * [Map工具-MapUtil](core/Map工具/Map工具-MapUtil.md)
+  * Map
+    * [概述](core/Map/概述.md)
+    * [Map工具-MapUtil](core/Map/Map工具-MapUtil.md)
+    * [双向查找Map-BiMap](core/Map/双向查找Map-BiMap.md)
+    * [可重复键值Map-TableMap](core/Map/可重复键值Map-TableMap.md)
   * Codec编码
     * [Base62编码解码-Base62](core/Codec编码/Base62编码解码-Base62.md)
     * [Base64编码解码-Base64](core/Codec编码/Base64编码解码-Base64.md)
@@ -95,6 +105,7 @@
     * [图片编辑器-Img](core/图片/图片编辑器-Img.md)
   * 网络
     * [网络工具-NetUtil](core/网络/网络工具-NetUtil.md)
+    * [URL生成器-UrlBuilder](core/网络/URL生成器-UrlBuilder.md)
 * 配置文件(Hutool-setting）
   * [概述](setting/概述.md)
   * [设置文件-Setting](setting/设置文件-Setting.md)
@@ -154,7 +165,7 @@
   * WebService
     * [Soap客户端-SoapClient](http/WebService/Soap客户端-SoapClient.md)
   * Server
-    * [简易Http服务器-SimpleServer](http/server/简易Http服务器-SimpleServer.md)
+    * [简易Http服务器-SimpleServer](http/Server/简易Http服务器-SimpleServer.md)
 * 定时任务（Hutool-cron）
   * [概述](cron/概述.md)
   * [全局定时任务-CronUtil](cron/全局定时任务-CronUtil.md)
