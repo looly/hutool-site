@@ -17,6 +17,8 @@ Hutool针对此格式，参考FastCSV项目做了对CSV文件读写的实现(Hut
 
 ### 读取CSV文件
 
+#### 读取为CsvRow
+
 ```java
 CsvReader reader = CsvUtil.getReader();
 //从文件中读取CSV数据
@@ -31,9 +33,52 @@ for (CsvRow csvRow : rows) {
 
 `CsvRow`对象还记录了一些其他信息，包括原始行号等。
 
-### 生成CSV文件
+#### 读取为Bean列表
+
+首先测试的CSV：`test_bean.csv`:
+
+```csv
+姓名,gender,focus,age
+张三,男,无,33
+李四,男,好对象,23
+王妹妹,女,特别关注,22
+```
+
+2. 定义Bean：
+
+```java
+// lombok注解
+@Data
+private static class TestBean{
+	// 如果csv中标题与字段不对应，可以使用alias注解设置别名
+	@Alias("姓名")
+	private String name;
+	private String gender;
+	private String focus;
+	private Integer age;
+}
+```
+
+3. 读取
+
+```java
+final CsvReader reader = CsvUtil.getReader();
+//假设csv文件在classpath目录下
+final List<TestBean> result = reader.read(
+				ResourceUtil.getUtf8Reader("test_bean.csv"), TestBean.class);
+```
+
+4. 输出：
 
 ```
+CsvReaderTest.TestBean(name=张三, gender=男, focus=无, age=33)
+CsvReaderTest.TestBean(name=李四, gender=男, focus=好对象, age=23)
+CsvReaderTest.TestBean(name=王妹妹, gender=女, focus=特别关注, age=22)
+```
+
+### 生成CSV文件
+
+```java
 //指定路径和编码
 CsvWriter writer = CsvUtil.getWriter("e:/testWrite.csv", CharsetUtil.CHARSET_UTF_8);
 //按行写出
