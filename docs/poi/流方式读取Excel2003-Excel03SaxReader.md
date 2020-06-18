@@ -13,7 +13,7 @@ Excel03SaxReader只支持Excel2003格式的Sax读取。
 private RowHandler createRowHandler() {
 	return new RowHandler() {
 		@Override
-		public void handle(int sheetIndex, int rowIndex, List<Object> rowlist) {
+		public void handle(int sheetIndex, long rowIndex, List<Object> rowlist) {
 			Console.log("[{}] [{}] {}", sheetIndex, rowIndex, rowlist);
 		}
 	};

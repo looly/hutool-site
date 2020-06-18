@@ -13,7 +13,7 @@ Excel07SaxReader只支持Excel2007格式的Sax读取。
 private RowHandler createRowHandler() {
 	return new RowHandler() {
 		@Override
-		public void handle(int sheetIndex, int rowIndex, List<Object> rowlist) {
+		public void handle(int sheetIndex, long rowIndex, List<Object> rowlist) {
 			Console.log("[{}] [{}] {}", sheetIndex, rowIndex, rowlist);
 		}
 	};
