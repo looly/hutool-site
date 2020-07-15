@@ -148,7 +148,7 @@ Db.use().execute("delete from user where name = ?", "张三");
 Db.use().execute("update user set age = ? where name = ?", 3, "张三");
 ```
 
-5. 事务
+6. 事务
 
 ```java
 Db.use().tx(new TxFunc() {
@@ -169,7 +169,7 @@ Db.use().tx(db -> {
 });
 ```
 
-6. 支持命名占位符的SQL执行
+7. 支持命名占位符的SQL执行
 
 有时候使用"?"占位符比较繁琐，且在复杂SQL中很容易出错，Hutool支持使用命名占位符来执行SQL。
 
@@ -183,3 +183,21 @@ Db.use().query("select * from table where id=@id and name = @name1 and nickName 
 - :name
 - ?name
 - @name
+
+8. IN查询
+
+我们在执行类似于`select * from user where id in 1,2,3`这类SQL的时候，Hutool封装如下：
+
+```java
+List<Entity> results = db.findAll(
+    Entity.create("user")
+        .set("id", "in 1,2,3"));
+```
+
+当然你也可以直接：
+
+```java
+List<Entity> results = db.findAll(
+    Entity.create("user")
+        .set("id", new long[]{1, 2, 3}));
+```
