@@ -47,6 +47,9 @@ String id2 = IdUtil.objectId();
 ```java
 //参数1为终端ID
 //参数2为数据中心ID
-Snowflake snowflake = IdUtil.createSnowflake(1, 1);
+Snowflake snowflake = IdUtil.getSnowflake(1, 1);
 long id = snowflake.nextId();
 ```
+
+> 注意
+> `IdUtil.createSnowflake`每次调用会创建一个新的Snowflake对象，不同的Snowflake对象创建的ID可能会有重复，因此请自行维护此对象为单例，或者使用`IdUtil.getSnowflake`使用全局单例对象。
