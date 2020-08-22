@@ -1,7 +1,5 @@
-日期时间工具-DateUtil
-===
-
 ## 由来
+
 考虑到Java本身对日期时间的支持有限，并且Date和Calendar对象的并存导致各种方法使用混乱和复杂，故使用此工具类做了封装。这其中的封装主要是日期和字符串之间的转换，以及提供对日期的定位（一个月前等等）。
 
 对于Date对象，为了便捷，使用了一个DateTime类来代替之，继承自Date对象，主要的便利在于，覆盖了toString()方法，返回yyyy-MM-dd HH:mm:ss形式的字符串，方便在输出时的调用（例如日志记录等），提供了众多便捷的方法对日期对象操作，关于DateTime会在相关章节介绍。
@@ -44,7 +42,7 @@ String dateStr = "2017-03-01";
 Date date = DateUtil.parse(dateStr, "yyyy-MM-dd");
 ```
 
-#### 格式化日期输出
+### 格式化日期输出
 
 ```java
 String dateStr = "2017-03-01";
@@ -63,7 +61,8 @@ String formatDateTime = DateUtil.formatDateTime(date);
 String formatTime = DateUtil.formatTime(date);
 ```
 
-#### 获取Date对象的某个部分
+### 获取Date对象的某个部分
+
 ```
 Date date = DateUtil.date();
 //获得年的部分
@@ -75,7 +74,8 @@ DateUtil.monthEnum(date);
 //.....
 ```
 
-#### 开始和结束时间
+### 开始和结束时间
+
 有的时候我们需要获得每天的开始时间、结束时间，每月的开始和结束时间等等，DateUtil也提供了相关方法：
 
 ```java
@@ -89,7 +89,8 @@ Date beginOfDay = DateUtil.beginOfDay(date);
 Date endOfDay = DateUtil.endOfDay(date);
 ```
 
-#### 日期时间偏移
+### 日期时间偏移
+
 日期或时间的偏移指针对某个日期增加或减少分、小时、天等等，达到日期变更的目的。Hutool也针对其做了大量封装
 
 ```java
@@ -122,7 +123,8 @@ DateUtil.lastMonth()
 DateUtil.nextMonth()
 ```
 
-#### 日期时间差
+### 日期时间差
+
 有时候我们需要计算两个日期之间的时间差（相差天数、相差小时数等等），Hutool将此类方法封装为between方法：
 
 ```java
@@ -136,7 +138,7 @@ Date date2 = DateUtil.parse(dateStr2);
 long betweenDay = DateUtil.between(date1, date2, DateUnit.DAY);
 ```
 
-#### 格式化时间差
+### 格式化时间差
 有时候我们希望看到易读的时间差，比如XX天XX小时XX分XX秒，此时使用`DateUtil.formatBetween`方法：
 
 ```java
@@ -146,7 +148,8 @@ String formatBetween = DateUtil.formatBetween(between, Level.MINUTE);
 Console.log(formatBetween);
 ```
 
-#### 计时器
+### 计时器
+
 计时器用于计算某段代码或过程花费的时间
 
 ```java
@@ -161,7 +164,18 @@ timer.intervalRestart();//返回花费时间，并重置开始时间
 timer.intervalMinute();//花费分钟数
 ```
 
-#### 其它
+### 星座和属相
+
+```java
+// "摩羯座"
+String zodiac = DateUtil.getZodiac(Month.JANUARY.getValue(), 19);
+
+// "狗"
+String chineseZodiac = DateUtil.getChineseZodiac(1994);
+```
+
+### 其它
+
 ```java
 //年龄
 DateUtil.ageOfNow("1990-01-30");
