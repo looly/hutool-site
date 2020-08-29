@@ -102,6 +102,8 @@
     * [数学相关-MathUtil](core/数学/数学相关-MathUtil.md)
   * 线程和并发
     * [线程工具-ThreadUtil](core/线程和并发/线程工具-ThreadUtil.md)
+    * [自定义线程池-ExecutorBuilder](core/线程和并发/自定义线程池-ExecutorBuilder.md)
+    * [高并发测试-ConcurrencyTester](core/线程和并发/高并发测试-ConcurrencyTester.md)
   * 图片
     * [图片工具-ImgUtil](core/图片/图片工具-ImgUtil.md)
     * [图片编辑器-Img](core/图片/图片编辑器-Img.md)
@@ -136,7 +138,8 @@
   * [加密解密工具-SecureUtil](crypto/加密解密工具-SecureUtil.md)
   * [对称加密-SymmetricCrypto](crypto/对称加密-SymmetricCrypto.md)
   * [非对称加密-AsymmetricCrypto](crypto/非对称加密-AsymmetricCrypto.md)
-  * [摘要加密-Digester和HMac](crypto/摘要加密-Digester和HMac.md)
+  * [摘要加密-Digester](crypto/摘要加密-Digester.md)
+  * [消息认证码算法-HMac.md](crypto/消息认证码算法-HMac.md)
   * [签名和验证-Sign](crypto/签名和验证-Sign.md)
   * [国密算法工具-SmUtil](crypto/国密算法工具-SmUtil.md)
 * DFA查找（Hutool-dfa）

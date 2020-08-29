@@ -1,9 +1,9 @@
 ## 介绍
 Hutool针对`java.security.Signature`做了简化包装，包装类为：`Sign`，用于生成签名和签名验证。
 
-对于签名算法，Hutool封装了JDK的，具体介绍见：[https://docs.oracle.com/javase/7/docs/technotes/guides/security/StandardNames.html#Signature](https://docs.oracle.com/javase/7/docs/technotes/guides/security/StandardNames.html#Signature)：
+对于签名算法，Hutool封装了JDK的Signature，具体介绍见：[https://docs.oracle.com/javase/7/docs/technotes/guides/security/StandardNames.html#Signature](https://docs.oracle.com/javase/7/docs/technotes/guides/security/StandardNames.html#Signature)：
 
-```
+```java
 // The RSA signature algorithm
 NONEwithRSA
 

@@ -2,7 +2,7 @@
 
 并发在Java中算是一个比较难理解和容易出问题的部分，而并发的核心在线程。好在从JDK1.5开始Java提供了`concurrent`包可以很好的帮我们处理大部分并发、异步等问题。
 
-不过，ExecutorService和Executors等众多概念依旧让我们使用这个包变得比较麻烦，如何才能隐藏这些概念？又如何用一个方法解决问题？`ThreadUtil`便为此而生。
+不过，`ExecutorService`和`Executors`等众多概念依旧让我们使用这个包变得比较麻烦，如何才能隐藏这些概念？又如何用一个方法解决问题？`ThreadUtil`便为此而生。
 
 ## 原理
 Hutool使用`GlobalThreadPool`持有一个全局的线程池，默认所有异步方法在这个线程池中执行。

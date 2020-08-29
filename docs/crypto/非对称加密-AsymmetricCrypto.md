@@ -10,14 +10,15 @@
 Hutool封装了JDK的，详细见[https://docs.oracle.com/javase/7/docs/technotes/guides/security/StandardNames.html#KeyPairGenerator](https://docs.oracle.com/javase/7/docs/technotes/guides/security/StandardNames.html#KeyPairGenerator)：
 
 - RSA
-- DSA
-- EC
+- RSA_ECB_PKCS1（RSA/ECB/PKCS1Padding）
+- RSA_None（RSA/None/NoPadding）
+- ECIES（需要Bouncy Castle库）
 
 ## 使用
 
 在非对称加密中，我们可以通过`AsymmetricCrypto(AsymmetricAlgorithm algorithm)`构造方法，通过传入不同的算法枚举，获得其加密解密器。
 
-当然，为了方便，我们针对最常用的RSA和DSA算法构建了单独的对象：`RSA`和`DSA`。
+当然，为了方便，我们针对最常用的RSA算法构建了单独的对象：`RSA`。
 
 ### 基本使用
 
@@ -93,3 +94,33 @@ byte[] decrypt = rsa.decrypt(aByte, KeyType.PrivateKey);
 //Assert.assertEquals("虎头闯杭州,多抬头看天,切勿只管种地", StrUtil.str(decrypt, CharsetUtil.CHARSET_UTF_8));
 ```
 
+## 其它算法
+
+### ECIES
+
+ECIES全称集成加密方案（elliptic curve integrate encrypt scheme）
+
+Hutool借助`Bouncy Castle`库可以支持`ECIES`算法：
+
+我们首先需要引入Bouncy Castle库：
+
+```xml
+<dependency>
+  <groupId>org.bouncycastle</groupId>
+  <artifactId>bcprov-jdk15to18</artifactId>
+  <version>1.66</version>
+</dependency>
+```
+
+```java
+final ECIES ecies = new ECIES();
+String textBase = "我是一段特别长的测试";
+StringBuilder text = new StringBuilder();
+for (int i = 0; i < 10; i++) {
+	text.append(textBase);
+}
+
+// 公钥加密，私钥解密
+String encryptStr = ecies.encryptBase64(text.toString(), KeyType.PublicKey);
+String decryptStr = StrUtil.utf8Str(ecies.decrypt(encryptStr, KeyType.PrivateKey));
+```
