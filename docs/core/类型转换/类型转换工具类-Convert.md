@@ -159,7 +159,7 @@ String digitUppercase = Convert.digitToChinese(a);
 > 转换为大写只能精确到分（小数点儿后两位），之后的数字会被忽略。
 
 ### 原始类和包装类转换
-有的时候，我们需要将包装类和原始类相互转换（比如Integer.classs 和 int.class），这时候我们可以：
+有的时候，我们需要将包装类和原始类相互转换（比如Integer.class 和 int.class），这时候我们可以：
 ```java
 //去包装
 Class<?> wrapClass = Integer.class;
