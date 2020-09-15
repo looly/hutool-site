@@ -217,5 +217,9 @@
   * [系统属性调用-SystemUtil](system/系统属性调用-SystemUtil.md)
 * 图形验证码（Hutool-captcha）
   * [概述](captcha/概述.md)
+* 网络Socket（Hutool-socket）
+  * [概述](socket/概述.md)
+  * [NIO封装-NioServer和NioClient](socket/NIO封装-NioServer和NioClient.md)
+  * [AIO封装-AioServer和AioClient](socket/AIO封装-AioServer和AioClient.md)
 * [Hutool的朋友们](Hutool的朋友们.md)
 * [捐赠使用公开](捐赠使用公开.md)
