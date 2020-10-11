@@ -67,15 +67,11 @@ ArrayList<String> list = CollUtil.newArrayList();
 此方法也是来源于[Python](https://www.python.org/)的一个语法糖，给定两个集合，然后两个集合中的元素一一对应，成为一个Map。此方法还有一个重载方法，可以传字符，然后给定分分隔符，字符串会被split成列表。栗子：
 
 ```Java
-String[] keys = new String[]{"a", "b", "c"};
-Integer[] values = new Integer[]{1, 2, 3};
-Map<String, Integer> map = CollUtil.zip(keys,values);
-System.out.println(map);    // {b=2, c=3, a=1}
+Collection<String> keys = CollUtil.newArrayList("a", "b", "c", "d");
+Collection<Integer> values = CollUtil.newArrayList(1, 2, 3, 4);
 
-String a = "a,b,c";
-String b = "1,2,3";
-Map<String, String> map2 = CollUtil.zip(a,b, ",");
-System.out.println(map2);   // {b=2, c=3, a=1}
+// {a=1,b=2,c=3,d=4}
+Map<String, Integer> map = CollUtil.zip(keys, values);
 ```
 
 ### 12. `filter`方法
