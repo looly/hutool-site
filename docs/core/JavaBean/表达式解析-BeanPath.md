@@ -11,8 +11,8 @@
 - `[]`表达式，可以获取集合等对象中对应index的值
 
 栗子：
-1. `persion` 获取Bean对象下person字段的值，或者Bean本身如果是Person对象，返回本身。
-2. `persion.name` 获取Bean中person字段下name字段的值，或者Bean本身如果是Person对象，返回其name字段的值。
+1. `person` 获取Bean对象下person字段的值，或者Bean本身如果是Person对象，返回本身。
+2. `person.name` 获取Bean中person字段下name字段的值，或者Bean本身如果是Person对象，返回其name字段的值。
 3. `persons[3]` 获取persons字段下第三个元素的值（假设person是数组或Collection对象）
 4. `person.friends[5].name` 获取person字段下friends列表（或数组）的第5个元素对象的name属性
 

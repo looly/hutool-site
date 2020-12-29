@@ -6,10 +6,10 @@
 
 ### 加减乘除
 
-- `NumberUtil.add`  针对double类型做加法
-- `NumberUtil.sub`  针对double类型做减法
-- `NumberUtil.mul`  针对double类型做乘法
-- `NumberUtil.div`  针对double类型做除法，并提供重载方法用于规定除不尽的情况下保留小数位数和舍弃方式。
+- `NumberUtil.add`  针对数字类型做加法
+- `NumberUtil.sub`  针对数字类型做减法
+- `NumberUtil.mul`  针对数字类型做乘法
+- `NumberUtil.div`  针对数字类型做除法，并提供重载方法用于规定除不尽的情况下保留小数位数和舍弃方式。
 
 以上四种运算都会将double转为BigDecimal后计算，解决float和double类型无法进行精确计算的问题。这些方法常用于商业计算。
 
@@ -17,7 +17,7 @@
 
 保留小数的方法主要有两种：
 
-- `NumberUtil.round` 方法主要封装BigDecimal中的方法来保留小数，返回double，这个方法更加灵活，可以选择四舍五入或者全部舍弃等模式。
+- `NumberUtil.round` 方法主要封装BigDecimal中的方法来保留小数，返回BigDecimal，这个方法更加灵活，可以选择四舍五入或者全部舍弃等模式。
 
 ```java
 double te1=123456.123456;
