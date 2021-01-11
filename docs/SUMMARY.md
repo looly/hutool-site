@@ -26,7 +26,7 @@
       * [文件名工具-FileNameUtil](core/IO/文件/文件名工具-FileNameUtil.md)
     * 资源
       * [概述](core/IO/资源/概述.md)
-      * [资源工具-ResourceUtil.md](core/IO/资源/资源工具-ResourceUtil.md)
+      * [资源工具-ResourceUtil](core/IO/资源/资源工具-ResourceUtil.md)
       * [ClassPath资源访问-ClassPathResource](core/IO/资源/ClassPath资源访问-ClassPathResource.md)
   * 工具类
     * [概述](core/工具类/概述.md)
@@ -94,7 +94,7 @@
     * [注解工具-AnnotationUtil](core/注解/注解工具-AnnotationUtil.md)
   * 比较器
     * [概述](core/比较器/概述.md)
-    * [比较工具-CompareUtil.md](core/比较器/比较工具-CompareUtil.md)
+    * [比较工具-CompareUtil](core/比较器/比较工具-CompareUtil.md)
   * 异常
     * [异常工具-ExceptionUtil](core/异常/异常工具-ExceptionUtil.md)
     * [其它异常封装](core/异常/其它异常封装.md)
@@ -116,7 +116,7 @@
   * [Properties扩展-Props](setting/Properties扩展-Props.md)
 * 日志（Hutool-log）
   * [概述](log/概述.md)
-  * [日志工厂-LogFactory.md](log/日志工厂-LogFactory.md)
+  * [日志工厂-LogFactory](log/日志工厂-LogFactory.md)
   * [静态调用日志-StaticLog](log/静态调用日志-StaticLog.md)
   * [疑惑解答](log/疑惑解答.md)
 * 缓存（Hutool-cache）
@@ -139,7 +139,7 @@
   * [对称加密-SymmetricCrypto](crypto/对称加密-SymmetricCrypto.md)
   * [非对称加密-AsymmetricCrypto](crypto/非对称加密-AsymmetricCrypto.md)
   * [摘要加密-Digester](crypto/摘要加密-Digester.md)
-  * [消息认证码算法-HMac.md](crypto/消息认证码算法-HMac.md)
+  * [消息认证码算法-HMac](crypto/消息认证码算法-HMac.md)
   * [签名和验证-Sign](crypto/签名和验证-Sign.md)
   * [国密算法工具-SmUtil](crypto/国密算法工具-SmUtil.md)
 * DFA查找（Hutool-dfa）
