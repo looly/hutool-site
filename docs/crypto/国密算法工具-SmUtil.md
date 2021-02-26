@@ -86,13 +86,47 @@ String x = "9EF573019D9A03B16B0BE44FC8A5B4E8E098F56034C97B312282DD0B4810AFC3";
 String y = "CC759673ED0FC9B9DC7E6FA38F0E2B121E02654BF37EA6B63FAF2A0D6013EADF";
 
 // 数据和ID此处使用16进制表示
-String dataHex = "434477813974bf58f94bcf760833c2b40f77a5fc360485b0b9ed1bd9682edb45";
-String idHex = "31323334353637383132333435363738";
+String data = "434477813974bf58f94bcf760833c2b40f77a5fc360485b0b9ed1bd9682edb45";
+String id = "31323334353637383132333435363738";
 
 final SM2 sm2 = new SM2(privateKeyHex, x, y);
+// 生成的签名是64位
+sm2.usePlainEncoding();
+
 final String sign = sm2.signHex(data, id);
 // true
 boolean verify = sm2.verifyHex(data, sign)
+```
+
+5. 使用私钥D值签名
+
+```java
+//需要签名的明文,得到明文对应的字节数组
+byte[] dataBytes = "我是一段测试aaaa".getBytes();
+//指定的私钥
+String privateKeyHex = "1ebf8b341c695ee456fd1a41b82645724bc25d79935437d30e7e4b0a554baa5e";
+
+// 此构造从5.5.9开始可使用
+final SM2 sm2 = new SM2(privateKeyHex, null, null);
+sm2.usePlainEncoding();
+byte[] sign = sm2.sign(dataBytes, null);
+```
+
+6. 使用公钥Q值验证签名
+
+```java
+//指定的公钥
+String publicKeyHex ="04db9629dd33ba568e9507add5df6587a0998361a03d3321948b448c653c2c1b7056434884ab6f3d1c529501f166a336e86f045cea10dffe58aa82ea13d725363";
+//需要加密的明文,得到明文对应的字节数组
+byte[] dataBytes = "我是一段测试aaaa".getBytes();
+//签名值
+String signHex ="2881346e038d2ed706ccdd025f2b1dafa7377d5cf090134b98756fafe084dddbcdba0ab00b5348ed48025195af3f1dda29e819bb66aa9d4d088050ff148482a";
+
+final SM2 sm2 = new SM2(null, ECKeyUtil.toSm2PublicParams(publicKeyHex));
+sm2.usePlainEncoding();
+
+// true
+boolean verify = sm2.verify(dataBytes, HexUtil.decodeHex(signHex));
 ```
 
 ### 摘要加密算法SM3

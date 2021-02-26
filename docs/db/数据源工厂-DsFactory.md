@@ -118,7 +118,8 @@ DataSource ds = DSFactory.get();
 //自定义数据库Setting，更多实用请参阅Hutool-Setting章节
 Setting setting = new Setting("otherPath/other.setting");
 //获取指定配置，第二个参数为分组，用于多数据源，无分组情况下传null
-DataSource ds = DSFactory.get(setting, null);
+// 注意此处DSFactory需要复用或者关闭
+DataSource ds = DSFactory.create(setting).getDataSource();
 ```
 
 ### 3. 多数据源
