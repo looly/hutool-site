@@ -17,7 +17,7 @@ Hutool针对`Bouncy Castle`做了简化包装，用于实现国密算法中的SM
 <dependency>
   <groupId>org.bouncycastle</groupId>
   <artifactId>bcprov-jdk15to18</artifactId>
-  <version>1.66</version>
+  <version>1.68</version>
 </dependency>
 ```
 
@@ -128,6 +128,25 @@ sm2.usePlainEncoding();
 // true
 boolean verify = sm2.verify(dataBytes, HexUtil.decodeHex(signHex));
 ```
+
+7. 其他格式的密钥
+
+在SM2算法中，密钥的格式分以下几种：
+
+私钥：
+
+- D值    一般为硬件直接生成的值
+- PKCS#8 JDK默认生成的私钥格式
+- PKCS#1 一般为OpenSSL生成的的EC密钥格式
+
+公钥：
+
+- Q值    一般为硬件直接生成的值
+- X.509  JDK默认生成的公钥格式
+- PKCS#1 一般为OpenSSL生成的的EC密钥格式
+
+在新版本的Hutool中，SM2的构造方法对这几类的密钥都做了兼容，即用户无需关注密钥类型：
+
 
 ### 摘要加密算法SM3
 

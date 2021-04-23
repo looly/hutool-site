@@ -87,10 +87,37 @@ String encryptHex = aes.encryptHex(content);
 String decryptStr = aes.decryptStr(encryptHex, CharsetUtil.CHARSET_UTF_8);
 ```
 
-2. 自定义模式和偏移
+2. 自定义内置模式和偏移
 
 ```java
 AES aes = new AES(Mode.CTS, Padding.PKCS5Padding, "0CoJUm6Qyw8W8jud".getBytes(), "0102030405060708".getBytes());
+```
+
+3. `PKCS7Padding`模式
+
+由于IOS等移动端对AES加密有要求，必须为`PKCS7Padding`模式，但JDK本身并不提供这种模式，因此想要支持必须做一些工作。
+
+首先引入bc库：
+
+```xml
+<dependency>
+	<groupId>org.bouncycastle</groupId>
+	<artifactId>bcprov-jdk15to18</artifactId>
+	<version>1.68</version>
+</dependency>
+```
+
+```java
+AES aes = new AES("CBC", "PKCS7Padding",
+  // 密钥，可以自定义
+  "0123456789ABHAEQ".getBytes(),
+  // iv加盐，按照实际需求添加
+  "DYgjCEIMVrj2W9xN".getBytes());
+
+// 加密为16进制表示
+String encryptHex = aes.encryptHex(content);
+// 解密
+String decryptStr = aes.decryptStr(encryptHex);
 ```
 
 ### DES封装

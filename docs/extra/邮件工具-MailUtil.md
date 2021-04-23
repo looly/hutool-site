@@ -8,12 +8,14 @@ Hutool对所有第三方都是可选依赖，因此在使用MailUtil时需要自
 
 ```
 <dependency>
-	<groupId>javax.mail</groupId>
-	<artifactId>mail</artifactId>
-	<version>1.4.7</version>
+	<groupId>com.sun.mail</groupId>
+	<artifactId>javax.mail</artifactId>
+	<version>1.6.2</version>
 </dependency>
 ```
 
+> 说明
+> com.sun.mail是javax.mail升级后的版本，新版本包名做了变更。
 
 ### 邮件服务器配置
 
@@ -143,7 +145,7 @@ timeout = 0
 connectionTimeout = 0
 ```
 
-3、针对QQ邮箱和Foxmail邮箱的说明
+3. 针对QQ邮箱和Foxmail邮箱的说明
 
 (1) QQ邮箱中SMTP密码是单独生成的授权码，而非你的QQ密码，至于怎么生成，见腾讯的帮助说明：[http://service.mail.qq.com/cgi-bin/help?subtype=1&&id=28&&no=1001256](http://service.mail.qq.com/cgi-bin/help?subtype=1&&id=28&&no=1001256)
 
@@ -162,3 +164,33 @@ user = foxmail邮箱对应的QQ号码或者qq邮箱@前面部分
 ...
 ```
 
+(3) 阿里云邮箱的`user`是邮箱的完整地址，即`xxx@aliyun.com`
+
+4. 针对QQ邮箱（foxmail）PKIX path building failed错误（since 5.6.4）
+
+部分用户反馈发送邮件时会遇到错误：
+
+```java
+cn.hutool.extra.mail.MailException: MessagingException: Could not connect to SMTP host: smtp.qq.com, port: 465
+...
+Caused by: javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+```
+
+这个错误可能是需要SSL验证造成的，我们可以手动跳过这个验证：
+
+```java
+MailAccount mailAccount = new MailAccount();
+mailAccount.setAuth(true);
+mailAccount.setSslEnable(true);
+...
+MailSSLSocketFactory sf = new MailSSLSocketFactory();
+sf.setTrustAllHosts(true);
+mailAccount.setCustomProperty("mail.smtp.ssl.socketFactory", sf);
+
+Mail mail = Mail.create(mailAccount)
+    .setTos("xx@xx.com")
+	.setTitle("邮箱验证")
+	.setContent("您的验证码是：<h3>2333</h3>")
+	.setHtml(true)
+	.send();
+```

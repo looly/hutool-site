@@ -53,6 +53,9 @@
     * [引用工具-ReferenceUtil](core/工具类/引用工具-ReferenceUtil.md)
     * [正则工具-ReUtil](core/工具类/正则工具-ReUtil.md)
     * [身份证工具-IdcardUtil](core/工具类/身份证工具-IdcardUtil.md)
+    * [信息脱敏工具-DesensitizedUtil](core/工具类/信息脱敏工具-DesensitizedUtil.md)
+    * [社会信用代码工具-CreditCodeUtil](core/工具类/社会信用代码工具-CreditCodeUtil.md)
+    * [SPI加载工具-ServiceLoaderUtil](core/工具类/SPI加载工具-ServiceLoaderUtil.md)
   * 语言特性
     * [概述](core/语言特性/概述.md)
     * [HashMap扩展-Dict](core/语言特性/HashMap扩展-Dict.md)
@@ -215,6 +218,7 @@
   * [Word生成-Word07Writer](poi/Word生成-Word07Writer.md)
 * 系统调用（Hutool-system）
   * [系统属性调用-SystemUtil](system/系统属性调用-SystemUtil.md)
+  * [Oshi封装-OshiUtil](system/Oshi封装-OshiUtil.md)
 * 图形验证码（Hutool-captcha）
   * [概述](captcha/概述.md)
 * 网络Socket（Hutool-socket）
