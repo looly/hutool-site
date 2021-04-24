@@ -1,6 +1,6 @@
 * [入门和安装]()
 * [更新记录](CHANGELOG)
-* 核心（Hutool-core）
+* 🍑核心（Hutool-core）
   * 克隆
     * [支持泛型的克隆接口和克隆类](core/克隆/支持泛型的克隆接口和克隆类.md)
   * 类型转换
@@ -113,16 +113,16 @@
   * 网络
     * [网络工具-NetUtil](core/网络/网络工具-NetUtil.md)
     * [URL生成器-UrlBuilder](core/网络/URL生成器-UrlBuilder.md)
-* 配置文件(Hutool-setting）
+* 🍍配置文件(Hutool-setting）
   * [概述](setting/概述.md)
   * [设置文件-Setting](setting/设置文件-Setting.md)
   * [Properties扩展-Props](setting/Properties扩展-Props.md)
-* 日志（Hutool-log）
+* 🍳日志（Hutool-log）
   * [概述](log/概述.md)
   * [日志工厂-LogFactory](log/日志工厂-LogFactory.md)
   * [静态调用日志-StaticLog](log/静态调用日志-StaticLog.md)
   * [疑惑解答](log/疑惑解答.md)
-* 缓存（Hutool-cache）
+* 🥝缓存（Hutool-cache）
   * [概述](cache/概述.md)
   * [缓存工具-CacheUtil](cache/CacheUtil.md)
   * [先入先出-FIFOCache](cache/FIFOCache.md)
@@ -131,12 +131,12 @@
   * [超时-TimedCache](cache/TimedCache.md)
   * [弱引用-WeakCache](cache/WeakCache.md)
   * [文件缓存-FileCache](cache/FileCache.md)
-* JSON（Hutool-json）
+* 🍌JSON（Hutool-json）
   * [概述](json/概述.md)
   * [JSON工具-JSONUtil](json/JSONUtil.md)
   * [JSON对象-JSONObject](json/JSONObject.md)
   * [JSON数组-JSONArray](json/JSONArray.md)
-* 加密解密（Hutool-crypto）
+* 🍯加密解密（Hutool-crypto）
   * [概述](crypto/概述.md)
   * [加密解密工具-SecureUtil](crypto/加密解密工具-SecureUtil.md)
   * [对称加密-SymmetricCrypto](crypto/对称加密-SymmetricCrypto.md)
@@ -145,10 +145,10 @@
   * [消息认证码算法-HMac](crypto/消息认证码算法-HMac.md)
   * [签名和验证-Sign](crypto/签名和验证-Sign.md)
   * [国密算法工具-SmUtil](crypto/国密算法工具-SmUtil.md)
-* DFA查找（Hutool-dfa）
+* 🥒DFA查找（Hutool-dfa）
   * [概述](dfa/概述.md)
   * [DFA查找](dfa/DFA查找.md)
-* 数据库（Hutool-db）
+* 🥞数据库（Hutool-db）
   * [概述](db/概述.md)
   * [数据库简单操作-Db](db/数据库简单操作-Db.md)
   * [支持事务的CRUD-Session](db/支持事务的CRUD-Session.md)
@@ -160,7 +160,7 @@
   * NoSQL数据库客户端封装
     * [Redis客户端封装-RedisDS](db/NoSQL/Redis客户端封装-RedisDS.md)
     * [MongoDB客户端封装-MongoDS](db/NoSQL/MongoDB客户端封装-MongoDS.md)
-* HTTP客户端（Hutool-http）
+* 🍜HTTP客户端（Hutool-http）
   * [概述](http/概述.md)
   * [Http客户端工具类-HttpUtil](http/Http客户端工具类-HttpUtil.md)
   * [Http请求-HttpRequest](http/Http请求-HttpRequest.md)
@@ -174,10 +174,10 @@
     * [Soap客户端-SoapClient](http/WebService/Soap客户端-SoapClient.md)
   * Server
     * [简易Http服务器-SimpleServer](http/Server/简易Http服务器-SimpleServer.md)
-* 定时任务（Hutool-cron）
+* ⏰定时任务（Hutool-cron）
   * [概述](cron/概述.md)
   * [全局定时任务-CronUtil](cron/全局定时任务-CronUtil.md)
-* 扩展（Hutool-extra）
+* 🍇扩展（Hutool-extra）
   * [概述](extra/概述.md)
   * [邮件工具-MailUtil](extra/邮件工具-MailUtil.md)
   * [二维码工具-QrCodeUtil](extra/二维码工具-QrCodeUtil.md)
@@ -199,15 +199,15 @@
   * 拼音
     * [拼音工具-PinyinUtil](extra/拼音/拼音工具-PinyinUtil.md)
    
-* 布隆过滤（Hutool-bloomFilter）
+* 🍛布隆过滤（Hutool-bloomFilter）
   * [概述](bloomFilter/概述.md)
-* 切面（Hutool-aop）
+* 🥑切面（Hutool-aop）
   * [概述](aop/概述.md)
   * [切面代理工具-ProxyUtil](aop/切面代理工具-ProxyUtil.md)
-* 脚本（Hutool-script）
+* 🥮脚本（Hutool-script）
   * [概述](script/概述.md)
   * [Script工具-ScriptUtil](script/Script工具-ScriptUtil.md)
-* Office文档操作（Hutool-poi）
+* 🥥Office文档操作（Hutool-poi）
   * [概述](poi/概述.md)
   * [Excel工具-ExcelUtil](poi/Excel工具-ExcelUtil.md)
   * [Excel读取-ExcelReader](poi/Excel读取-ExcelReader.md)
@@ -216,14 +216,14 @@
   * [Excel生成-ExcelWriter](poi/Excel生成-ExcelWriter.md)
   * [Excel大数据生成-BigExcelWriter](poi/Excel大数据生成-BigExcelWriter.md)
   * [Word生成-Word07Writer](poi/Word生成-Word07Writer.md)
-* 系统调用（Hutool-system）
+* ☕系统调用（Hutool-system）
   * [系统属性调用-SystemUtil](system/系统属性调用-SystemUtil.md)
   * [Oshi封装-OshiUtil](system/Oshi封装-OshiUtil.md)
-* 图形验证码（Hutool-captcha）
+* 🍱图形验证码（Hutool-captcha）
   * [概述](captcha/概述.md)
-* 网络Socket（Hutool-socket）
+* 🥓网络Socket（Hutool-socket）
   * [概述](socket/概述.md)
   * [NIO封装-NioServer和NioClient](socket/NIO封装-NioServer和NioClient.md)
   * [AIO封装-AioServer和AioClient](socket/AIO封装-AioServer和AioClient.md)
-* [Hutool的朋友们](Hutool的朋友们.md)
-* [捐赠使用公开](捐赠使用公开.md)
+* 😄[Hutool的朋友们](Hutool的朋友们.md)
+* 💳[捐赠使用公开](捐赠使用公开.md)

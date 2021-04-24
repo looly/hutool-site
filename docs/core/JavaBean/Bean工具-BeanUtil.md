@@ -118,7 +118,7 @@ SubPerson person = BeanUtil.fillBeanWithMapIgnoreCase(map, new SubPerson(), fals
 
 同时提供了map转bean的方法，与fillBean不同的是，此处并不是传Bean对象，而是Bean类，Hutool会自动调用默认构造方法创建对象。当然，前提是Bean类有默认构造方法（空构造），这些方法有：
 
-1. `BeanUtil.mapToBean`
+1. `BeanUtil.toBean`
 
 ```java
 HashMap<String, Object> map = CollUtil.newHashMap();
@@ -128,17 +128,17 @@ map.put("b_age", 12);
 HashMap<String, String> mapping = CollUtil.newHashMap();
 mapping.put("a_name", "name");
 mapping.put("b_age", "age");
-Person person = BeanUtil.mapToBean(map, Person.class, CopyOptions.create().setFieldMapping(mapping));
+Person person = BeanUtil.toBean(map, Person.class, CopyOptions.create().setFieldMapping(mapping));
 ```
 
-2. `BeanUtil.mapToBeanIgnoreCase`
+2. `BeanUtil.toBeanIgnoreCase`
 
 ```java
 HashMap<String, Object> map = CollUtil.newHashMap();
 map.put("Name", "Joe");
 map.put("aGe", 12);
 
-Person person = BeanUtil.mapToBeanIgnoreCase(map, Person.class, false);
+Person person = BeanUtil.toBeanIgnoreCase(map, Person.class, false);
 ```
 
 ### Bean转为Map
@@ -172,7 +172,7 @@ BeanUtil.copyProperties(p1, map);
 
 ### Alias注解
 
-5.x的Hutool中增加了一个自定义注解：`Alias`，通过此注解可以给Bean的字段设置别名。
+5.x的Hutool中增加了一个自定义注解：`@Alias`，通过此注解可以给Bean的字段设置别名。
 
 首先我们给Bean加上注解：
 
