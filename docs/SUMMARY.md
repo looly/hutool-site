@@ -72,6 +72,8 @@
     * [Bean工具-BeanUtil](core/JavaBean/Bean工具-BeanUtil.md)
     * [DynaBean](core/JavaBean/DynaBean.md)
     * [表达式解析-BeanPath](core/JavaBean/表达式解析-BeanPath.md)
+    * [Bean描述-BeanDesc](core/JavaBean/Bean描述-BeanDesc.md)
+    * [空检查属性获取-OptinalBean](core/JavaBean/空检查属性获取-OptinalBean.md)
   * 集合类
     * [概述](core/集合类/概述.md)
     * [集合工具-CollUtil](core/集合类/集合工具-CollUtil.md)
@@ -225,5 +227,7 @@
   * [概述](socket/概述.md)
   * [NIO封装-NioServer和NioClient](socket/NIO封装-NioServer和NioClient.md)
   * [AIO封装-AioServer和AioClient](socket/AIO封装-AioServer和AioClient.md)
+* 🍩JWT（Hutool-jwt）
+  * [概述](jwt/概述.md)
 * 😄[Hutool的朋友们](Hutool的朋友们.md)
 * 💳[捐赠使用公开](捐赠使用公开.md)
