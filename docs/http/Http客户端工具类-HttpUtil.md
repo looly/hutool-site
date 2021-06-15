@@ -52,7 +52,7 @@ String result= HttpUtil.post("https://www.baidu.com", paramMap);
 因为Hutool-http机制问题，请求页面返回结果是一次性解析为byte[]的，如果请求URL返回结果太大（比如文件下载），那内存会爆掉，因此针对文件下载HttpUtil单独做了封装。文件下载在面对大文件时采用流的方式读写，内存中只是保留一定量的缓存，然后分块写入硬盘，因此大文件情况下不会对内存有压力。
 
 ```java
-String fileUrl = "http://mirrors.sohu.com/centos/7.3.1611/isos/x86_64/CentOS-7-x86_64-DVD-1611.iso";
+String fileUrl = "http://mirrors.sohu.com/centos/8.4.2105/isos/x86_64/CentOS-8.4.2105-x86_64-dvd1.iso";
 
 //将文件下载后保存在E盘，返回结果为下载文件大小
 long size = HttpUtil.downloadFile(fileUrl, FileUtil.file("e:/"));

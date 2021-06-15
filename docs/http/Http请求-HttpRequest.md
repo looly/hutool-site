@@ -26,6 +26,41 @@ String result2 = HttpRequest.post(url)
 	.execute().body();
 ```
 
+### 配置代理
+
+如果代理无需账号密码，可以直接：
+
+```java
+String result2 = HttpRequest.post(url)
+	.setHttpProxy("127.0.0.1", 9080)
+	.body(json)
+	.execute().body();
+```
+
+如果需要自定其他类型代理或更多的项目，可以：
+
+```java
+String result2 = HttpRequest.post(url)
+	.setProxy(new Proxy(Proxy.Type.HTTP,
+				new InetSocketAddress(host, port))
+	.body(json)
+	.execute().body();
+```
+
+如果遇到https代理错误`Proxy returns "HTTP/1.0 407 Proxy Authentication Required"`，可以尝试：
+
+```java
+System.setProperty("jdk.http.auth.tunneling.disabledSchemes", "");
+Authenticator.setDefault(
+    new Authenticator() {
+        @Override
+        public PasswordAuthentication getPasswordAuthentication() {
+              return new PasswordAuthentication(authUser, authPassword.toCharArray());
+        }
+    }
+);
+```
+
 ## 其它自定义项
 同样，我们通过HttpRequest可以很方便的做以下操作：
 
