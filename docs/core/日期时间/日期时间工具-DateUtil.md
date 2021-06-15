@@ -7,6 +7,7 @@
 ## 方法
 
 ### 转换
+
 #### Date、long、Calendar之间的相互转换
 
 ```java
@@ -25,11 +26,27 @@ String today= DateUtil.today();
 #### 字符串转日期
 
 `DateUtil.parse`方法会自动识别一些常用格式，包括：
-1. yyyy-MM-dd HH:mm:ss
-2. yyyy-MM-dd
-3. HH:mm:ss
-4. yyyy-MM-dd HH:mm
-5. yyyy-MM-dd HH:mm:ss.SSS
+
+yyyy-MM-dd HH:mm:ss
+- yyyy/MM/dd HH:mm:ss
+- yyyy.MM.dd HH:mm:ss
+- yyyy年MM月dd日 HH时mm分ss秒
+- yyyy-MM-dd
+- yyyy/MM/dd
+- yyyy.MM.dd
+- HH:mm:ss
+- HH时mm分ss秒
+- yyyy-MM-dd HH:mm
+- yyyy-MM-dd HH:mm:ss.SSS
+- yyyyMMddHHmmss
+- yyyyMMddHHmmssSSS
+- yyyyMMdd
+- EEE, dd MMM yyyy HH:mm:ss z
+- EEE MMM dd HH:mm:ss zzz yyyy
+- yyyy-MM-dd'T'HH:mm:ss'Z'
+- yyyy-MM-dd'T'HH:mm:ss.SSS'Z'
+- yyyy-MM-dd'T'HH:mm:ssZ
+- yyyy-MM-dd'T'HH:mm:ss.SSSZ
 
 ```java
 String dateStr = "2017-03-01";
@@ -63,7 +80,7 @@ String formatTime = DateUtil.formatTime(date);
 
 ### 获取Date对象的某个部分
 
-```
+```java
 Date date = DateUtil.date();
 //获得年的部分
 DateUtil.year(date);
@@ -146,22 +163,6 @@ long betweenDay = DateUtil.between(date1, date2, DateUnit.DAY);
 String formatBetween = DateUtil.formatBetween(between, Level.MINUTE);
 //输出：31天1小时
 Console.log(formatBetween);
-```
-
-### 计时器
-
-计时器用于计算某段代码或过程花费的时间
-
-```java
-TimeInterval timer = DateUtil.timer();
-
-//---------------------------------
-//-------这是执行过程
-//---------------------------------
-
-timer.interval();//花费毫秒数
-timer.intervalRestart();//返回花费时间，并重置开始时间
-timer.intervalMinute();//花费分钟数
 ```
 
 ### 星座和属相

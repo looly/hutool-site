@@ -158,6 +158,42 @@ String digitUppercase = Convert.digitToChinese(a);
 > 注意
 > 转换为大写只能精确到分（小数点儿后两位），之后的数字会被忽略。
 
+### 数字转换
+
+1. 数字转为英文表达
+
+```java
+// ONE HUNDRED AND CENTS TWENTY THREE ONLY
+String format = Convert.numberToWord(100.23);
+```
+
+2. 数字简化
+
+```java
+// 1.2k
+String format1 = Convert.numberToSimple(1200, false);
+```
+
+3. 数字转中文
+
+数字转中文方法中，只保留两位小数
+
+```java
+// 一万零八百八十九点七二
+String f1 = Convert.numberToChinese(10889.72356, false);
+
+// 使用金额大写
+// 壹万贰仟陆佰伍拾叁
+String f1 = Convert.numberToChinese(12653, true);
+```
+
+4. 数字中文表示转换为数字
+
+```java
+// 1012
+String f1 = Convert.numberToChinese("一千零一十二");
+```
+
 ### 原始类和包装类转换
 有的时候，我们需要将包装类和原始类相互转换（比如Integer.class 和 int.class），这时候我们可以：
 ```java

@@ -58,18 +58,26 @@ Assert.assertArrayEquals(a, clone);
 `ArrayUtil.split`方法用于拆分一个byte数组，将byte数组平均分成几等份，常用于消息拆分。
 
 ### 过滤
-`ArrayUtil.filter`方法用于编辑已有数组元素，只针对泛型数组操作，原始类型数组并未提供。
-方法中Editor接口用于返回每个元素编辑后的值，返回null此元素将被抛弃。
+`ArrayUtil.filter`方法用于过滤已有数组元素，只针对泛型数组操作，原始类型数组并未提供。
+方法中`Filter`接口用于返回boolean值决定是否保留。
 
-一个大栗子：过滤数组，只保留偶数
+过滤数组，只保留偶数
+
 ```java
 Integer[] a = {1,2,3,4,5,6};
-Integer[] filter = ArrayUtil.filter(a, new Editor<Integer>(){
-	@Override
-	public Integer edit(Integer t) {
-		return (t % 2 == 0) ? t : null;
-	}});
-Assert.assertArrayEquals(filter, new Integer[]{2,4,6});
+// [2,4,6]
+Integer[] filter = ArrayUtil.filter(a, (Editor<Integer>) t -> (t % 2 == 0) ? t : null);
+```
+
+### 编辑
+
+对已有数组编辑，获得编辑后的值。
+
+```java
+Integer[] a = {1, 2, 3, 4, 5, 6};
+// [1, 20, 3, 40, 5, 60]
+Integer[] filter = ArrayUtil.filter(a, (Editor<Integer>) t -> (t % 2 == 0) ? t * 10 : t);
+
 ```
 
 ### zip

@@ -12,6 +12,7 @@
     * [日期时间对象-DateTime](core/日期时间/日期时间对象-DateTime.md)
     * [农历日期-ChineseDate](core/日期时间/农历日期-ChineseDate.md)
     * [LocalDateTime工具-LocalDateTimeUtil](core/日期时间/LocalDateTime工具-LocalDateTimeUtil.md)
+    * [计时器工具-TimeInterval](core/日期时间/计时器工具-TimeInterval.md)
   * IO流相关
     * [概述](core/IO/概述.md)
     * [IO工具类-IoUtil](core/IO/IO工具类-IoUtil.md)
@@ -100,6 +101,7 @@
   * 比较器
     * [概述](core/比较器/概述.md)
     * [比较工具-CompareUtil](core/比较器/比较工具-CompareUtil.md)
+    * [版本比较器-VersionComparator](core/比较器/版本比较器-VersionComparator.md)
   * 异常
     * [异常工具-ExceptionUtil](core/异常/异常工具-ExceptionUtil.md)
     * [其它异常封装](core/异常/其它异常封装.md)
@@ -115,6 +117,8 @@
   * 网络
     * [网络工具-NetUtil](core/网络/网络工具-NetUtil.md)
     * [URL生成器-UrlBuilder](core/网络/URL生成器-UrlBuilder.md)
+  * 源码编译
+    * [源码编译工具-CompilerUtil.md](core/源码编译/源码编译工具-CompilerUtil.md)
 * 🍍配置文件(Hutool-setting）
   * [概述](setting/概述.md)
   * [设置文件-Setting](setting/设置文件-Setting.md)
