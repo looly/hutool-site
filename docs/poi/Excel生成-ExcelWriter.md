@@ -189,6 +189,9 @@ writer.addHeaderAlias("score", "分数");
 writer.addHeaderAlias("isPass", "是否通过");
 writer.addHeaderAlias("examDate", "考试时间");
 
+// 默认的，未添加alias的属性也会写出，如果想只写出加了别名的字段，可以调用此方法排除之
+writer.setOnlyAlias(true);
+
 // 合并单元格后的标题行，使用默认标题样式
 writer.merge(4, "一班成绩单");
 // 一次性写出内容，使用默认样式，强制输出标题
@@ -326,3 +329,30 @@ StyleSet style = writer.getStyleSet();
 CellStyle cellStyle = style.getHeadCellStyle();
 ...
 ```
+
+### 5. 自定义写出的值
+
+你可以实现`CellSetter`接口来自定义写出到单元格的值，此接口只有一个方法：`setValue(Cell cell)`，通过暴露`Cell`对象使得用户可以自定义输出单元格内容，甚至是样式。
+
+```java
+// 此处使用lambda自定义写出内容
+List<Object> row = ListUtil.of((CellSetter) cell -> cell.setCellValue("自定义内容"));
+
+ExcelWriter writer = ExcelUtil.getWriter("/test/test.xlsx");
+writer.writeRow(row);
+writer.close();
+```
+
+> 注意
+> 某些特殊的字符出会导致Excel自动转义，如_xXXXX_这种格式的字符串会被当做unicode转义符，会被反转义。
+> 此时可以使用Hutool内置的`EscapeStrCellSetter`
+
+```java
+List<Object> row = ListUtil.of(new EscapeStrCellSetter("_x5116_"));
+
+ExcelWriter writer = ExcelUtil.getWriter("/test/test.xlsx");
+writer.writeRow(row);
+writer.close();
+```
+
+此问题的详细说明见：https://gitee.com/dromara/hutool/issues/I466ZZ
