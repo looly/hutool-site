@@ -7,7 +7,7 @@
 - 根据固定长度分割
 - 通过正则分隔
 
-因此，`StrSpliter`应运而生。`StrSpliter`中全部为静态方法，方便快捷调用。
+因此，`StrSplitter`应运而生。`StrSplitter`中全部为静态方法，方便快捷调用。
 
 ## 方法
 
@@ -22,7 +22,7 @@
 ```java
 String str1 = "a, ,efedsfs,   ddf";
 //参数：被切分字符串，分隔符逗号，0表示无限制分片数，去除两边空格，忽略空白项
-List<String> split = StrSpliter.split(str1, ',', 0, true, true);
+List<String> split = StrSplitter.split(str1, ',', 0, true, true);
 ```
 
 ### 特殊方法

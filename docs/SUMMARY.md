@@ -95,7 +95,7 @@
     * [CSV文件处理工具-CsvUtil](core/文本操作/CSV文件处理工具-CsvUtil.md)
     * [可复用字符串生成器-StrBuilder](core/文本操作/可复用字符串生成器-StrBuilder.md)
     * [Unicode编码转换工具-UnicodeUtil](core/文本操作/Unicode编码转换工具-UnicodeUtil.md)
-    * [字符串切割-StrSpliter](core/文本操作/字符串切割-StrSpliter.md)
+    * [字符串切割-StrSplitter](core/文本操作/字符串切割-StrSplitter.md)
   * 注解
     * [注解工具-AnnotationUtil](core/注解/注解工具-AnnotationUtil.md)
   * 比较器
