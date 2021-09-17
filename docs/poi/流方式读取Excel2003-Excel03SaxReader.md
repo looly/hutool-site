@@ -23,7 +23,7 @@ private RowHandler createRowHandler() {
 ### ExcelUtil快速读取
 
 ```java
-ExcelUtil.read03BySax("aaa.xls", 1, createRowHandler());
+ExcelUtil.readBySax("aaa.xls", 1, createRowHandler());
 ```
 
 ### 构建对象读取

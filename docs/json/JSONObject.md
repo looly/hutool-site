@@ -1,6 +1,3 @@
-JSONObject
-===
-
 ## 介绍
 JSONObject代表一个JSON中的键值对象，这个对象以大括号包围，每个键值对使用`,`隔开，键与值使用`:`隔开，一个JSONObject类似于这样：
 ```json
