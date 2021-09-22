@@ -233,5 +233,8 @@
   * [AIO封装-AioServer和AioClient](socket/AIO封装-AioServer和AioClient.md)
 * 🍩JWT（Hutool-jwt）
   * [概述](jwt/概述.md)
+  * [JWT工具-JWTUtil](jwt/JWT工具-JWTUtil.md)
+  * [JWT签名工具-JWTSignerUtil](jwt/JWT签名工具-JWTSignerUtil.md)
+  * [JWT验证-JWTValidator](jwt/JWT验证-JWTValidator.md)
 * 😄[Hutool的朋友们](Hutool的朋友们.md)
 * 💳[捐赠使用公开](捐赠使用公开.md)

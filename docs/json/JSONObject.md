@@ -135,17 +135,3 @@ json.setDateFormat("yyyy-MM-dd HH:mm:ss");
     ]
 }
 ```
-
-同样，`JSONUtil`还可以支持以下对象转为JSONObject对象：
-- String对象
-- Java Bean对象
-- Map对象
-- XML字符串（使用`JSONUtil.parseFromXml`方法）
-- ResourceBundle(使用`JSONUtil.parseFromResourceBundle`)
-
-`JSONUtil`还提供了JSONObject对象转换为其它对象的方法：
-- toJsonStr 转换为JSON字符串
-- toXmlStr 转换为XML字符串
-- toBean 转换为JavaBean
-- 
-
