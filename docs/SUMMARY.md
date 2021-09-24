@@ -206,6 +206,8 @@
     * [拼音工具-PinyinUtil](extra/拼音/拼音工具-PinyinUtil.md)
   * 压缩
     * [压缩封装-CompressUtil](extra/压缩/压缩封装-CompressUtil.md)
+  * 表达式引擎
+    * [表达式引擎封装-ExpressionUtil](extra/表达式引擎/表达式引擎封装-ExpressionUtil.md)
     
    
 * 🍛布隆过滤（Hutool-bloomFilter）

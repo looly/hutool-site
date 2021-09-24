@@ -33,6 +33,16 @@
 
 ## 使用
 
+首先引入`commons-compress`
+
+```xml
+<dependency>
+	<groupId>org.apache.commons</groupId>
+	<artifactId>commons-compress</artifactId>
+	<version>1.21</version>
+</dependency>
+```
+
 ### 压缩文件
 
 我们以7Zip为例：
