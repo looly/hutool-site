@@ -204,6 +204,9 @@
     * [Cglib工具-CglibUtil](extra/cglib/Cglib工具-CglibUtil.md)
   * 拼音
     * [拼音工具-PinyinUtil](extra/拼音/拼音工具-PinyinUtil.md)
+  * 压缩
+    * [压缩封装-CompressUtil](extra/压缩/压缩封装-CompressUtil.md)
+    
    
 * 🍛布隆过滤（Hutool-bloomFilter）
   * [概述](bloomFilter/概述.md)

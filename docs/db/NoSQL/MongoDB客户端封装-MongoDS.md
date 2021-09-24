@@ -12,7 +12,7 @@ MongoDB客户端封装-MongoDS
 <dependency>
 	<groupId>org.mongodb</groupId>
 	<artifactId>mongo-java-driver</artifactId>
-	<version>3.8.1</version>
+	<version>3.12.10</version>
 </dependency>
 ```
 
@@ -21,11 +21,6 @@ MongoDB客户端封装-MongoDS
 在ClassPath（或者src/main/resources）的config目录下下新建mongo.setting
 
 ```
-#--------------------------------------
-# MongoDB 连接设定
-# author xiaoleilu
-#--------------------------------------
-
 #每个主机答应的连接数（每个主机的连接池大小），当连接池被用光时，会被阻塞住 ，默以为10 --int
 connectionsPerHost=100
 #线程队列数，它以connectionsPerHost值相乘的结果就是线程队列最大值。如果连接线程排满了队列就会抛出“Out of semaphores to get db”错误 --int

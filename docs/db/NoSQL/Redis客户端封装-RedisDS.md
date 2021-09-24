@@ -12,7 +12,7 @@ RedisDS基于Jedis封装，需自行引入Jedis依赖。
 <dependency>
 	<groupId>redis.clients</groupId>
 	<artifactId>jedis</artifactId>
-	<version>2.9.0</version>
+	<version>3.7.0</version>
 </dependency>
 ```
 

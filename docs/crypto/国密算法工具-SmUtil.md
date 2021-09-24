@@ -17,7 +17,7 @@ Hutool针对`Bouncy Castle`做了简化包装，用于实现国密算法中的SM
 <dependency>
   <groupId>org.bouncycastle</groupId>
   <artifactId>bcprov-jdk15to18</artifactId>
-  <version>1.68</version>
+  <version>1.69</version>
 </dependency>
 ```
 
