@@ -82,6 +82,8 @@
     * [Iterator工具-IterUtil](core/集合类/Iterator工具-IterUtil.md)
     * [有界优先队列-BoundedPriorityQueue](core/集合类/有界优先队列-BoundedPriorityQueue.md)
     * [线程安全的HashSet-ConcurrentHashSet](core/集合类/线程安全的HashSet-ConcurrentHashSet.md)
+    * [集合串行流工具-CollStreamUtil](core/集合类/集合串行流工具-CollStreamUtil.md)
+    * [行遍历器-LineIter](core/集合类/行遍历器-LineIter.md)
   * Map
     * [概述](core/Map/概述.md)
     * [Map工具-MapUtil](core/Map/Map工具-MapUtil.md)
@@ -91,6 +93,10 @@
     * [Base62编码解码-Base62](core/Codec编码/Base62编码解码-Base62.md)
     * [Base64编码解码-Base64](core/Codec编码/Base64编码解码-Base64.md)
     * [Base32编码解码-Base32](core/Codec编码/Base32编码解码-Base32.md)
+    * [莫尔斯电码-Morse](core/Codec编码/莫尔斯电码-Morse.md)
+    * [BCD码-BCD](core/Codec编码/BCD码-BCD.md)
+    * [回转N位密码-Rot](core/Codec编码/回转N位密码-Rot.md)
+    * [Punycode实现-PunyCode.md](core/Codec编码/Punycode实现-PunyCode.md)
   * 文本操作
     * [CSV文件处理工具-CsvUtil](core/文本操作/CSV文件处理工具-CsvUtil.md)
     * [可复用字符串生成器-StrBuilder](core/文本操作/可复用字符串生成器-StrBuilder.md)
