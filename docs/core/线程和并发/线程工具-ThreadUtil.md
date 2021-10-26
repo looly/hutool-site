@@ -17,7 +17,7 @@ Hutool使用`GlobalThreadPool`持有一个全局的线程池，默认所有异�
 
 获得一个新的线程池
 
-### ThreadUtil.excAsync
+### ThreadUtil.execAsync
 
 执行异步方法
 
