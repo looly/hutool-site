@@ -78,7 +78,7 @@
     * [DynaBean](core/JavaBean/DynaBean.md)
     * [表达式解析-BeanPath](core/JavaBean/表达式解析-BeanPath.md)
     * [Bean描述-BeanDesc](core/JavaBean/Bean描述-BeanDesc.md)
-    * [空检查属性获取-OptinalBean](core/JavaBean/空检查属性获取-OptinalBean.md)
+    * [空检查属性获取-Opt](core/JavaBean/空检查属性获取-Opt.md)
   * 集合类
     * [概述](core/集合类/概述.md)
     * [集合工具-CollUtil](core/集合类/集合工具-CollUtil.md)
