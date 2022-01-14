@@ -1,6 +1,6 @@
 ## 由来
 
-在Java中，对文件、文件夹打包，压缩是一件比较繁琐的事情，我们常常引入Zip4j进行此类操作。但是很多时候，JDK中的zip包就可满足我们大部分需求。ZipUtil就是针对java.util.zip做工具化封装，使压缩解压操作可以一个方法搞定，并且自动处理文件和目录的问题，不再需要用户判断，压缩后的文件也会自动创建文件，自动创建父目录，大大简化的压缩解压的复杂度。
+在Java中，对文件、文件夹打包，压缩是一件比较繁琐的事情，我们常常引入[Zip4j](https://github.com/srikanth-lingala/zip4j)进行此类操作。但是很多时候，JDK中的zip包就可满足我们大部分需求。ZipUtil就是针对`java.util.zip`做工具化封装，使压缩解压操作可以一个方法搞定，并且自动处理文件和目录的问题，不再需要用户判断，压缩后的文件也会自动创建文件，自动创建父目录，大大简化的压缩解压的复杂度。
 
 ## 方法
 
@@ -81,4 +81,24 @@ Gzip是网页传输中广泛使用的压缩方式，Hutool同样提供其工具�
 ```java
 //将test.zip解压到e:\\aaa目录下，返回解压到的目录
 File unzip = ZipUtil.unzip("E:\\aaa\\test.zip", "e:\\aaa", CharsetUtil.CHARSET_GBK);
+```
+
+2. 压缩并添加密码
+
+Hutool或JDK的Zip工具并不支持添加密码，可以考虑使用[Zip4j](https://github.com/srikanth-lingala/zip4j)完成，以下代码来自Zip4j官网。
+
+```java
+ZipParameters zipParameters = new ZipParameters();
+zipParameters.setEncryptFiles(true);
+zipParameters.setEncryptionMethod(EncryptionMethod.AES);
+// Below line is optional. AES 256 is used by default. You can override it to use AES 128. AES 192 is supported only for extracting.
+zipParameters.setAesKeyStrength(AesKeyStrength.KEY_STRENGTH_256); 
+
+List<File> filesToAdd = Arrays.asList(
+    new File("somefile"), 
+    new File("someotherfile")
+);
+
+ZipFile zipFile = new ZipFile("filename.zip", "password".toCharArray());
+zipFile.addFiles(filesToAdd, zipParameters);
 ```
