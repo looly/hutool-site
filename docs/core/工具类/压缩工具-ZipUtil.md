@@ -71,3 +71,14 @@ Gzip是网页传输中广泛使用的压缩方式，Hutool同样提供其工具�
 > ZipUtil默认情况下使用系统编码，也就是说：
 > 1. 如果你在命令行下运行，则调用系统编码（一般Windows下为GBK、Linux下为UTF-8）
 > 2. 如果你在IDE（如Eclipse）下运行代码，则读取的是当前项目的编码（详细请查阅IDE设置，我的项目默认都是UTF-8编码，因此解压和压缩都是用这个编码）
+
+### 常见问题
+
+1. 解压时报`java.lang.IllegalArgumentException:MALFORMED`错误
+
+基本是因为编码问题，Hutool默认使用UTF-8编码，自定义为其他编码即可（一般为GBK）。
+
+```java
+//将test.zip解压到e:\\aaa目录下，返回解压到的目录
+File unzip = ZipUtil.unzip("E:\\aaa\\test.zip", "e:\\aaa", CharsetUtil.CHARSET_GBK);
+```
