@@ -5,7 +5,7 @@
 
 ## 使用
 
-1. 使用SoapUI解析WSDL地址，找到WebService方法和参数。
+1. 使用[SoapUI](https://www.soapui.org/)解析WSDL地址，找到WebService方法和参数。
 
 我们得到的XML模板为：
 
@@ -43,3 +43,39 @@ SoapClient client = SoapClient.create("http://www.webxml.com.cn/WebServices/IpAd
     // 返回内容为XML字符串，可以配合XmlUtil解析这个响应
     Console.log(client.send(true));
 ```
+
+## 扩展
+
+### 查看生成的请求XML
+
+调用`SoapClient`对象的`getMsgStr`方法可以查看生成的XML，以检查是否与SoapUI生成的一致。
+
+```java
+SoapClient client = ...;
+Console.log(client.getMsgStr(true));
+```
+
+### 多参数或复杂参数
+
+对于请求体是列表参数或多参数的情况，如：
+
+```xml
+<web:method>
+  <arg0>
+    <fd1>aaa</fd1>
+    <fd2>bbb</fd2>
+  </arg0>
+</web:method>
+```
+
+这类请求可以借助`addChildElement`完成。
+
+```java
+SoapClient client = SoapClient.create("https://hutool.cn/WebServices/test.asmx")
+		.setMethod("web:method", "http://hutool.cn/")
+		SOAPElement arg0 = client.getMethodEle().addChildElement("arg0");
+		arg0.addChildElement("fdSource").setValue("?");
+		arg0.addChildElement("fdTemplated").setValue("?");
+```
+
+> 详细的问题解答见：https://gitee.com/dromara/hutool/issues/I4QL1V
