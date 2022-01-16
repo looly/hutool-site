@@ -2,7 +2,7 @@
 
 在嵌套对象的属性获取中，由于子对象无法得知是否为`null`，每次获取属性都要检查属性兑现是否为null，使得代码会变得特备臃肿，因此使用`Opt`来优雅的链式获取属性对象值。
 
-> 声明：此类的实现来自：https://mp.weixin.qq.com/s/0c8iC0OTtx5LqPkhvkK0tw，PR来自：https://github.com/dromara/hutool/pull/1182
+> 声明：此类的作者：[阿超](https://gitee.com/VampireAchao) ，PR来自：https://gitee.com/dromara/hutool/pulls/426
 
 ## 使用
 
