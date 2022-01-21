@@ -1,33 +1,14 @@
-$(document).ready(function() {
-   // MagnificPopup
-	var magnifPopup = function() {
-		$('.image-popup').magnificPopup({
-			type: 'image',
-			removalDelay: 300,
-			mainClass: 'mfp-with-zoom',
-			gallery:{
-				enabled:true
-			}
+$(document).ready(function () {
+	var magnifVideo = function () {
+		$('.popup-vimeo').magnificPopup({
+			disableOn: 700,
+			type: 'iframe',
+			mainClass: 'mfp-fade',
+			removalDelay: 160,
+			preloader: false,
+
+			fixedContentPos: false
 		});
 	};
-
-	var magnifVideo = function() {
-		$('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
-        disableOn: 700,
-        type: 'iframe',
-        mainClass: 'mfp-fade',
-        removalDelay: 160,
-        preloader: false,
-
-        fixedContentPos: false
-    });
-	};
-
-	
-
-
-	// Call the functions 
-	magnifPopup();
 	magnifVideo();
-
 });
