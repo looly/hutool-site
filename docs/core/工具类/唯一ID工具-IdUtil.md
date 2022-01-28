@@ -49,6 +49,14 @@ String id2 = IdUtil.objectId();
 //参数2为数据中心ID
 Snowflake snowflake = IdUtil.getSnowflake(1, 1);
 long id = snowflake.nextId();
+
+//简单使用
+long id = IdUtil.getSnowflakeNextId();
+String id = snowflake.getSnowflakeNextIdStr();
+```
+
+```java
+
 ```
 
 > 注意
