@@ -13,7 +13,7 @@ timedCache.put("key1", "value1", 1);//1毫秒过期
 timedCache.put("key2", "value2", DateUnit.SECOND.getMillis() * 5);
 timedCache.put("key3", "value3");//默认过期(4毫秒)
 
-//启动定时任务，每5毫秒秒检查一次过期
+//启动定时任务，每5毫秒清理一次过期条目，注释此行首次启动仍会清理过期条目
 timedCache.schedulePrune(5);
 
 //等待5毫秒
