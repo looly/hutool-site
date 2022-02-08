@@ -43,7 +43,7 @@ String result = template.render(Dict.create().set("name", "Hutool"));
 
 ```java
 TemplateEngine engine = TemplateUtil.createEngine(new TemplateConfig("templates", ResourceMode.CLASSPATH));
-Template template = engine.getTemplate("templates/velocity_test.vtl");
+Template template = engine.getTemplate("velocity_test.vtl");
 String result = template.render(Dict.create().set("name", "Hutool"));
 ```
 
