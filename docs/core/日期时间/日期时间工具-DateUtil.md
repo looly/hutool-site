@@ -175,6 +175,26 @@ String zodiac = DateUtil.getZodiac(Month.JANUARY.getValue(), 19);
 String chineseZodiac = DateUtil.getChineseZodiac(1994);
 ```
 
+### 日期范围
+```java
+// 创建日期范围生成器
+DateTime start = DateUtil.parse("2021-01-31");
+DateTime end = DateUtil.parse("2021-03-31");
+DateRange range = DateUtil.range(start, end, DateField.MONTH);
+
+// 简单使用
+// 开始时间
+DateRange startRange = DateUtil.range(DateUtil.parse("2017-01-01"), DateUtil.parse("2017-01-31"), DateField.DAY_OF_YEAR);
+// 结束时间
+DateRange endRange = DateUtil.range(DateUtil.parse("2017-01-31"), DateUtil.parse("2017-02-02"), DateField.DAY_OF_YEAR);
+// 交集 返回 [2017-01-31 00:00:00]
+List<DateTime> dateTimes = DateUtil.rangeContains(startRange, endRange);
+// 差集 返回 [2017-02-01 00:00:00, 2017-02-02 00:00:00]
+List<DateTime> dateNotTimes = DateUtil.rangeNotContains(startRange,endRange);
+// 区间 返回[2017-01-01 00:00:00, 2017-01-02 00:00:00, 2017-01-03 00:00:00]
+List<DateTime> rangeToList = DateUtil.rangeToList(DateUtil.parse("2017-01-01"), DateUtil.parse("2017-01-03"), DateField.DAY_OF_YEAR);
+```
+
 ### 其它
 
 ```java
