@@ -115,3 +115,12 @@ list.add("b");
 list.add("c");
 List<String> page = ListUtil.page(1, 2, list);
 ```
+
+### 分组
+```java
+List<String> list = new ArrayList<>();
+list.add("a");
+list.add("b");
+list.add("c");
+List<List<String>> partition = ListUtil.partition(list, 2);
+```
