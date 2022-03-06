@@ -199,6 +199,11 @@ writer.write(rows, true);
 // 关闭writer，释放内存
 writer.close();
 ```
+同时支持别名注解的。可以在字段上加@Alias注解。
+```java
+@Alias(value = "姓名")
+private String name;
+```
 
 效果：
 ![](https://static.oschina.net/uploads/img/201808/01220010_Ybbw.png)
