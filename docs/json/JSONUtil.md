@@ -100,6 +100,30 @@ Price price = JSONUtil.toBean(json, Price.class);
 price.getADT().get(0).get(0).getBookingCode().get(0);
 ```
 
+### Bean转JSON
+
+5.x的Hutool中增加了一个自定义注解：`@Alias`，通过此注解可以给Bean的字段设置别名。
+
+```java
+@Data
+public class Test {
+    private String name;
+
+    @Alias("aliasSex")
+    private String sex;
+
+    public static void main(String[] args) {
+        Test test = new Test();
+        test.setName("handy");
+        test.setSex("男");
+        // 结果: {"name":"handy","aliasSex":"男"}
+        String json = JSONUtil.toJsonStr(test);
+    }
+
+}
+
+```
+
 ### readXXX
 
 这类方法主要是从JSON文件中读取JSON对象的快捷方法。包括：
