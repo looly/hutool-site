@@ -170,6 +170,26 @@ Map<String, Object> map = MapUtil.newHashMap();
 BeanUtil.copyProperties(p1, map);
 ```
 
+5.6.6+加入 复制集合中的Bean属性 List的转化可使用 `copyToList`
+
+```java
+
+List<Student> studentList = new ArrayList<>();
+Student student = new Student();
+student.setName("张三");
+student.setAge(123);
+student.setNo(3158L);
+studentList.add(student);
+
+Student student2 = new Student();
+student.setName("李四");
+student.setAge(125);
+student.setNo(8848L);
+studentList.add(student2);
+// 复制到 Person 类
+List<Person> people = BeanUtil.copyToList(studentList, Person.class);
+```
+
 ### Alias注解
 
 5.x的Hutool中增加了一个自定义注解：`@Alias`，通过此注解可以给Bean的字段设置别名。
