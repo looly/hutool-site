@@ -29,13 +29,6 @@ public enum TestEnum{
 获取枚举类中所有枚举对象的name列表。栗子：
 
 ```java
-//定义枚举
-public enum TestEnum {
-	TEST1, TEST2, TEST3;
-}
-```
-
-```java
 List<String> names = EnumUtil.getNames(TestEnum.class);
 //结果：[TEST1, TEST2, TEST3]
 ```
@@ -47,6 +40,20 @@ List<String> names = EnumUtil.getNames(TestEnum.class);
 ```java
 List<Object> types = EnumUtil.getFieldValues(TestEnum.class, "type");
 //结果：[type1, type2, type3]
+```
+
+### `getBy`
+根据传入lambda和值获得对应枚举。栗子🌰：
+```java
+TestEnum testEnum = EnumUtil.getBy(TestEnum::ordinal, 1);
+//结果：TEST2
+```
+
+### `getFieldBy`
+根据传入lambda和值获得对应枚举的值。栗子🌰：
+```java
+String type = EnumUtil.getFieldBy(TestEnum::getType, Enum::ordinal, 1);
+// 结果：“type2”
 ```
 
 ### `getEnumMap`
