@@ -92,6 +92,33 @@ Map<String, String> map2 = MapUtil.filter(map, (Filter<Entry<String, String>>) t
 }
 ```
 
+- `map` 通过传入的BiFunction实现来返回值为新的map，支持返回别的类型
+
+定义个小枚举
+```java
+enum PeopleEnum {GIRL, BOY, CHILD}
+```
+开始操作
+```java
+Map<Integer, String> adjectivesMap = MapUtil.<Integer, String>builder()
+.put(0, "lovely")
+.put(1, "friendly")
+.put(2, "happily")
+.build();
+
+Map<Integer, String> resultMap = MapUtil.map(adjectivesMap, (k, v) -> v + " " + PeopleEnum.values()[k].name().toLowerCase());
+```
+
+结果为
+
+```json
+{
+  0: "lovely girl",
+  1: "friendly boy",
+  2: "happily child"
+}
+```
+
 - `reverse` Map的键和值互换
 
 ```java
