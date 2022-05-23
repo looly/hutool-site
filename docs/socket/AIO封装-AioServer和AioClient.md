@@ -38,7 +38,25 @@ aioServer.setIoAction(new SimpleIoAction() {
 ### 客户端
 
 ```java
-AioClient client = new AioClient(new InetSocketAddress("localhost", 8899), new SimpleIoAction() {
+final AsynchronousChannelGroup GROUP = AsynchronousChannelGroup.withFixedThreadPool(//
+		Runtime.getRuntime().availableProcessors(), // 默认线程池大小
+		ThreadFactoryBuilder.create().setNamePrefix("Huool-socket-").build()//
+);
+
+AsynchronousSocketChannel channel;
+try {
+	channel = AsynchronousSocketChannel.open(GROUP);
+} catch (IOException e) {
+	throw new IORuntimeException(e);
+}
+try {
+	channel.connect(new InetSocketAddress("localhost", 8899)).get();
+} catch (InterruptedException | ExecutionException e) {
+	IoUtil.close(channel);
+	throw new SocketRuntimeException(e);
+}
+
+AioClient client = new AioClient(channel, new SimpleIoAction() {
 	
 	@Override
 	public void doAction(AioSession session, ByteBuffer data) {
@@ -55,3 +73,7 @@ client.read();
 
 client.close();
 ```
+
+>> 注意：
+>> GROUP维护一个连接池，建议全局单例持有。
+>> 见：https://gitee.com/dromara/hutool/issues/I56SYG
