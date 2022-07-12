@@ -69,15 +69,21 @@ Integer[] a = {1,2,3,4,5,6};
 Integer[] filter = ArrayUtil.filter(a, (Editor<Integer>) t -> (t % 2 == 0) ? t : null);
 ```
 
-### 编辑
-
 对已有数组编辑，获得编辑后的值。
-
 ```java
 Integer[] a = {1, 2, 3, 4, 5, 6};
 // [1, 20, 3, 40, 5, 60]
 Integer[] filter = ArrayUtil.filter(a, (Editor<Integer>) t -> (t % 2 == 0) ? t * 10 : t);
+```
 
+### 编辑
+
+修改元素对象,此方法会修改原数组。
+
+```java
+Integer[] a = {1, 2, 3, 4, 5, 6};
+// [1, 20, 3, 40, 5, 60]
+ArrayUtil.edit(a, t -> (t % 2 == 0) ? t * 10 : t);
 ```
 
 ### zip
