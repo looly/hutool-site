@@ -42,7 +42,7 @@ String addressValue = Opt.ofNullable(user)
 ```java
 // ofBlankAble相对于ofNullable考虑了字符串为空串的情况
 String hutool = Opt.ofBlankAble("").orElse("hutool");
-Assert.assertEquals("hutool", hutool);
+Assert.equals("hutool", hutool);
 ```
 - 原版Optional有区别的是，get不会抛出NoSuchElementException
 - 如果想使用原版Optional中的get这样，获取一个一定不为空的值，则应该使用orElseThrow
@@ -50,14 +50,14 @@ Assert.assertEquals("hutool", hutool);
 // 和原版Optional有区别的是，get不会抛出NoSuchElementException
 // 如果想使用原版Optional中的get这样，获取一个一定不为空的值，则应该使用orElseThrow
 Object opt = Opt.ofNullable(null).get();
-Assert.assertNull(opt);
+Assert.isNull(isEmpty);
 ```
 - 这是参考了jdk11 Optional中的新函数isEmpty，用于判断不存在值的情况
 ```java
 // 这是参考了jdk11 Optional中的新函数
 // 判断包裹内元素是否为空，注意并没有判断空字符串的情况
 boolean isEmpty = Opt.empty().isEmpty();
-Assert.assertTrue(isEmpty);
+Assert.isTrue(isEmpty);
 ```
 - 灵感来源于jdk9 Optional中的新函数ifPresentOrElse，用于 存在值时执行某些操作，不存在值时执行另一个操作，支持链式编程
 ```java
@@ -71,25 +71,25 @@ Opt.empty().ifPresentOrElse(System.out::println, () -> System.err.println("Ops!S
 User user = new User();
 // 相当于ifPresent的链式调用
 Opt.ofNullable("hutool").peek(user::setUsername).peek(user::setNickname);
-Assert.assertEquals("hutool", user.getNickname());
-Assert.assertEquals("hutool", user.getUsername());
+Assert.equals("hutool", user.getNickname());
+Assert.equals("hutool", user.getUsername());
 
 // 注意，传入的lambda中，对包裹内的元素执行赋值操作并不会影响到原来的元素
 String name = Opt.ofNullable("hutool").peek(username -> username = "123").peek(username -> username = "456").get();
-Assert.assertEquals("hutool", name);
+Assert.equals("hutool", name);
 ```
 - 灵感来源于jdk11 Optional中的新函数or，用于值不存在时，用别的Opt代替
 ```java
 // 灵感来源于jdk11 Optional中的新函数or
 // 给一个替代的Opt
 String str = Opt.<String>ofNullable(null).or(() -> Opt.ofNullable("Hello hutool!")).map(String::toUpperCase).orElseThrow();
-Assert.assertEquals("HELLO HUTOOL!", str);
+Assert.equals("HELLO HUTOOL!", str);
 
 User user = User.builder().username("hutool").build();
 Opt<User> userOpt = Opt.of(user);
 // 获取昵称，获取不到则获取用户名
 String name = userOpt.map(User::getNickname).or(() -> userOpt.map(User::getUsername)).get();
-Assert.assertEquals("hutool", name);
+Assert.equals("hutool", name);
 ```
 - 对orElseThrow进行了重载，支持 双冒号+自定义提示语 写法，比原来的
 ```java
