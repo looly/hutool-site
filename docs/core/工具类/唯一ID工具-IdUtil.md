@@ -52,7 +52,7 @@ long id = snowflake.nextId();
 
 //简单使用
 long id = IdUtil.getSnowflakeNextId();
-String id = snowflake.getSnowflakeNextIdStr();
+String id = IdUtil.getSnowflakeNextIdStr();
 ```
 
 ```java
