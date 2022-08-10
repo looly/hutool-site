@@ -28,11 +28,11 @@ Hutool封装了JDK的，详细见[https://docs.oracle.com/javase/7/docs/technote
 RSA rsa = new RSA();
 
 //获得私钥
-rsa.getPrivateKey()
-rsa.getPrivateKeyBase64()
+rsa.getPrivateKey();
+rsa.getPrivateKeyBase64();
 //获得公钥
-rsa.getPublicKey()
-rsa.getPublicKeyBase64()
+rsa.getPublicKey();
+rsa.getPublicKeyBase64();
 
 //公钥加密，私钥解密
 byte[] encrypt = rsa.encrypt(StrUtil.bytes("我是一段测试aaaa", CharsetUtil.CHARSET_UTF_8), KeyType.PublicKey);
