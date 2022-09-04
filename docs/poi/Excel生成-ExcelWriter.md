@@ -260,6 +260,7 @@ writer.write(rows, true);
 
 response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=utf-8"); 
 response.setHeader("Content-Disposition","attachment;filename=test.xlsx"); 
+ServletOutputStream out=response.getOutputStream(); 
 
 writer.flush(out, true);
 writer.close();
