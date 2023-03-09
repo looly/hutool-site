@@ -41,6 +41,13 @@
 		<!--[if lt IE 9]>
 			<script src="https://cdn.bootcdn.net/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
 		<![endif]-->
+		<!-- 跳转https -->
+		<script>
+			var targetProtocol = "https:";
+			if (window.location.protocol != targetProtocol){
+				window.location.href = targetProtocol +  window.location.href.substring(window.location.protocol.length);
+			}
+		</script>
 		<!-- 百度统计 -->
 		<script>
 			var _hmt = _hmt || [];
@@ -625,12 +632,13 @@
 			}
 		});
 	</script>
-	<!-- gitter -->
+	<!-- gitter
 	<script>
 		((window.gitter = {}).chat = {}).options = {
 			room: 'hutool/Lobby'
 		};
 	</script>
 	<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+	-->
 	</body>
 </html>

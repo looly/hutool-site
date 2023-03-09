@@ -17,7 +17,13 @@
   <link rel="stylesheet" href="https://cdn.staticfile.org/docsify/4.13.0/themes/vue.min.css">
   <!-- 日夜模式 -->
   <link rel="stylesheet" href="https://cdn.staticfile.org/docsify-darklight-theme/3.2.0/docsify-style.min.css"/>
-  
+  <!-- 跳转https -->
+  <script>
+    var targetProtocol = "https:";
+    if (window.location.protocol != targetProtocol){
+    	window.location.href = targetProtocol +  window.location.href.substring(window.location.protocol.length);
+    }
+  </script>
   <!-- 百度统计 -->
   <script>
     var _hmt = _hmt || [];
