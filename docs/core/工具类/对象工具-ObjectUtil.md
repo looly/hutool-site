@@ -6,7 +6,7 @@
 
 ### 默认值
 
-借助于lambada表达式，ObjectUtil可以完成判断给定的值是否为null，不为null执行特定逻辑的功能。
+借助于lambda表达式，ObjectUtil可以完成判断给定的值是否为null，不为null执行特定逻辑的功能。
 
 ```java
 final String dateStr = null;

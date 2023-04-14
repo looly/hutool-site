@@ -41,6 +41,13 @@
 		<!--[if lt IE 9]>
 			<script src="https://cdn.bootcdn.net/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
 		<![endif]-->
+		<!-- 跳转https -->
+		<script>
+			var targetProtocol = "https:";
+			if (window.location.protocol != targetProtocol){
+				window.location.href = targetProtocol +  window.location.href.substring(window.location.protocol.length);
+			}
+		</script>
 		<!-- 百度统计 -->
 		<script>
 			var _hmt = _hmt || [];
@@ -324,7 +331,7 @@
 						<div style="text-align: center;">
 							<div class="col-md-3">
 								<i class="icon-qq"></i>
-								<a href="https://qm.qq.com/cgi-bin/qm/qr?k=jPq9DsjXs7GUWbXRZU3wygSJyMEy4pqr&jump_from=webapi">QQ群⑥：610134978</a>
+								<a href="https://qm.qq.com/cgi-bin/qm/qr?k=QtsqXLkHpLjE99tkre19j6pjPMhSay1a&jump_from=webapi">QQ群⑦：715292493</a>
 							</div>
 							<div class="col-md-3">
 								<i class="icon-mail2"></i>
@@ -422,7 +429,7 @@
 							</a>
 						</div>
 						<div class="col-md-2 friend">
-							<a href="https://jpom.io/" target="_blank">
+							<a href="https://jpom.top/" target="_blank">
 								<img src="https://plus.hutool.cn/images/dromara/jpom.png" msg="一款简而轻的低侵入式在线构建、自动部署、日常运维、项目监控软件">
 							</a>
 						</div>
@@ -571,7 +578,7 @@
 							</div>
 							<div class="col-md-6">
 								<p>
-									&copy; 2022 Hutool Project. All Rights Reserved.<br/>
+									&copy; 2023 Hutool Project. All Rights Reserved.<br/>
 									Designed by <a href="https://luxiaolei.com/" target="_blank">Looly</a>
 									Member of <a href="https://dromara.org/" target="_blank">Dromara</a><br/>
 								</p>
@@ -629,12 +636,13 @@
 			}
 		});
 	</script>
-	<!-- gitter -->
+	<!-- gitter
 	<script>
 		((window.gitter = {}).chat = {}).options = {
 			room: 'hutool/Lobby'
 		};
 	</script>
 	<script src="https://sidecar.gitter.im/dist/sidecar.v1.js" async defer></script>
+	-->
 	</body>
 </html>
