@@ -19,10 +19,10 @@
   <link rel="stylesheet" href="https://cdn.staticfile.org/docsify-darklight-theme/3.2.0/docsify-style.min.css"/>
   <!-- 跳转https -->
   <script>
-    var targetProtocol = "https:";
-    if (window.location.protocol != targetProtocol){
-    	window.location.href = targetProtocol +  window.location.href.substring(window.location.protocol.length);
-    }
+    // var targetProtocol = "https:";
+    // if (window.location.protocol != targetProtocol){
+    // 	window.location.href = targetProtocol +  window.location.href.substring(window.location.protocol.length);
+    // }
   </script>
   <!-- 百度统计 -->
   <script>
@@ -72,28 +72,47 @@
       plugins: [
         // footer
         function(hook) {
-          var ad = [
-            '<div style="padding: 0em 30% 1em 30%; background-color: #E8ECF1;">特别赞助 by：<br/>', 
-              '<a target="_blank" href="http://www.ccflow.org/?from=hutool"><img src="https://plus.hutool.cn/images/ad/ccflow2.png" style="margin-top:5px;"></a><br/>',
-              '<a target="_blank" href="https://sourl.cn/ri66pJ?from=hutool"><img src="https://plus.hutool.cn/images/ad/xiaoe/mstj.png" style="margin-top:5px;"></a><br/>',
-              '<a target="_blank" href="https://www.tongzhouyun.com/home?from=hutool"><img src="https://plus.hutool.cn/images/ad/agile/agil_banner.jpg" style="margin-top:5px;"></a><br/>',
-              '<a target="_blank" href="https://datayi.cn/w/a9a500M9"><img src="https://plus.hutool.cn/images/ad/postcat.jpg" style="margin-top:5px;"></a><br/>',
-              '<a target="_blank" href="https://gitee.com/dromara/MaxKey"><img src="https://plus.hutool.cn/images/ad/maxkey_banner.jpg" style="margin-top:5px;"></a><br/>',
-              '<a target="_blank" href="https://www.xiaonuo.vip/?from=hutool"><img src="https://plus.hutool.cn/images/ad/xiaonuo_banner.jpg" style="margin-top:5px;"></a>',
-              '<a target="_blank" href="http://github.crmeb.net/u/Hutool"><img src="https://plus.hutool.cn/images/ad/crmeb/crmeb_banner.jpg" style="margin-top:5px;"></a>',
-              '<a target="_blank" href="https://www.mingdao.com?s=utm_54=utm_source=Hutool-Java&utm_medium=banner&utm_campaign=%E5%93%81%E7%89%8C%E6%8E%A8%E5%B9%BF&utm_content=IT%E8%B5%8B%E8%83%BD%E4%B8%9A%E5%8A%A1"><img src="https://plus.hutool.cn/images/ad/mingdao/mingdao_banner.png" style="margin-top:5px;"></a>',
-            '</div><br/>'
-          ].join('');
+          var ad = `
+          <div class="hutool-top-ad" style="background-color: #E8ECF1;text-align:center">
+            <div style="text-align:left">特别赞助 by：</div>
+            <a target="_blank" href="http://www.ccflow.org/?from=hutool">
+              <img src="https://plus.hutool.cn/images/ad/ccflow2.png" />
+            </a>
+            <a target="_blank" href="https://sourl.cn/ri66pJ?from=hutool">
+              <img src="https://plus.hutool.cn/images/ad/xiaoe/mstj.png" />
+            </a>
+            <a target="_blank" href="https://www.tongzhouyun.com/home?from=hutool">
+              <img src="https://plus.hutool.cn/images/ad/agile/agil_banner.jpg" />
+            </a>
+            <a target="_blank" href="https://datayi.cn/w/a9a500M9">
+              <img src="https://plus.hutool.cn/images/ad/postcat.jpg">
+            </a>
+            <a target="_blank" href="https://gitee.com/dromara/MaxKey">
+              <img src="https://plus.hutool.cn/images/ad/maxkey_banner.jpg" />
+            </a>
+            <a target="_blank" href="https://www.xiaonuo.vip/?from=hutool">
+              <img src="https://plus.hutool.cn/images/ad/xiaonuo_banner.jpg" />
+            </a>
+            <a target="_blank" href="http://github.crmeb.net/u/Hutool">
+              <img src="https://plus.hutool.cn/images/ad/crmeb/crmeb_banner.jpg" />
+            </a>
+            <a target="_blank" href="https://www.mingdao.com?s=utm_54=utm_source=Hutool-Java&utm_medium=banner&utm_campaign=%E5%93%81%E7%89%8C%E6%8E%A8%E5%B9%BF&utm_content=IT%E8%B5%8B%E8%83%BD%E4%B8%9A%E5%8A%A1">
+              <img src="https://plus.hutool.cn/images/ad/mingdao/mingdao_banner.png" />
+            </a>
+          </div>
+          <style>
+            .hutool-top-ad a img{width:48%;margin-left:5px}
+          </style>
+          `
 
-          var footer = [
-            '<hr/>',
-            '<footer>',
-              '&copy; 2023 Hutool Project. All Rights Reserved. <a href="https://docsify.js.org" target="_blank">Powered by docsify</a></span><br/><br/>',
-              '<span><img src="http://www.beian.gov.cn/img/new/gongan.png"/>&nbsp;<a href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=15030202000256" target="_blank" style="color: grey; text-decoration: none;">蒙公网安备15030202000256号</a></span>',
-              '&nbsp;&nbsp;&nbsp;<span><a href="https://beian.miit.gov.cn" target="_blank" style="color: grey; text-decoration: none;">蒙ICP备19001663号</a></span>',
-            '</footer>'
-          ].join('');
-
+          var footer = `
+          <hr/>
+          <footer>
+            &copy; 2023 Hutool Project. All Rights Reserved. <a href="https://docsify.js.org" target="_blank">Powered by docsify</a></span><br/><br/>
+            <span><img src="http://www.beian.gov.cn/img/new/gongan.png"/>&nbsp;<a href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=15030202000256" target="_blank" style="color: grey; text-decoration: none;">蒙公网安备15030202000256号</a></span>
+            &nbsp;&nbsp;&nbsp;<span><a href="https://beian.miit.gov.cn" target="_blank" style="color: grey; text-decoration: none;">蒙ICP备19001663号</a></span>
+          </footer>
+          `
           hook.afterEach(function(html) {
             return ad + html + footer;
           });
