@@ -37,10 +37,10 @@ Assert.assertEquals(matchAll.toString(), "[大, 土豆, 刚出锅, 出锅]");
 3. 情况三：匹配到最长关键词，跳过已经匹配的关键词
 
 ```java
-// 匹配到【大】，由于到最长匹配，因此【大土豆】接着被匹配
-// 由于【大土豆】被匹配，【土豆】被跳过，由于【刚出锅】被匹配，【出锅】被跳过
+// 匹配到【大】，由于非密集匹配，因此从下一个字符开始查找，匹配到【土豆】接着被匹配
+// 由于【刚出锅】被匹配，由于非密集匹配，【出锅】被跳过
 matchAll = tree.matchAll(text, -1, false, true);
-Assert.assertEquals(matchAll.toString(), "[大, 大土豆, 刚出锅]");
+Assert.assertEquals(matchAll.toString(), "[大, 土豆, 刚出锅]");
 ```
 
 4. 情况四：匹配到最长关键词，不跳过已经匹配的关键词（最全关键词）
