@@ -4,504 +4,582 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
 <html class="no-js" lang="zh-cmn-Hans">
-	<!--<![endif]-->
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="description" content="Hutool是一个功能丰富且易用的Java工具库，封装的工具涵盖了字符串、数字、集合、编码、日期、文件、IO、加密、数据库JDBC、JSON、HTTP客户端等一系列操作。" />
-		<meta name="keywords" content="hutool,java,orm,tools,工具,工具集,类库" />
-		<!-- 搜索引擎验证 -->
-		<meta name="baidu-site-verification" content="3wiVWg7AdT" />
-		<meta name="360-site-verification" content="02746194ea28ec4b021636a7edf0609e" />
-		
-		<!-- QQ分享卡片信息 -->
-		<meta itemprop="name" content="Hutool-Java工具集" />
-		<meta itemprop="description" content="Hutool是一个Java工具包，它帮助我们简化代码和方法，让Java语言也可以甜甜的。" />
-		<meta itemprop="image" content="images/logo_small.jpg" />
+<!--<![endif]-->
 
-		<title>Hutool🍬一个功能丰富且易用的Java工具库，涵盖了字符串、数字、集合、编码、日期、文件、IO、加密、数据库JDBC、JSON、HTTP客户端等功能。</title>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description"
+		content="Hutool是一个功能丰富且易用的Java工具库，封装的工具涵盖了字符串、数字、集合、编码、日期、文件、IO、加密、数据库JDBC、JSON、HTTP客户端等一系列操作。" />
+	<meta name="keywords" content="hutool,java,orm,tools,工具,工具集,类库" />
+	<!-- 搜索引擎验证 -->
+	<meta name="baidu-site-verification" content="3wiVWg7AdT" />
+	<meta name="360-site-verification" content="02746194ea28ec4b021636a7edf0609e" />
 
-		<link rel="icon" type="image/png" size="484X300" href="https://plus.hutool.cn/images/logo_484.png">
-		<link rel="shortcut icon" href="favicon.ico">
+	<!-- QQ分享卡片信息 -->
+	<meta itemprop="name" content="Hutool-Java工具集" />
+	<meta itemprop="description" content="Hutool是一个Java工具包，它帮助我们简化代码和方法，让Java语言也可以甜甜的。" />
+	<meta itemprop="image" content="images/logo_small.jpg" />
 
-		<link rel="stylesheet" href="https://cdn.staticfile.org/animate.css/4.1.1/animate.min.css">
-		<link rel="stylesheet" href="https://plus.hutool.cn/css/icomoon.css">
-		<!-- Theme style -->
-		<link rel="stylesheet" href="https://plus.hutool.cn/css/style.css">
+	<title>Hutool🍬一个功能丰富且易用的Java工具库，涵盖了字符串、数字、集合、编码、日期、文件、IO、加密、数据库JDBC、JSON、HTTP客户端等功能。</title>
 
-		<link rel="stylesheet" href="https://cdn.staticfile.org/simple-line-icons/2.5.5/css/simple-line-icons.min.css">
-		<link rel="stylesheet" href="https://cdn.staticfile.org/magnific-popup.js/1.1.0/magnific-popup.min.css">
-		<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
-		<!-- highlight.js -->
-		<link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.1.2/styles/zenburn.min.css">
-		<!-- Modernizr JS -->
-		<script src="https://cdn.staticfile.org/modernizr/2.6.2/modernizr.min.js"></script>
-		<!-- FOR IE9 below -->
-		<!--[if lt IE 9]>
+	<link rel="icon" type="image/png" size="484X300" href="https://plus.hutool.cn/images/logo_484.png">
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<link rel="stylesheet" href="https://cdn.staticfile.org/animate.css/4.1.1/animate.min.css">
+	<link rel="stylesheet" href="https://plus.hutool.cn/css/icomoon.css">
+	<!-- Theme style -->
+	<link rel="stylesheet" href="https://plus.hutool.cn/css/style.css">
+
+	<link rel="stylesheet" href="https://cdn.staticfile.org/simple-line-icons/2.5.5/css/simple-line-icons.min.css">
+	<link rel="stylesheet" href="https://cdn.staticfile.org/magnific-popup.js/1.1.0/magnific-popup.min.css">
+	<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- highlight.js -->
+	<link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.1.2/styles/zenburn.min.css">
+	<!-- Modernizr JS -->
+	<script src="https://cdn.staticfile.org/modernizr/2.6.2/modernizr.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
 			<script src="https://cdn.bootcdn.net/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
 		<![endif]-->
-		<!-- 跳转https -->
-		<script>
-			var targetProtocol = "https:";
-			if (window.location.protocol != targetProtocol && window.location.protocol != "file:"){
-				window.location.href = targetProtocol +  window.location.href.substring(window.location.protocol.length);
-			}
-		</script>
-		<!-- 百度统计 -->
-		<script>
-			var _hmt = _hmt || [];
-			(function() {
-			  var hm = document.createElement("script");
-			  hm.src = "https://hm.baidu.com/hm.js?f2c884fc06fca522c4105429259b8a73";
-			  var s = document.getElementsByTagName("script")[0]; 
-			  s.parentNode.insertBefore(hm, s);
-			})();
-		</script>
-	</head>
+	<!-- 跳转https -->
+	<script>
+		var targetProtocol = "https:";
+		if (window.location.protocol != targetProtocol && window.location.protocol != "file:") {
+			window.location.href = targetProtocol + window.location.href.substring(window.location.protocol.length);
+		}
+	</script>
+	<!-- 百度统计 -->
+	<script>
+		var _hmt = _hmt || [];
+		(function () {
+			var hm = document.createElement("script");
+			hm.src = "https://hm.baidu.com/hm.js?f2c884fc06fca522c4105429259b8a73";
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+</head>
 
-	<body>
-		<!-- Loader -->
-		<div class="fh5co-loader"></div>
-		<div class="fh5co-page" id="app">
+<body>
+	<!-- Loader -->
+	<div class="fh5co-loader"></div>
+	<div class="fh5co-page" id="app">
 
-			<div id="fh5co-container">
-				<div id="fh5co-home" class="js-fullheight-home" data-section="home" style="background-image: linear-gradient(25deg, #020cff, #9c17b0, #c33565, #d75100);background-position: 50% 0;" data-stellar-background-ratio="0.5">
-					<div class="container">
-						<div class="col-md-12">
-							<div class="js-fullheight-home fh5co-copy">
-								<div class="js-fullheight-home fh5co-copy-inner">
-									<h1>
-										<b style="font-size: 220%;margin-left:-10px">Hutool</b>
-										<span style="font-size: 50%">v5.8.27</span>
-									</h1>
-									<h2>A set of tools that keep Java sweet.</h2>
-									<div style="margin-top: 100px">
-										<div>
-											<a href="https://doc.hutool.cn/pages/index/" target="_blank" class="btn btn-primary btn-outline" style="width:120px;margin-top: 20px;"><b>🍭参考文档</b></a>
-											<a href="https://plus.hutool.cn/apidocs/" target="_blank" class="btn btn-primary btn-outline" style="width:120px;margin-top: 20px;"><b>🏷️API文档</b></a>
-											<a href="https://shop108037867.taobao.com/" target="_blank" class="btn btn-primary btn-outline" style="width:120px;margin-top: 20px;">🛍️周边商店</a>
-											<a href="https://nav.hutool.cn/" target="_blank" class="btn btn-primary btn-outline" style="width:120px;margin-top: 20px;">🧭网址导航</a>
-										</div>
-										<div>
-											<a href="https://github.com/dromara/hutool/" target="_blank" class="btn btn-primary btn-outline" style="width:120px;margin-top: 20px;"><i class="icon-github"></i>&nbsp;Github</a>
-											<a href="https://gitee.com/dromara/hutool/" target="_blank" class="btn btn-primary btn-outline" style="width:120px;margin-top: 20px;"><i class="icon-git"></i>&nbsp;Gitee</a>
-											<a href="https://hutool.cn/docs/#/" target="_blank" class="btn btn-primary btn-outline" style="width:120px;margin-top: 20px;"><b>旧版文档</b></a>
-										</div>
-										<br/>
-										<div style="font-size: 1em;color: white;border-top: 1px solid white;padding-top: 40px;">
-											<div style="font-weight: 600;margin-bottom: 10px;">特别赞助：</div>
-											<a href="http://www.ccflow.org/?from=hutool" target="_blank"><img alt="ccflow" src="https://plus.hutool.cn/images/zz/ccflow3.png" style="height: 50px;margin-top:10px;"></a>
-											<a href="https://www.tongzhouyun.com/home?from=hutool" target="_blank"><img alt="agileBPM" src="https://plus.hutool.cn/images/zz/agile/agile_logo.png" style="height: 50px;margin-top:10px;"></a>
-											<a href="http://github.crmeb.net/u/Hutool" target="_blank"><img alt="crmeb" src="https://plus.hutool.cn/images/zz/crmeb/crmeb_logo.png" style="height: 50px;margin-top:10px;"></a>
-											<a href="https://www.jeequan.com/product/jeepay.html?from=hutool" target="_blank"><img alt="jeepay" src="https://plus.hutool.cn/images/zz/jeepay/jeepay_logo.png" style="height: 50px;margin-top:10px;"></a>
-											<a href="https://vue.misboot.com/#/user/Login?from=hutool2" target="_blank"><img alt="misboot" src="https://plus.hutool.cn/images/zz/misboot/misboot.png" style="height: 50px;margin-top:10px;"></a>
-										</div>
+		<div id="fh5co-container">
+			<div id="fh5co-home" class="js-fullheight-home" data-section="home"
+				style="background-image: linear-gradient(25deg, #020cff, #9c17b0, #c33565, #d75100);background-position: 50% 0;"
+				data-stellar-background-ratio="0.5">
+				<div class="container">
+					<div class="col-md-12">
+						<div class="js-fullheight-home fh5co-copy">
+							<div class="js-fullheight-home fh5co-copy-inner">
+								<h1>
+									<b style="font-size: 220%;margin-left:-10px">Hutool</b>
+									<span style="font-size: 50%">v5.8.28</span>
+								</h1>
+								<h2>A set of tools that keep Java sweet.</h2>
+								<div style="margin-top: 100px">
+									<div>
+										<a href="https://doc.hutool.cn/pages/index/" target="_blank"
+											class="btn btn-primary btn-outline"
+											style="width:120px;margin-top: 20px;"><b>🍭参考文档</b></a>
+										<a href="https://plus.hutool.cn/apidocs/" target="_blank"
+											class="btn btn-primary btn-outline"
+											style="width:120px;margin-top: 20px;"><b>🏷️API文档</b></a>
+										<a href="https://shop108037867.taobao.com/" target="_blank"
+											class="btn btn-primary btn-outline"
+											style="width:120px;margin-top: 20px;">🛍️周边商店</a>
+										<a href="https://nav.hutool.cn/" target="_blank"
+											class="btn btn-primary btn-outline"
+											style="width:120px;margin-top: 20px;">🧭网址导航</a>
+									</div>
+									<div>
+										<a href="https://github.com/dromara/hutool/" target="_blank"
+											class="btn btn-primary btn-outline" style="width:120px;margin-top: 20px;"><i
+												class="icon-github"></i>&nbsp;Github</a>
+										<a href="https://gitee.com/dromara/hutool/" target="_blank"
+											class="btn btn-primary btn-outline" style="width:120px;margin-top: 20px;"><i
+												class="icon-git"></i>&nbsp;Gitee</a>
+										<a href="https://hutool.cn/docs/#/" target="_blank"
+											class="btn btn-primary btn-outline"
+											style="width:120px;margin-top: 20px;"><b>旧版文档</b></a>
+									</div>
+									<br />
+									<div
+										style="font-size: 1em;color: white;border-top: 1px solid white;padding-top: 40px;">
+										<div style="font-weight: 600;margin-bottom: 10px;">特别赞助：</div>
+										<a href="http://www.ccflow.org/?from=hutool" target="_blank"><img alt="ccflow"
+												src="https://plus.hutool.cn/images/zz/ccflow3.png"
+												style="height: 50px;margin-top:10px;"></a>
+										<a href="https://www.tongzhouyun.com/home?from=hutool" target="_blank"><img
+												alt="agileBPM"
+												src="https://plus.hutool.cn/images/zz/agile/agile_logo.png"
+												style="height: 50px;margin-top:10px;"></a>
+										<a href="http://github.crmeb.net/u/Hutool" target="_blank"><img alt="crmeb"
+												src="https://plus.hutool.cn/images/zz/crmeb/crmeb_logo.png"
+												style="height: 50px;margin-top:10px;"></a>
+										<a href="https://www.jeequan.com/product/jeepay.html?from=hutool"
+											target="_blank"><img alt="jeepay"
+												src="https://plus.hutool.cn/images/zz/jeepay/jeepay_logo.png"
+												style="height: 50px;margin-top:10px;"></a>
+										<a href="https://vue.misboot.com/#/user/Login?from=hutool2" target="_blank"><img
+												alt="misboot" src="https://plus.hutool.cn/images/zz/misboot/misboot.png"
+												style="height: 50px;margin-top:10px;"></a>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
+			</div>
 
-				<!-- 导航 -->
-				<div class="js-sticky">
-					<div class="fh5co-main-nav">
-						<div class="container">
-							<div class="fh5co-menu-1">
-								<span><img alt="hutool" src="https://plus.hutool.cn/images/hutool.svg" style="width: 120px;margin-right: 50px;"/></span>
-								<a href="#" data-nav-section="home">主页</a>
-								<a href="#" data-nav-section="start">开始</a>
-								<a href="#" data-nav-section="docs">文档</a>
-								<a href="#" data-nav-section="team">团队</a>
-								<a href="#" data-nav-section="contact">加入讨论</a>
-								<a href="#" data-nav-section="donate">赞助商</a>
-								<a href="#" data-nav-section="friends">友情链接</a>
-								<span><a href="https://shop108037867.taobao.com/" onclick="window.location.href='https://shop108037867.taobao.com/'" style="color: red;">👕周边商店</a></span>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div id="fh5co-about" data-section="start">
-					<div class="fh5co-2col">
-
-						<div class="fh5co-2col-inner left">
-
-							<div class="fh5co-tabs-container">
-								<ul class="fh5co-tabs fh5co-three">
-									<li class="active">
-										<a href="#" data-tab="marketing">简介</a>
-									</li>
-									<li>
-										<a href="#" data-tab="analysis">设计哲学</a>
-									</li>
-									<li>
-										<a href="#" data-tab="strategy">安装</a>
-									</li>
-								</ul>
-								<div class="fh5co-tab-content active" data-tab-content="marketing">
-									<p>Hutool是一个小而全的Java工具类库，通过静态方法封装，降低相关API的学习成本，提高工作效率，使Java拥有函数式语言般的优雅，让Java语言也可以“甜甜的”。</p>
-									<p>Hutool中的工具方法来自每个用户的精雕细琢，它涵盖了Java开发底层代码中的方方面面，它既是大型项目开发中解决小问题的利器，也是小型项目中的效率担当；</p>
-									<ul class="checked">
-										<li>Web开发</li>
-										<li>与其它框架无耦合</li>
-										<li>高度可替换</li>
-									</ul>
-								</div>
-
-								<div class="fh5co-tab-content" data-tab-content="analysis">
-									<p>Hutool的设计思想是尽量减少重复的定义，让项目中的util这个package尽量少，总的来说有如下的几个思想：</p>
-									<ul class="checked">
-										<li>方法优先于对象</li>
-										<li>自动识别优于用户定义</li>
-										<li>便捷性与灵活性并存</li>
-										<li>适配与兼容</li>
-										<li>可选依赖原则</li>
-										<li>无侵入原则</li>
-									</ul>
-								</div>
-
-								<div class="fh5co-tab-content" data-tab-content="strategy">
-									<div>🍊Maven:在项目的pom.xml的dependencies中加入以下内容:</div>
-									<pre style="background: none; padding: 0;margin: 0;border: none; overflow-x: hidden;">
-										<code>&lt;dependency&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&lt;groupId&gt;cn.hutool&lt;/groupId&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&lt;artifactId&gt;hutool-all&lt;/artifactId&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&lt;version&gt;5.8.27&lt;/version&gt;<br/>&lt;/dependency&gt;</code>
-									</pre>
-									<br>
-									<div>🍐Gradle:</div>
-									<pre style="background: none; padding: 0;margin: 0;border: none; overflow-x: hidden;">
-										<code>implementation 'cn.hutool:hutool-all:5.8.27'</code>
-									</pre>
-								</div>
-
-							</div>
-
-						</div>
-
-					</div>
-					
-					<div class="fh5co-2col fh5co-text" style="margin-top: 20px;">
-						<img alt="hutool代码样例" src="https://plus.hutool.cn/images/code_example.gif" style="width:83%;margin-left: 15%;border: 3px solid grey" />
-					</div>
-				</div>
-
-				<div id="fh5co-services" data-section="docs">
-					<div class="fh5co-video">
-						<a href="https://player.bilibili.com/player.html?aid=710062843&bvid=BV1bQ4y1M7d9&cid=170377135&page=2" class="popup-vimeo">
-							<i class="icon-play2"></i>
-						</a>
-						<span>Watch Video</span>
-					</div>
+			<!-- 导航 -->
+			<div class="js-sticky">
+				<div class="fh5co-main-nav">
 					<div class="container">
-						<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
-							<h2>Hutool 是什么</h2>
-							<p>Hutool是一个Java工具包类库，对文件、流、加密解密、转码、正则、线程、XML等JDK方法进行封装，组成各种Util工具类</p>
+						<div class="fh5co-menu-1">
+							<span><img alt="hutool" src="https://plus.hutool.cn/images/hutool.svg"
+									style="width: 120px;margin-right: 50px;" /></span>
+							<a href="#" data-nav-section="home">主页</a>
+							<a href="#" data-nav-section="start">开始</a>
+							<a href="#" data-nav-section="docs">文档</a>
+							<a href="#" data-nav-section="team">团队</a>
+							<a href="#" data-nav-section="contact">加入讨论</a>
+							<a href="#" data-nav-section="donate">赞助商</a>
+							<a href="#" data-nav-section="friends">友情链接</a>
+							<span><a href="https://shop108037867.taobao.com/"
+									onclick="window.location.href='https://shop108037867.taobao.com/'"
+									style="color: red;">👕周边商店</a></span>
 						</div>
-						<div class="col-md-4">
-							<div class="service">
-								<div class="icon"><i class="icon-clock"></i></div>
-								<h3>日期工具</h3>
-								<p>通过DateUtil类，提供高度便捷的日期访问、处理和转换方式。</p>
+					</div>
+				</div>
+			</div>
+
+			<div id="fh5co-about" data-section="start">
+				<div class="fh5co-2col">
+
+					<div class="fh5co-2col-inner left">
+
+						<div class="fh5co-tabs-container">
+							<ul class="fh5co-tabs fh5co-three">
+								<li class="active">
+									<a href="#" data-tab="marketing">简介</a>
+								</li>
+								<li>
+									<a href="#" data-tab="analysis">设计哲学</a>
+								</li>
+								<li>
+									<a href="#" data-tab="strategy">安装</a>
+								</li>
+							</ul>
+							<div class="fh5co-tab-content active" data-tab-content="marketing">
+								<p>Hutool是一个小而全的Java工具类库，通过静态方法封装，降低相关API的学习成本，提高工作效率，使Java拥有函数式语言般的优雅，让Java语言也可以“甜甜的”。
+								</p>
+								<p>Hutool中的工具方法来自每个用户的精雕细琢，它涵盖了Java开发底层代码中的方方面面，它既是大型项目开发中解决小问题的利器，也是小型项目中的效率担当；</p>
+								<ul class="checked">
+									<li>Web开发</li>
+									<li>与其它框架无耦合</li>
+									<li>高度可替换</li>
+								</ul>
 							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="service">
-								<div class="icon"><i class="icon-compass"></i></div>
-								<h3>HTTP客户端</h3>
-								<p>通过HttpUtil对HTTP客户端的封装，实现便捷的HTTP请求，并简化文件上传操作。</p>
+
+							<div class="fh5co-tab-content" data-tab-content="analysis">
+								<p>Hutool的设计思想是尽量减少重复的定义，让项目中的util这个package尽量少，总的来说有如下的几个思想：</p>
+								<ul class="checked">
+									<li>方法优先于对象</li>
+									<li>自动识别优于用户定义</li>
+									<li>便捷性与灵活性并存</li>
+									<li>适配与兼容</li>
+									<li>可选依赖原则</li>
+									<li>无侵入原则</li>
+								</ul>
 							</div>
-						</div>
-						<div class="col-md-4">
-							<div class="service">
-								<div class="icon"><i class="icon-shuffle"></i></div>
-								<h3>转换工具</h3>
-								<p>通过Convert类中的相应静态方法，提供一整套的类型转换解决方案，并通过ConverterRegistry工厂类自定义转换。</p>
+
+							<div class="fh5co-tab-content" data-tab-content="strategy">
+								<div>🍊Maven:在项目的pom.xml的dependencies中加入以下内容:</div>
+								<pre style="background: none; padding: 0;margin: 0;border: none; overflow-x: hidden;">
+										<code>&lt;dependency&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&lt;groupId&gt;cn.hutool&lt;/groupId&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&lt;artifactId&gt;hutool-all&lt;/artifactId&gt;<br/>&nbsp;&nbsp;&nbsp;&nbsp;&lt;version&gt;5.8.28&lt;/version&gt;<br/>&lt;/dependency&gt;</code>
+									</pre>
+								<br>
+								<div>🍐Gradle:</div>
+								<pre style="background: none; padding: 0;margin: 0;border: none; overflow-x: hidden;">
+										<code>implementation 'cn.hutool:hutool-all:5.8.28'</code>
+									</pre>
 							</div>
+
 						</div>
 
-						<div class="col-md-4">
-							<div class="service">
-								<div class="icon"><i class="icon-settings"></i></div>
-								<h3>配置文件工具（Setting）</h3>
-								<p>通过Setting对象，提供兼容Properties文件的更加强大的配置文件工具，用于解决中文、分组等JDK配置文件存在的诸多问题。</p>
-							</div>
+					</div>
+
+				</div>
+
+				<div class="fh5co-2col fh5co-text" style="margin-top: 20px;">
+					<img alt="hutool代码样例" src="https://plus.hutool.cn/images/code_example.gif"
+						style="width:83%;margin-left: 15%;border: 3px solid grey" />
+				</div>
+			</div>
+
+			<div id="fh5co-services" data-section="docs">
+				<div class="fh5co-video">
+					<a href="https://player.bilibili.com/player.html?aid=710062843&bvid=BV1bQ4y1M7d9&cid=170377135&page=2"
+						class="popup-vimeo">
+						<i class="icon-play2"></i>
+					</a>
+					<span>Watch Video</span>
+				</div>
+				<div class="container">
+					<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
+						<h2>Hutool 是什么</h2>
+						<p>Hutool是一个Java工具包类库，对文件、流、加密解密、转码、正则、线程、XML等JDK方法进行封装，组成各种Util工具类</p>
+					</div>
+					<div class="col-md-4">
+						<div class="service">
+							<div class="icon"><i class="icon-clock"></i></div>
+							<h3>日期工具</h3>
+							<p>通过DateUtil类，提供高度便捷的日期访问、处理和转换方式。</p>
 						</div>
-						<div class="col-md-4">
-							<div class="service">
-								<div class="icon"><i class="icon-note"></i></div>
-								<h3>日志工具</h3>
-								<p>Hutool的日志功能，通过抽象Log接口，提供对Slf4j、LogBack、Log4j、JDK-Logging的全面兼容支持。</p>
-							</div>
+					</div>
+					<div class="col-md-4">
+						<div class="service">
+							<div class="icon"><i class="icon-compass"></i></div>
+							<h3>HTTP客户端</h3>
+							<p>通过HttpUtil对HTTP客户端的封装，实现便捷的HTTP请求，并简化文件上传操作。</p>
 						</div>
-						<div class="col-md-4">
-							<div class="service">
-								<div class="icon"><i class="icon-support"></i></div>
-								<h3>JDBC工具类（DB模块）</h3>
-								<p>通过db模块，提供对MySQL、Oracle等关系型数据库的JDBC封装，借助ActiveRecord思想，大大简化数据库操作。</p>
-							</div>
+					</div>
+					<div class="col-md-4">
+						<div class="service">
+							<div class="icon"><i class="icon-shuffle"></i></div>
+							<h3>转换工具</h3>
+							<p>通过Convert类中的相应静态方法，提供一整套的类型转换解决方案，并通过ConverterRegistry工厂类自定义转换。</p>
 						</div>
-						<div class="col-md-12 text-center">
-							<p>Hutool的更多功能，期待你的探索：</p>
+					</div>
+
+					<div class="col-md-4">
+						<div class="service">
+							<div class="icon"><i class="icon-settings"></i></div>
+							<h3>配置文件工具（Setting）</h3>
+							<p>通过Setting对象，提供兼容Properties文件的更加强大的配置文件工具，用于解决中文、分组等JDK配置文件存在的诸多问题。</p>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="service">
+							<div class="icon"><i class="icon-note"></i></div>
+							<h3>日志工具</h3>
+							<p>Hutool的日志功能，通过抽象Log接口，提供对Slf4j、LogBack、Log4j、JDK-Logging的全面兼容支持。</p>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="service">
+							<div class="icon"><i class="icon-support"></i></div>
+							<h3>JDBC工具类（DB模块）</h3>
+							<p>通过db模块，提供对MySQL、Oracle等关系型数据库的JDBC封装，借助ActiveRecord思想，大大简化数据库操作。</p>
+						</div>
+					</div>
+					<div class="col-md-12 text-center">
+						<p>Hutool的更多功能，期待你的探索：</p>
+						<p>
+							<a href="https://hutool.cn/docs/#/" target="_blank"
+								class="btn btn-primary btn-outline">参考文档</a>
+							<a href="https://apidoc.gitee.com/dromara/hutool" target="_blank"
+								class="btn btn-primary btn-outline" style="margin-left: 60px;">API 文档</a>
+						</p>
+					</div>
+
+				</div>
+
+			</div>
+			<!-- END fh5co-services -->
+
+			<div id="fh5co-team" data-section="team">
+				<div class="container">
+					<div class="col-md-12 text-center fh5co-heading">
+						<h2>维护团队</h2>
+					</div>
+					<div class="col-md-2 col-md-offset-1">
+						<div class="person">
+							<img alt="小磊" src="https://plus.hutool.cn/images/team/me.jpg" alt="" class="img-responsive">
+							<h3>小磊</h3>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="person">
+							<img alt="阿超" src="https://plus.hutool.cn/images/team/achao.jpg" alt=""
+								class="img-responsive">
+							<h3>阿超</h3>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="person">
+							<img alt="Husky" src="https://plus.hutool.cn/images/team/husky.jpg" alt=""
+								class="img-responsive">
+							<h3>Husky</h3>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="person">
+							<img alt="温良恭" src="https://plus.hutool.cn/images/team/wengongliang.jpg" alt=""
+								class="img-responsive">
+							<h3>温良恭</h3>
+						</div>
+					</div>
+					<div class="col-md-2">
+						<div class="person">
+							<img alt="lxSkye" src="https://plus.hutool.cn/images/team/lxSkye.jpg" alt=""
+								class="img-responsive">
+							<h3>lxSkye</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- END fh5co-team -->
+
+			<div id="fh5co-contact" data-section="contact">
+				<div class="container">
+					<div class="col-md-12 text-center fh5co-heading">
+						<h2>加入讨论</h2>
+						<p>通过以下方式加入讨论，或为Hutool添砖加瓦</p>
+					</div>
+					<div style="text-align: center;">
+						<div class="col-md-3">
+							<i class="icon-qq"></i>
+							<a
+								href="https://qm.qq.com/cgi-bin/qm/qr?k=QtsqXLkHpLjE99tkre19j6pjPMhSay1a&jump_from=webapi">QQ群⑦：715292493</a>
+						</div>
+						<div class="col-md-3">
+							<i class="icon-mail2"></i>
+							<a href="mailto:loolly@aliyun.com" target="_blank">loolly@aliyun.com</a>
+						</div>
+						<div class="col-md-3">
+							<i class="icon-git"></i>
+							<a href="https://gitee.com/dromara/hutool/issues" target="_blank">Gitee Issues</a>
+						</div>
+						<div class="col-md-3">
+							<i class="icon-github"></i>
+							<a href="https://github.com/dromara/hutool/issues" target="_blank">Github Issues</a>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<!-- END fh5co-contact -->
+
+			<div id="fh5co-donate" data-section="donate" style="padding: 7em 0; background-color: #E8ECF1;">
+				<div class="container">
+					<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
+						<h2>赞助商</h2>
+						<p>为Hutool提供赞助，也许他们也会为你提供好的产品</p>
+					</div>
+					<div class="col-md-8 col-md-offset-2">
+						<a target="_blank" href="http://www.ccflow.org/?from=hutool"><img alt="ccflow"
+								src="https://plus.hutool.cn/images/zz/ccflow2.png" style="width:100%"></a>
+					</div>
+					<div class="col-md-8 col-md-offset-2" style="margin-top: 1em;">
+						<a target="_blank" href="https://www.tongzhouyun.com/home?from=hutool"><img alt="agileBPM"
+								src="https://plus.hutool.cn/images/zz/agile/agil_banner.jpg" style="width:100%"></a>
+					</div>
+					<div class="col-md-8 col-md-offset-2" style="margin-top: 1em;">
+						<a target="_blank" href="http://github.crmeb.net/u/Hutool"><img alt="crmeb"
+								src="https://plus.hutool.cn/images/zz/crmeb/crmeb_banner.jpg" style="width:100%"></a>
+					</div>
+					<div class="col-md-8 col-md-offset-2" style="margin-top: 1em;">
+						<a target="_blank" href="https://www.asiayun.com/aff/HIWXJNBB"><img alt="asiayun"
+								src="https://plus.hutool.cn/images/zz/asiayun.jpg" style="width:100%"></a>
+					</div>
+					<div class="col-md-8 col-md-offset-2" style="margin-top: 1em;">
+						<script async
+							src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1629303428033221"
+							crossorigin="anonymous"></script>
+						<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1629303428033221"
+							data-ad-slot="8686716912" data-ad-format="auto" data-full-width-responsive="true"></ins>
+						<script>
+							(adsbygoogle = window.adsbygoogle || []).push({});
+						</script>
+					</div>
+				</div>
+			</div>
+			<!-- END fh5co-friends -->
+
+			<div id="fh5co-friends" data-section="friends" style="padding: 7em 0;">
+				<div class="container">
+					<div class="col-md-12 text-center fh5co-heading">
+						<h2><a target="_blank" href="https://dromara.org/">Dromara</a>组织成员项目</h2>
+					</div>
+					<div class="col-md-2 friend">
+						<a href="https://gitee.com/dromara/TLog" target="_blank">
+							<img alt="tlog" src="https://plus.hutool.cn/images/dromara/tlog2.png"
+								msg="一个轻量级的分布式日志标记追踪神器，10分钟即可接入，自动对日志打标签完成微服务的链路追踪">
+						</a>
+					</div>
+					<div class="col-md-2 friend">
+						<a href="https://gitee.com/dromara/liteFlow" target="_blank">
+							<img alt="liteflow" src="https://plus.hutool.cn/images/dromara/liteflow.png"
+								msg="轻量，快速，稳定，可编排的组件式流程引擎">
+						</a>
+					</div>
+					<div class="col-md-2 friend">
+						<a href="https://sa-token.cc/" target="_blank">
+							<img alt="sa-token" src="https://plus.hutool.cn/images/dromara/sa-token.png"
+								msg="一个轻量级 java 权限认证框架，让鉴权变得简单、优雅！">
+						</a>
+					</div>
+					<div class="col-md-2 friend">
+						<a href="https://gitee.com/dromara/hmily" target="_blank">
+							<img alt="hmily" src="https://plus.hutool.cn/images/dromara/hmily.png"
+								msg="高性能一站式分布式事务解决方案。">
+						</a>
+					</div>
+					<div class="col-md-2 friend">
+						<a href="https://gitee.com/dromara/Raincat" target="_blank">
+							<img alt="raincat" src="https://plus.hutool.cn/images/dromara/raincat.png"
+								msg="强一致性分布式事务解决方案。">
+						</a>
+					</div>
+					<div class="col-md-2 friend">
+						<a href="https://gitee.com/dromara/myth" target="_blank">
+							<img alt="myth" src="https://plus.hutool.cn/images/dromara/myth.png" msg="可靠消息分布式事务解决方案。">
+						</a>
+					</div>
+					<div class="col-md-2 friend">
+						<a href="https://cubic.jiagoujishu.com/" target="_blank">
+							<img alt="cubic" src="https://plus.hutool.cn/images/dromara/cubic.png"
+								msg="一站式问题定位平台，以agent的方式无侵入接入应用，完整集成arthas功能模块，致力于应用级监控，帮助开发人员快速定位问题">
+						</a>
+					</div>
+					<div class="col-md-2 friend">
+						<a href="https://maxkey.top/" target="_blank">
+							<img alt="maxkey" src="https://plus.hutool.cn/images/dromara/maxkey.png"
+								msg="业界领先的身份管理和认证产品">
+						</a>
+					</div>
+					<div class="col-md-2 friend">
+						<a href="http://forest.dtflyx.com/" target="_blank">
+							<img alt="forest" src="https://plus.hutool.cn/images/dromara/forest-logo.png"
+								msg="Forest能够帮助您使用更简单的方式编写Java的HTTP客户端" nf>
+						</a>
+					</div>
+					<div class="col-md-2 friend">
+						<a href="https://jpom.top/" target="_blank">
+							<img alt="jpon" src="https://plus.hutool.cn/images/dromara/jpom.png"
+								msg="一款简而轻的低侵入式在线构建、自动部署、日常运维、项目监控软件">
+						</a>
+					</div>
+					<div class="col-md-2 friend">
+						<a href="https://su.usthe.com/" target="_blank">
+							<img alt="sureness" src="https://plus.hutool.cn/images/dromara/sureness.png"
+								msg="面向 REST API 的高性能认证鉴权框架">
+						</a>
+					</div>
+					<div class="col-md-2 friend">
+						<a href="https://easy-es.cn/" target="_blank">
+							<img alt="easy-es" src="https://plus.hutool.cn/images/dromara/easy-es2.png"
+								msg="🚀傻瓜级ElasticSearch搜索引擎ORM框架">
+						</a>
+					</div>
+					<div class="col-md-2 friend">
+						<a href="https://gitee.com/dromara/northstar" target="_blank">
+							<img alt="northstar" src="https://plus.hutool.cn/images/dromara/northstar_logo.png"
+								msg="Northstar盈富量化交易平台">
+						</a>
+					</div>
+					<div class="col-md-2 friend">
+						<a href="https://plugins.sheng90.wang/fast-request/" target="_blank">
+							<img alt="fast-request" src="https://plus.hutool.cn/images/dromara/fastRequest.gif"
+								msg="Idea 版 Postman，为简化调试API而生">
+						</a>
+					</div>
+					<div class="col-md-2 friend">
+						<a href="https://www.jeesuite.com/" target="_blank">
+							<img alt="mendmix" src="https://plus.hutool.cn/images/dromara/mendmix.png"
+								msg="开源分布式云原生架构一站式解决方案">
+						</a>
+					</div>
+					<div class="col-md-2 friend">
+						<a href="https://gitee.com/dromara/koalas-rpc" target="_blank">
+							<img alt="koalas-rpc" src="https://plus.hutool.cn/images/dromara/koalas-rpc2.png"
+								msg="企业生产级百亿日PV高可用可拓展的RPC框架。">
+						</a>
+					</div>
+					<div class="col-md-2 friend">
+						<a href="https://async.sizegang.cn/" target="_blank">
+							<img alt="gobrs-async" src="https://plus.hutool.cn/images/dromara/gobrs-async.png"
+								msg="🔥 配置极简功能强大的异步任务动态编排框架">
+						</a>
+					</div>
+					<div class="col-md-2 friend">
+						<a href="https://dynamictp.cn/" target="_blank">
+							<img alt="dynamic-tp" src="https://plus.hutool.cn/images/dromara/dynamic-tp.png"
+								msg="🔥🔥🔥 基于配置中心的轻量级动态可监控线程池">
+						</a>
+					</div>
+					<div class="col-md-2 friend">
+						<a href="https://www.x-easypdf.cn" target="_blank">
+							<img alt="x-easypdf" src="https://plus.hutool.cn/images/dromara/x-easypdf.png"
+								msg="一个用搭积木的方式构建pdf的框架（基于pdfbox）">
+						</a>
+					</div>
+					<div class="col-md-2 friend">
+						<a href="http://dromara.gitee.io/image-combiner" target="_blank">
+							<img alt="image-combiner" src="https://plus.hutool.cn/images/dromara/image-combiner.png"
+								msg="一个专门用于图片合成的工具，没有很复杂的功能，简单实用，却不失强大">
+						</a>
+					</div>
+					<div class="col-md-2 friend">
+						<a href="https://www.herodotus.cn/" target="_blank">
+							<img alt="dante-cloud" src="https://plus.hutool.cn/images/dromara/dante-cloud2.png"
+								msg="Dante-Cloud 是一款企业级微服务架构和服务能力开发平台。">
+						</a>
+					</div>
+					<div class="col-md-2 friend">
+						<a href="https://dromara.org/zh/projects/" target="_blank">
+							<img alt="dromara" src="https://plus.hutool.cn/images/dromara/dromara.png"
+								msg="让每一位开源爱好者，体会到开源的快乐。">
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- END fh5co-friends -->
+
+			<!-- wwads -->
+			<div style="position: fixed; right: 10px; bottom: 70px; z-index: 99999;">
+				<div class="wwads-cn wwads-vertical" data-id="126" style="max-width:150px"></div>
+			</div>
+
+			<footer id="fh5co-footer">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-4">
 							<p>
-								<a href="https://hutool.cn/docs/#/" target="_blank" class="btn btn-primary btn-outline">参考文档</a>
-								<a href="https://apidoc.gitee.com/dromara/hutool" target="_blank" class="btn btn-primary btn-outline" style="margin-left: 60px;">API 文档</a>
+								&copy; 2024 Hutool Project. All Rights Reserved.<br />
+								Designed by <a href="https://luxiaolei.com/" target="_blank">Looly</a>
+								Member of <a href="https://dromara.org/" target="_blank">Dromara</a><br />
 							</p>
 						</div>
-
-					</div>
-
-				</div>
-				<!-- END fh5co-services -->
-				
-				<div id="fh5co-team" data-section="team">
-					<div class="container">
-						<div class="col-md-12 text-center fh5co-heading">
-							<h2>维护团队</h2>
-						</div>
-						<div class="col-md-2 col-md-offset-1">
-							<div class="person">
-								<img alt="小磊" src="https://plus.hutool.cn/images/team/me.jpg" alt="" class="img-responsive">
-								<h3>小磊</h3>
-							</div>
+						<div class="col-md-6">
+							<small>
+								<img alt="beian" src="https://www.beian.gov.cn/img/new/gongan.png" />&nbsp;<a
+									href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=15030202000256"
+									target="_blank">蒙公网安备15030202000256号</a>
+								<a href="https://beian.miit.gov.cn" target="_blank">蒙ICP备19001663号</a><br />
+							</small>
 						</div>
 						<div class="col-md-2">
-							<div class="person">
-								<img alt="阿超" src="https://plus.hutool.cn/images/team/achao.jpg" alt="" class="img-responsive">
-								<h3>阿超</h3>
-							</div>
-						</div>
-						<div class="col-md-2">
-							<div class="person">
-								<img alt="Husky" src="https://plus.hutool.cn/images/team/husky.jpg" alt="" class="img-responsive">
-								<h3>Husky</h3>
-							</div>
-						</div>
-						<div class="col-md-2">
-							<div class="person">
-								<img alt="温良恭" src="https://plus.hutool.cn/images/team/wengongliang.jpg" alt="" class="img-responsive">
-								<h3>温良恭</h3>
-							</div>
-						</div>
-						<div class="col-md-2">
-							<div class="person">
-								<img alt="lxSkye" src="https://plus.hutool.cn/images/team/lxSkye.jpg" alt="" class="img-responsive">
-								<h3>lxSkye</h3>
-							</div>
+							<ul class="fh5co-social">
+								<li><a href="https://luxiaolei.com/" target="_blank"><i class="icon-home"></i></a></li>
+								<li><a href="https://weibo.com/loolly" target="_blank"><i class="icon-weibo"></i></a>
+								</li>
+								<li><a href="https://github.com/dromara/hutool" target="_blank"><i
+											class="icon-github"></i></a></li>
+							</ul>
 						</div>
 					</div>
 				</div>
-				<!-- END fh5co-team -->
-
-				<div id="fh5co-contact" data-section="contact">
-					<div class="container">
-						<div class="col-md-12 text-center fh5co-heading">
-							<h2>加入讨论</h2>
-							<p>通过以下方式加入讨论，或为Hutool添砖加瓦</p>
-						</div>
-						<div style="text-align: center;">
-							<div class="col-md-3">
-								<i class="icon-qq"></i>
-								<a href="https://qm.qq.com/cgi-bin/qm/qr?k=QtsqXLkHpLjE99tkre19j6pjPMhSay1a&jump_from=webapi">QQ群⑦：715292493</a>
-							</div>
-							<div class="col-md-3">
-								<i class="icon-mail2"></i>
-								<a href="mailto:loolly@aliyun.com" target="_blank">loolly@aliyun.com</a>
-							</div>
-							<div class="col-md-3">
-								<i class="icon-git"></i>
-								<a href="https://gitee.com/dromara/hutool/issues" target="_blank">Gitee Issues</a>
-							</div>
-							<div class="col-md-3">
-								<i class="icon-github"></i>
-								<a href="https://github.com/dromara/hutool/issues" target="_blank">Github Issues</a>
-							</div>
-						</div>
-
-					</div>
-				</div>
-				<!-- END fh5co-contact -->
-				
-				<div id="fh5co-donate" data-section="donate" style="padding: 7em 0; background-color: #E8ECF1;">
-					<div class="container">
-						<div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
-							<h2>赞助商</h2>
-							<p>为Hutool提供赞助，也许他们也会为你提供好的产品</p>
-						</div>
-						<div class="col-md-8 col-md-offset-2">
-							<a target="_blank" href="http://www.ccflow.org/?from=hutool"><img alt="ccflow" src="https://plus.hutool.cn/images/zz/ccflow2.png" style="width:100%"></a>
-						</div>
-						<div class="col-md-8 col-md-offset-2" style="margin-top: 1em;">
-							<a target="_blank" href="https://www.tongzhouyun.com/home?from=hutool"><img alt="agileBPM" src="https://plus.hutool.cn/images/zz/agile/agil_banner.jpg" style="width:100%"></a>
-						</div>
-						<div class="col-md-8 col-md-offset-2" style="margin-top: 1em;">
-							<a target="_blank" href="http://github.crmeb.net/u/Hutool"><img alt="crmeb" src="https://plus.hutool.cn/images/zz/crmeb/crmeb_banner.jpg" style="width:100%"></a>
-						</div>
-						<div class="col-md-8 col-md-offset-2" style="margin-top: 1em;">
-							<a target="_blank" href="https://www.asiayun.com/aff/HIWXJNBB"><img alt="asiayun" src="https://plus.hutool.cn/images/zz/asiayun.jpg" style="width:100%"></a>
-						</div>
-					</div>
-				</div>
-				<!-- END fh5co-friends -->
-				
-				<div id="fh5co-friends" data-section="friends" style="padding: 7em 0;">
-					<div class="container">
-						<div class="col-md-12 text-center fh5co-heading">
-							<h2><a target="_blank" href="https://dromara.org/">Dromara</a>组织成员项目</h2>
-						</div>
-						<div class="col-md-2 friend">
-							<a href="https://gitee.com/dromara/TLog" target="_blank">
-								<img alt="tlog" src="https://plus.hutool.cn/images/dromara/tlog2.png" msg="一个轻量级的分布式日志标记追踪神器，10分钟即可接入，自动对日志打标签完成微服务的链路追踪">
-							</a>
-						</div>
-						<div class="col-md-2 friend">
-							<a href="https://gitee.com/dromara/liteFlow" target="_blank">
-								<img alt="liteflow" src="https://plus.hutool.cn/images/dromara/liteflow.png" msg="轻量，快速，稳定，可编排的组件式流程引擎">
-							</a>
-						</div>
-						<div class="col-md-2 friend">
-							<a href="https://sa-token.cc/" target="_blank">
-								<img alt="sa-token" src="https://plus.hutool.cn/images/dromara/sa-token.png" msg="一个轻量级 java 权限认证框架，让鉴权变得简单、优雅！">
-							</a>
-						</div>
-						<div class="col-md-2 friend">
-							<a href="https://gitee.com/dromara/hmily" target="_blank">
-								<img alt="hmily" src="https://plus.hutool.cn/images/dromara/hmily.png" msg="高性能一站式分布式事务解决方案。">
-							</a>
-						</div>
-						<div class="col-md-2 friend">
-							<a href="https://gitee.com/dromara/Raincat" target="_blank">
-								<img alt="raincat" src="https://plus.hutool.cn/images/dromara/raincat.png" msg="强一致性分布式事务解决方案。">
-							</a>
-						</div>
-						<div class="col-md-2 friend">
-							<a href="https://gitee.com/dromara/myth" target="_blank">
-								<img alt="myth" src="https://plus.hutool.cn/images/dromara/myth.png" msg="可靠消息分布式事务解决方案。">
-							</a>
-						</div>
-						<div class="col-md-2 friend">
-							<a href="https://cubic.jiagoujishu.com/" target="_blank">
-								<img alt="cubic" src="https://plus.hutool.cn/images/dromara/cubic.png" msg="一站式问题定位平台，以agent的方式无侵入接入应用，完整集成arthas功能模块，致力于应用级监控，帮助开发人员快速定位问题">
-							</a>
-						</div>
-						<div class="col-md-2 friend">
-							<a href="https://maxkey.top/" target="_blank">
-								<img alt="maxkey" src="https://plus.hutool.cn/images/dromara/maxkey.png" msg="业界领先的身份管理和认证产品">
-							</a>
-						</div>
-						<div class="col-md-2 friend">
-							<a href="http://forest.dtflyx.com/" target="_blank">
-								<img alt="forest" src="https://plus.hutool.cn/images/dromara/forest-logo.png" msg="Forest能够帮助您使用更简单的方式编写Java的HTTP客户端" nf>
-							</a>
-						</div>
-						<div class="col-md-2 friend">
-							<a href="https://jpom.top/" target="_blank">
-								<img alt="jpon" src="https://plus.hutool.cn/images/dromara/jpom.png" msg="一款简而轻的低侵入式在线构建、自动部署、日常运维、项目监控软件">
-							</a>
-						</div>
-						<div class="col-md-2 friend">
-							<a href="https://su.usthe.com/" target="_blank">
-								<img alt="sureness" src="https://plus.hutool.cn/images/dromara/sureness.png" msg="面向 REST API 的高性能认证鉴权框架">
-							</a>
-						</div>
-						<div class="col-md-2 friend">
-							<a href="https://easy-es.cn/" target="_blank">
-								<img alt="easy-es" src="https://plus.hutool.cn/images/dromara/easy-es2.png" msg="🚀傻瓜级ElasticSearch搜索引擎ORM框架">
-							</a>
-						</div>
-						<div class="col-md-2 friend">
-							<a href="https://gitee.com/dromara/northstar" target="_blank">
-								<img alt="northstar" src="https://plus.hutool.cn/images/dromara/northstar_logo.png" msg="Northstar盈富量化交易平台">
-							</a>
-						</div>
-						<div class="col-md-2 friend">
-							<a href="https://hertzbeat.com/" target="_blank">
-								<img alt="hertzbeat" src="https://plus.hutool.cn/images/dromara/hertzbeat_brand.jpg" msg="易用友好的云监控系统">
-							</a>
-						</div>
-						<div class="col-md-2 friend">
-							<a href="https://plugins.sheng90.wang/fast-request/" target="_blank">
-								<img alt="fast-request" src="https://plus.hutool.cn/images/dromara/fastRequest.gif" msg="Idea 版 Postman，为简化调试API而生">
-							</a>
-						</div>
-						<div class="col-md-2 friend">
-							<a href="https://www.jeesuite.com/" target="_blank">
-								<img alt="mendmix" src="https://plus.hutool.cn/images/dromara/mendmix.png" msg="开源分布式云原生架构一站式解决方案">
-							</a>
-						</div>
-						<div class="col-md-2 friend">
-							<a href="https://gitee.com/dromara/koalas-rpc" target="_blank">
-								<img alt="koalas-rpc" src="https://plus.hutool.cn/images/dromara/koalas-rpc2.png" msg="企业生产级百亿日PV高可用可拓展的RPC框架。">
-							</a>
-						</div>
-						<div class="col-md-2 friend">
-							<a href="https://async.sizegang.cn/" target="_blank">
-								<img alt="gobrs-async" src="https://plus.hutool.cn/images/dromara/gobrs-async.png" msg="🔥 配置极简功能强大的异步任务动态编排框架">
-							</a>
-						</div>
-						<div class="col-md-2 friend">
-							<a href="https://dynamictp.cn/" target="_blank">
-								<img alt="dynamic-tp" src="https://plus.hutool.cn/images/dromara/dynamic-tp.png" msg="🔥🔥🔥 基于配置中心的轻量级动态可监控线程池">
-							</a>
-						</div>
-						<div class="col-md-2 friend">
-							<a href="https://www.x-easypdf.cn" target="_blank">
-								<img alt="x-easypdf" src="https://plus.hutool.cn/images/dromara/x-easypdf.png" msg="一个用搭积木的方式构建pdf的框架（基于pdfbox）">
-							</a>
-						</div>
-						<div class="col-md-2 friend">
-							<a href="http://dromara.gitee.io/image-combiner" target="_blank">
-								<img alt="image-combiner" src="https://plus.hutool.cn/images/dromara/image-combiner.png" msg="一个专门用于图片合成的工具，没有很复杂的功能，简单实用，却不失强大">
-							</a>
-						</div>
-						<div class="col-md-2 friend">
-							<a href="https://www.herodotus.cn/" target="_blank">
-								<img alt="dante-cloud" src="https://plus.hutool.cn/images/dromara/dante-cloud2.png" msg="Dante-Cloud 是一款企业级微服务架构和服务能力开发平台。">
-							</a>
-						</div>
-						<div class="col-md-2 friend">
-							<a href="https://dromara.org/zh/projects/" target="_blank">
-								<img alt="dromara" src="https://plus.hutool.cn/images/dromara/dromara.png" msg="让每一位开源爱好者，体会到开源的快乐。">
-							</a>
-						</div>
-					</div>
-				</div>
-				<!-- END fh5co-friends -->
-
-				<!-- wwads -->
-				<div style="position: fixed; right: 10px; bottom: 70px; z-index: 99999;">
-					<div class="wwads-cn wwads-vertical" data-id="126" style="max-width:150px"></div>
-				</div>
-
-				<footer id="fh5co-footer">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-4">
-								<p>
-									&copy; 2024 Hutool Project. All Rights Reserved.<br/>
-									Designed by <a href="https://luxiaolei.com/" target="_blank">Looly</a>
-									Member of <a href="https://dromara.org/" target="_blank">Dromara</a><br/>
-								</p>
-							</div>
-							<div class="col-md-6">
-								<small>
-									<img alt="beian" src="https://www.beian.gov.cn/img/new/gongan.png"/>&nbsp;<a href="https://www.beian.gov.cn/portal/registerSystemInfo?recordcode=15030202000256" target="_blank">蒙公网安备15030202000256号</a>
-									<a href="https://beian.miit.gov.cn" target="_blank">蒙ICP备19001663号</a><br/>
-								</small>
-							</div>
-							<div class="col-md-2">
-								<ul class="fh5co-social">
-									<li><a href="https://luxiaolei.com/" target="_blank"><i class="icon-home"></i></a></li>
-									<li><a href="https://weibo.com/loolly" target="_blank"><i class="icon-weibo"></i></a></li>
-									<li><a href="https://github.com/dromara/hutool" target="_blank"><i class="icon-github"></i></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</footer>
-			</div>
-			<!-- END fh5co-container -->
+			</footer>
 		</div>
-		<!-- END fh5co-pages -->
+		<!-- END fh5co-container -->
+	</div>
+	<!-- END fh5co-pages -->
 
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
@@ -525,5 +603,6 @@
 	<script type="text/javascript" charset="UTF-8" src="https://cdn.wwads.cn/js/makemoney.js" async></script>
 	<!-- Main JS -->
 	<script src="https://plus.hutool.cn/js/main.js"></script>
-	</body>
+</body>
+
 </html>
